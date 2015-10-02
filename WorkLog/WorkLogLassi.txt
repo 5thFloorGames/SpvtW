@@ -1,0 +1,3 @@
+WorkLog Lassi
+1.10. First meeting and setup - 3h
+2.10. Coding the basic logic - 3h 
