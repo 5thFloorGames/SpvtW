@@ -7,11 +7,15 @@ public class SpawnScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Instantiate (enemy, transform.position + Vector3.left, Quaternion.identity);
+		InvokeRepeating("Spawn", Random.Range(1,20), 10);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	void Spawn(){
+		Instantiate (enemy, transform.position + Vector3.left, Quaternion.identity);
 	}
 }
