@@ -7,7 +7,7 @@ public class SpawnScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Instantiate (enemy);
+		Instantiate (enemy, transform.position + Vector3.left, Quaternion.identity);
 	}
 	
 	// Update is called once per frame
