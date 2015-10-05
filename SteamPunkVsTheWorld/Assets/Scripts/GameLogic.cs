@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class GameLogic : MonoBehaviour {
 
 	public List<GameObject> plants;
-	private int index = 0;
+	private Plant active;
 
 	// Use this for initialization
 	void Start () {
@@ -17,14 +17,11 @@ public class GameLogic : MonoBehaviour {
 	
 	}
 
-	public void ChangePlant(){
-		index++;
-		if (index >= plants.Count) {
-			index = 0;
-		}
+	public void ChangePlant(Plant plant){
+		active = plant;
 	}
 
 	public GameObject activePlant(){
-		return plants[index];
+		return plants[(int)active];
 	}
 }
