@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HitScript : MonoBehaviour {
-
+public class NibblingScript : MonoBehaviour {
+	
 	// Use this for initialization
 	void Start () {
 	
@@ -10,13 +10,13 @@ public class HitScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 
-	void OnTriggerEnter2D(Collider2D other) {
+	void OnCollisionStay2D(Collision2D other) {
+		print ("nomnom");
 		if (other.gameObject.tag.Equals ("Enemy")) {
-			other.SendMessageUpwards ("Damaged");
-			Destroy(gameObject);
+			this.SendMessage("Damaged");
 		}
 	}
 }

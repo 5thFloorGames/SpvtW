@@ -26,7 +26,6 @@ public class ClickToBuild : MonoBehaviour {
 			}
 		}
 
-		print ("clicked");
 		//this.gameObject.GetComponent<Renderer> ().material.color = Color.green;
 		//print ("stuff");
 
