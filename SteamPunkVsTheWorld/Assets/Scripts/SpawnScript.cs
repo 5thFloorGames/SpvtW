@@ -7,7 +7,7 @@ public class SpawnScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		InvokeRepeating("Spawn", Random.Range(10,30), 10);
+		InvokeRepeating("Spawn", Random.Range(10,60), 30);
 	}
 	
 	// Update is called once per frame
