@@ -21,7 +21,12 @@ public class GameLogic : MonoBehaviour {
 		active = (Plant) System.Enum.Parse( typeof( Plant ), plantName );
 	}
 
-	public GameObject activePlant(){
-		return plants[(int)active];
+	public GameObject buildPlant(){
+		if (active != Plant.None) {
+			Resources.buyPlant (active);
+			return plants[(int)active];
+		} else {
+			return null;
+		}
 	}
 }
