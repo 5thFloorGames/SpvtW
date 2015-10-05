@@ -17,7 +17,7 @@ TagManager:
   - Background
   - Plants
   - Kittens
-  - 
+  - Resources
   - 
   - 
   - 
@@ -50,6 +50,9 @@ TagManager:
     locked: 0
   - name: Kittens
     uniqueID: 3664065277
+    locked: 0
+  - name: Resources
+    uniqueID: 2545658925
     locked: 0
   - name: Default
     uniqueID: 0

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class GameLogic : MonoBehaviour {
 
 	public List<GameObject> plants;
-	private Plant active;
+	public Plant active;
 
 	// Use this for initialization
 	void Start () {
@@ -17,8 +17,8 @@ public class GameLogic : MonoBehaviour {
 	
 	}
 
-	public void ChangePlant(Plant plant){
-		active = plant;
+	public void ChangePlant (string plantName){
+		active = (Plant) System.Enum.Parse( typeof( Plant ), plantName );
 	}
 
 	public GameObject activePlant(){
