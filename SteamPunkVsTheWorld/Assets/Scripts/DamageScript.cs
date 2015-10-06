@@ -20,6 +20,7 @@ public class DamageScript : MonoBehaviour {
 		health--;
 		if (health == 0) {
 			Destroy(gameObject);
+			// notify your parent that you are dead
 		}
 	}
 }

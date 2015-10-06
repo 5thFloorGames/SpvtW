@@ -21,6 +21,8 @@ public class ClickToBuild : MonoBehaviour {
 			GameObject thingTobuild = logic.buildPlant();
 			if(thingTobuild != null){
 				Instantiate(thingTobuild, transform.position, Quaternion.identity);
+				// Save this so you can free the spot when a plant dies
+				// Set planting spot as parent
 				free = false;
 				logic.ChangePlant("None");
 			}
