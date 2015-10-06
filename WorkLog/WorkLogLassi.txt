@@ -2,4 +2,5 @@ WorkLog Lassi
 1.10. First meeting and setup - 3h
 2.10. Coding the basic logic - 2.5h
 2.10. Remaking the project in 2D - 1.0h
-5.10. Adding basic UI and resourcds - 2.5h
+5.10. Adding basic UI and resources - 3h
+5.10. Making plants eatable - 1h

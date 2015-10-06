@@ -12,10 +12,10 @@ public class MovementScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		directions.Add (Direction.Left, Vector3.left * 0.01f);
-		directions.Add (Direction.Right, Vector3.right * 0.05f);
-		directions.Add (Direction.Up, Vector3.up * 0.01f);
-		directions.Add (Direction.Down, Vector3.down * 0.01f);
+		directions.Add (Direction.Left, Vector3.left * 0.5f * Time.deltaTime);
+		directions.Add (Direction.Right, Vector3.right * 3f * Time.deltaTime);
+		directions.Add (Direction.Up, Vector3.up * 0.5f * Time.deltaTime);
+		directions.Add (Direction.Down, Vector3.down * 0.5f * Time.deltaTime);
 	}
 	
 	// Update is called once per frame
