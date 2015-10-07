@@ -1,0 +1,14 @@
+PvZ in numbers
+
+Zombies take 12 hits
+Game starts with 50 sun and a sunplant unlocked
+Sunflower has a 10 second cooldown
+One Sunflower and passive income produce 50 sun in about 10 seconds too
+Wallnut takes 72 hits
+Shooter takes 5 hits
+Sunflower takes 5 hits
+Normal zombie takes about 20 seconds to kill from one plant
+Cone zombie seems to be twice as tough
+Wallnut survives for 40 seconds
+Flag carrier takes 35 seconds to get to the end
+Normal zombie takes 55 seconds
