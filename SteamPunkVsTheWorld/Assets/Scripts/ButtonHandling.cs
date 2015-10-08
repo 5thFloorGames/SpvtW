@@ -6,6 +6,7 @@ public class ButtonHandling : MonoBehaviour {
 
 	public Plant plant;
 	public Button button;
+	public int cooldown;
 
 	// Use this for initialization
 	void Start () {
