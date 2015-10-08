@@ -20,9 +20,8 @@ public class ClickToBuild : MonoBehaviour {
 		if (free) {
 			GameObject thingTobuild = logic.buildPlant();
 			if(thingTobuild != null){
-				Instantiate(thingTobuild, transform.position, Quaternion.identity);
-				// Save this so you can free the spot when a plant dies
-				// Set planting spot as parent
+				GameObject newPlant = (GameObject)Instantiate(thingTobuild, transform.position, Quaternion.identity);
+				newPlant.transform.parent = transform;
 				free = false;
 				logic.ChangePlant("None");
 			}
@@ -31,5 +30,17 @@ public class ClickToBuild : MonoBehaviour {
 		//this.gameObject.GetComponent<Renderer> ().material.color = Color.green;
 		//print ("stuff");
 
+	}
+
+	void OnMouseOver(){
+		// show gray preview
+	}
+
+	void OnMouseExit(){
+		// remove gray preview
+	}
+
+	void Free(){
+		free = true;
 	}
 }
