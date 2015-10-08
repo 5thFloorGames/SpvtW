@@ -4,3 +4,7 @@ WorkLog Lassi
 2.10. Remaking the project in 2D - 1.0h
 5.10. Adding basic UI and resources - 3h
 5.10. Making plants eatable - 1h
+7.10. Thinking about theme - 1h
+8.10. Coding the rest of basic gameplay and testing sprites - 4.5h
+
+Total: 16 h
