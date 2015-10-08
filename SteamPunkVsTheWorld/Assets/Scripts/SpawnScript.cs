@@ -8,7 +8,6 @@ public class SpawnScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Spawn ();
 		InvokeRepeating("Spawn", Random.Range(10,60), 30);
 		Spawn ();
 	}
@@ -20,7 +19,7 @@ public class SpawnScript : MonoBehaviour {
 
 	void Spawn(){
 		GameObject spawned = (GameObject) Instantiate (enemy, transform.position + Vector3.left, Quaternion.identity);
-		spawned.GetComponent<SpriteRenderer> ().sortingOrder = orderInLayer;
+		spawned.GetComponentInChildren<SpriteRenderer> ().sortingOrder = orderInLayer;
 	}
 
 

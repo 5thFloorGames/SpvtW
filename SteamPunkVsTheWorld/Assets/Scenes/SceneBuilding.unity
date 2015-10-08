@@ -2182,6 +2182,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 11460602, guid: 39b582676d295439496e57f20c4880f1, type: 2}
+      propertyPath: orderInLayer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39b582676d295439496e57f20c4880f1, type: 2}
   m_IsPrefabParent: 0
@@ -2819,6 +2823,10 @@ Prefab:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 129616723}
+    - target: {fileID: 11460602, guid: 39b582676d295439496e57f20c4880f1, type: 2}
+      propertyPath: orderInLayer
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39b582676d295439496e57f20c4880f1, type: 2}
   m_IsPrefabParent: 0
@@ -3028,6 +3036,10 @@ Prefab:
     - target: {fileID: 427852, guid: 39b582676d295439496e57f20c4880f1, type: 2}
       propertyPath: m_RootOrder
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 11460602, guid: 39b582676d295439496e57f20c4880f1, type: 2}
+      propertyPath: orderInLayer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39b582676d295439496e57f20c4880f1, type: 2}
@@ -4174,6 +4186,10 @@ Prefab:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 128354, guid: 14f086201599d4fc1b6a14e2ea9598c2, type: 2}
+    - target: {fileID: 11460602, guid: 39b582676d295439496e57f20c4880f1, type: 2}
+      propertyPath: orderInLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39b582676d295439496e57f20c4880f1, type: 2}
   m_IsPrefabParent: 0
@@ -4370,6 +4386,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 427852, guid: 39b582676d295439496e57f20c4880f1, type: 2}
       propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 11460602, guid: 39b582676d295439496e57f20c4880f1, type: 2}
+      propertyPath: orderInLayer
       value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -22,6 +22,8 @@ public class ClickToBuild : MonoBehaviour {
 			if(thingTobuild != null){
 				GameObject newPlant = (GameObject)Instantiate(thingTobuild, transform.position, Quaternion.identity);
 				newPlant.transform.parent = transform;
+				// Set order in layer according to the zombies and another plants 2,4,6,8,10 or something
+				// Put the plants on the same layer as kittens
 				free = false;
 				logic.ChangePlant("None");
 			}
