@@ -4,14 +4,15 @@ using System.Collections;
 
 public class ResourceUpdater : MonoBehaviour {
 
-	public Text resources;
+	private Text resources;
 
 	// Use this for initialization
 	void Start () {
+		resources = gameObject.GetComponent<Text>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		resources.text = ("Resources: " + ResourceScript.getResources());
+		resources.text = (ResourceScript.getResources());
 	}
 }
