@@ -12,6 +12,6 @@ public class ResourceUpdater : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		resources.text = ("Resources: " + Resources.getResources());
+		resources.text = ("Resources: " + ResourceScript.getResources());
 	}
 }

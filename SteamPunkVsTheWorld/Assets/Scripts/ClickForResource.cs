@@ -16,7 +16,7 @@ public class ClickForResource : MonoBehaviour {
 	}
 
 	void OnMouseDown(){
-		Resources.addResources (25);
+		ResourceScript.addResources (25);
 		Destroy (gameObject);
 	}
 }

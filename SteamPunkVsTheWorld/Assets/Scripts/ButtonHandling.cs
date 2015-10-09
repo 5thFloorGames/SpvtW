@@ -16,7 +16,7 @@ public class ButtonHandling : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Resources.getResources () < Resources.getPlantPrice(plant) || timeStamp > Time.time) {
+		if (ResourceScript.getResources () < ResourceScript.getPlantPrice(plant) || timeStamp > Time.time) {
 			button.interactable = false;
 		} else {
 			button.interactable = true;

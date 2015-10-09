@@ -9,6 +9,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 457500}
   - 212: {fileID: 21244820}
+  - 114: {fileID: 11464956}
+  - 61: {fileID: 6150166}
   m_Layer: 8
   m_Name: Tile
   m_TagString: Untagged
@@ -28,6 +30,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!61 &6150166
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115280}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+--- !u!114 &11464956
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12c7b26533aad45338acde49eb603ea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  free: 1
 --- !u!212 &21244820
 SpriteRenderer:
   m_ObjectHideFlags: 1

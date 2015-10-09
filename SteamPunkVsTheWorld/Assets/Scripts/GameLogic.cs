@@ -13,8 +13,8 @@ public class GameLogic : MonoBehaviour {
 	void Start () {
 		plants = new List<GameObject>();
 		plants.Add (new GameObject ());
-		plants.Add (Resources.Load ("Producer"));
-		plants.Add (Resources.Load ("Shooter"));
+		plants.Add ((GameObject)Resources.Load ("Producer"));
+		plants.Add ((GameObject)Resources.Load ("Shooter"));
 	}
 	
 	// Update is called once per frame
@@ -28,7 +28,7 @@ public class GameLogic : MonoBehaviour {
 
 	public GameObject buildPlant(){
 		if (active != Plant.None) {
-			Resources.buyPlant (active);
+			ResourceScript.buyPlant (active);
 			buttons[(int)active].SendMessage("ActivateCooldown");
 			return plants[(int)active];
 		} else {
