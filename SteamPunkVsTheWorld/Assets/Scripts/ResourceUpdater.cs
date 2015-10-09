@@ -13,6 +13,6 @@ public class ResourceUpdater : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		resources.text = (ResourceScript.getResources());
+		resources.text = ResourceScript.getResources().ToString();
 	}
 }
