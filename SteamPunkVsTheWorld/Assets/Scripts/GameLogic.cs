@@ -5,13 +5,16 @@ using System.Collections.Generic;
 
 public class GameLogic : MonoBehaviour {
 
-	public List<GameObject> plants;
+	private List<GameObject> plants;
 	public List<Button> buttons;
 	public Plant active;
 
 	// Use this for initialization
 	void Start () {
-	
+		plants = new List<GameObject>();
+		plants.Add (new GameObject ());
+		plants.Add (Resources.Load ("Producer"));
+		plants.Add (Resources.Load ("Shooter"));
 	}
 	
 	// Update is called once per frame

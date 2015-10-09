@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-public class Resources : MonoBehaviour {
+public class ResourceScript : MonoBehaviour {
 
 	private static int resources = 150;
 	private static Dictionary<Plant,int> plantPrices = new Dictionary<Plant,int>();
