@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f151667635be749f19fc3315b3739917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 142546, guid: 86723c0db6c1640c7a84ab9c0c4f59d3, type: 2}
+  bullet: {fileID: 152312, guid: 716562ef41b2d483eae46ea0beba88cf, type: 2}
 --- !u!114 &11465692
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,6 +141,10 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 152312, guid: 716562ef41b2d483eae46ea0beba88cf, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 118602}
