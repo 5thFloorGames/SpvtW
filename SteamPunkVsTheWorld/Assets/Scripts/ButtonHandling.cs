@@ -5,13 +5,13 @@ using System.Collections;
 public class ButtonHandling : MonoBehaviour {
 
 	public Plant plant;
-	public Button button;
+	private Button button;
 	public float cooldown = 5f;
 	private float timeStamp = 0;
 
 	// Use this for initialization
 	void Start () {
-	
+		button = this.gameObject.GetComponent<Button> ();
 	}
 	
 	// Update is called once per frame

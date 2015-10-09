@@ -3053,7 +3053,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plant: 2
-  button: {fileID: 1648501848}
   cooldown: 5
 --- !u!1001 &1661044467
 Prefab:
@@ -3926,7 +3925,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plant: 1
-  button: {fileID: 2072040406}
   cooldown: 10
 --- !u!1001 &2073622226
 Prefab:
