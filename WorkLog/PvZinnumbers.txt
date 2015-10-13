@@ -14,3 +14,4 @@ Flag carrier takes 35 seconds to get to the end
 Normal zombie takes 55 seconds
 Piranha plant eats a zombie for 40-42 seconds
 Wallnut has a 30 second cooldown
+Twopeater has like a 6 second cooldown

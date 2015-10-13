@@ -16,6 +16,6 @@ public class ResourceGeneration : MonoBehaviour {
 	}
 	
 	void Produce() {
-		Instantiate (resource, transform.position, Quaternion.identity);
+		Instantiate (resource, transform.position + new Vector3(0f,0f,-1f), Quaternion.identity);
 	}
 }

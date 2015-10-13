@@ -6,6 +6,6 @@ WorkLog Lassi
 5.10. Making plants eatable - 1h
 7.10. Thinking about theme - 1h
 8.10. Coding the rest of basic gameplay and testing sprites - 5h
-9.10. Making the work with sprites - 2h
+9.10. Making the work with sprites - 3h
 
 Total: 18.5 h
