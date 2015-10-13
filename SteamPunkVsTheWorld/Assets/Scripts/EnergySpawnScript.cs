@@ -7,7 +7,7 @@ public class EnergySpawnScript : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		InvokeRepeating("Spawn", Random.Range(1,5), 10);
+		InvokeRepeating("Spawn", 6, 6);
 	}
 	
 	// Update is called once per frame

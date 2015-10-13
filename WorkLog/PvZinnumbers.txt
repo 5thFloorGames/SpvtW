@@ -15,3 +15,5 @@ Normal zombie takes 55 seconds
 Piranha plant eats a zombie for 40-42 seconds
 Wallnut has a 30 second cooldown
 Twopeater has like a 6 second cooldown
+Shooters shoot ever 1.4 seconds about, except 20/12 is 1.6
+First energy comes in 5-10 seconds. Then every 24 seconds.

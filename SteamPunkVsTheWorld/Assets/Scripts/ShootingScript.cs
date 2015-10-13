@@ -7,7 +7,7 @@ public class ShootingScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		InvokeRepeating("Shoot", 3, 4);
+		InvokeRepeating("Shoot", 1.6f, 1.6f);
 	}
 	
 	// Update is called once per frame

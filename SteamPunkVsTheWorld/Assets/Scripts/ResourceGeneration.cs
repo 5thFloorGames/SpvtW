@@ -7,7 +7,7 @@ public class ResourceGeneration : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		InvokeRepeating("Produce", 3, 15);
+		InvokeRepeating("Produce", 5, 24);
 	}
 	
 	// Update is called once per frame
