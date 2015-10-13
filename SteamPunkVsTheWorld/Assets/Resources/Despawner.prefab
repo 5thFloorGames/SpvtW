@@ -14,7 +14,7 @@ GameObject:
   - 61: {fileID: 6153328}
   - 50: {fileID: 5024770}
   m_Layer: 0
-  m_Name: DespawnerRight
+  m_Name: Despawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

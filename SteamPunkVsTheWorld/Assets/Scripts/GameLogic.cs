@@ -12,8 +12,8 @@ public class GameLogic : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		plants = new List<GameObject>();
-		plants.Add (zeroIndexHolder());
-		plants.Add ((GameObject)Resources.Load("Producer"));
+        plants.Add(zeroIndexHolder());
+        plants.Add ((GameObject)Resources.Load("Producer"));
 		plants.Add ((GameObject)Resources.Load("Shooter"));
 		plants.Add ((GameObject)Resources.Load("Blocker"));
 	}
