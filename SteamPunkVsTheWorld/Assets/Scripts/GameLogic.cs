@@ -12,10 +12,10 @@ public class GameLogic : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		plants = new List<GameObject>();
-		plants.Add (new GameObject ());
-		plants.Add ((GameObject)Resources.Load ("Producer"));
-		plants.Add ((GameObject)Resources.Load ("Shooter"));
-		plants.Add ((GameObject)Resources.Load ("Blocker"));
+		plants.Add (zeroIndexHolder());
+		plants.Add ((GameObject)Resources.Load("Producer"));
+		plants.Add ((GameObject)Resources.Load("Shooter"));
+		plants.Add ((GameObject)Resources.Load("Blocker"));
 	}
 	
 	// Update is called once per frame
@@ -37,5 +37,11 @@ public class GameLogic : MonoBehaviour {
 		}
 	}
 
+    GameObject zeroIndexHolder() {
+        GameObject go = new GameObject();
+        go.name = "ZeroIndexHolder";
+        go.hideFlags = HideFlags.HideInHierarchy;
+        return go;
+    }
 
 }
