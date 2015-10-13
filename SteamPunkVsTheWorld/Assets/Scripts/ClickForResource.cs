@@ -13,7 +13,7 @@ public class ClickForResource : MonoBehaviour {
 	}
 
 	void OnMouseDown(){
-		ResourceScript.addResources (25);
+		ResourceScript.addResources (1);
 		Destroy (gameObject);
 	}
 }

@@ -43,14 +43,8 @@ TagManager:
   - name: Background
     uniqueID: 2134388425
     locked: 0
-  - name: Plants
+  - name: DynamicElements
     uniqueID: 2929032221
-    locked: 0
-  - name: Bullets
-    uniqueID: 3792567291
-    locked: 0
-  - name: Kittens
-    uniqueID: 3664065277
     locked: 0
   - name: Resources
     uniqueID: 2545658925

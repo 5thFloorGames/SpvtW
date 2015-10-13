@@ -4,10 +4,12 @@ using System.Collections;
 public class ShootingScript : MonoBehaviour {
 
 	public GameObject bullet;
+	public int orderInLayer;
 
 	// Use this for initialization
 	void Start () {
 		InvokeRepeating("Shoot", 1.6f, 1.6f);
+		orderInLayer = gameObject.GetComponentInChildren<SpriteRenderer> ().sortingOrder + 2;
 	}
 	
 	// Update is called once per frame
@@ -16,6 +18,7 @@ public class ShootingScript : MonoBehaviour {
 	}
 
 	void Shoot() {
-		Instantiate (bullet,transform.position + Vector3.right, Quaternion.identity);
+		GameObject tempBullet = (GameObject) Instantiate (bullet,transform.position + Vector3.right, Quaternion.identity);
+		tempBullet.GetComponentInChildren<SpriteRenderer> ().sortingOrder = orderInLayer;
 	}
 }
