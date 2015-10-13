@@ -1,6 +1,6 @@
 PvZ in numbers
 
-Zombies take 12 hits
+Zombies take 12 hits, actually 10, then it falls over, but it can still take two hits
 Game starts with 50 sun and a sunplant unlocked
 Sunflower has a 10 second cooldown
 One Sunflower and passive income produce 50 sun in about 10 seconds too
@@ -17,3 +17,4 @@ Wallnut has a 30 second cooldown
 Twopeater has like a 6 second cooldown
 Shooters shoot ever 1.4 seconds about, except 20/12 is 1.6
 First energy comes in 5-10 seconds. Then every 24 seconds.
+The falling resource stuff falls about 5-7 seconds

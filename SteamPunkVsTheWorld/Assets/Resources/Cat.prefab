@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b474e4735e704edeb14a0d1dfbe3957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 12
+  health: 11
 --- !u!114 &11463952
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -180,7 +180,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: health
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -3503,6 +3503,7 @@ GameObject:
   - 4: {fileID: 1486247604}
   - 114: {fileID: 1486247603}
   - 114: {fileID: 1486247602}
+  - 114: {fileID: 1486247605}
   m_Layer: 0
   m_Name: GameLogic
   m_TagString: GameController
@@ -3552,6 +3553,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!114 &1486247605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1486247601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dd1eb7bef6c84b09afb9472c31cee45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1513168321
 Prefab:
   m_ObjectHideFlags: 0

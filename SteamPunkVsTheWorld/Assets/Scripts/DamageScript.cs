@@ -16,11 +16,9 @@ public class DamageScript : MonoBehaviour {
 	}
 
 	void Damaged(){
-		print ("damaged");
 		health--;
 		if (health == 0) {
 			Destroy(gameObject);
-			// notify your parent that you are dead
 		}
 	}
 }

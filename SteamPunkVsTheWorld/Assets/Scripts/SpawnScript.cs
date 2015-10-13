@@ -8,7 +8,6 @@ public class SpawnScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		InvokeRepeating("Spawn", Random.Range(10,60), 30);
 	}
 	
 	// Update is called once per frame
@@ -16,10 +15,9 @@ public class SpawnScript : MonoBehaviour {
 		
 	}
 
-	void Spawn(){
+	public void Spawn(){
 		GameObject spawned = (GameObject) Instantiate (enemy, transform.position + Vector3.left, Quaternion.identity);
 		spawned.GetComponentInChildren<SpriteRenderer> ().sortingOrder = orderInLayer;
-
 	}
 
 
