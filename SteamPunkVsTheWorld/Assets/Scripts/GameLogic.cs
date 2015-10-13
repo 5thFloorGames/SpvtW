@@ -15,6 +15,7 @@ public class GameLogic : MonoBehaviour {
 		plants.Add (new GameObject ());
 		plants.Add ((GameObject)Resources.Load ("Producer"));
 		plants.Add ((GameObject)Resources.Load ("Shooter"));
+		plants.Add ((GameObject)Resources.Load ("Blocker"));
 	}
 	
 	// Update is called once per frame

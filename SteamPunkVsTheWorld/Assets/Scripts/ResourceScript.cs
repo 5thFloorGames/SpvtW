@@ -13,6 +13,7 @@ public class ResourceScript : MonoBehaviour {
 	void Start () {
 		plantPrices.Add (Plant.Producer, 50);
 		plantPrices.Add (Plant.Shooter, 100);
+		plantPrices.Add (Plant.Blocker, 50);
 	}
 	
 	// Update is called once per frame
