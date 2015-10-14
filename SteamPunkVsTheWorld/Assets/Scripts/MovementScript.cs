@@ -8,7 +8,7 @@ public class MovementScript : MonoBehaviour {
 
 	public Direction direction;
 	private Dictionary<Direction, Vector3> directions = new Dictionary<Direction, Vector3>();
-
+	private bool moving = true;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +20,16 @@ public class MovementScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.Translate (directions[direction]);
+		if (moving) {
+			transform.Translate (directions[direction]);
+		}
+	}
+
+	public void Stop(){
+		moving = false;
+	}
+
+	public void Go(){
+		moving = true;
 	}
 }

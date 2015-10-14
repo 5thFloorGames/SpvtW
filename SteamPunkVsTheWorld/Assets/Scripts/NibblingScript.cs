@@ -15,12 +15,13 @@ public class NibblingScript : MonoBehaviour {
 
 	}
 
-	void OnCollisionStay2D(Collision2D other) {
-		print ("nomnom");
+	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.tag.Equals ("Enemy")) {
-			print ("damaged");
+			other.gameObject.SendMessage("Stop");
 			health--;
 			if (health == 0) {
+				// Figure out how to enable two kittens that are stuck on the plant
+				other.gameObject.SendMessage("Go");
 				transform.parent.SendMessage("Free");
 				Destroy(gameObject);
 			}

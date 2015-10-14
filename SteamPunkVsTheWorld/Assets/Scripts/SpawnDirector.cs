@@ -39,9 +39,23 @@ public class SpawnDirector : MonoBehaviour {
 
 	void setSpawnQueue(int length){
 		Queue<int> tempQueue = new Queue<int>();
+		int twoBefore = -1;
+		int	oneBefore = -1;
 		for (int i = 0; i < length; i++) {
-			tempQueue.Enqueue(Random.Range(0,5));
+			int randomNumber = Random.Range(0,5);
+			while(randomNumber == twoBefore || randomNumber == oneBefore){
+				randomNumber = Random.Range(0,5);
+			}
+			tempQueue.Enqueue(randomNumber);
+			twoBefore = oneBefore;
+			oneBefore = randomNumber;
 		}
 		spawnQueue = tempQueue;
+	}
+
+	void printQueue(){
+		while (spawnQueue.Count != 0) {
+			print (spawnQueue.Dequeue());
+		}
 	}
 }

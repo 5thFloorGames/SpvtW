@@ -67,7 +67,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 118602}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -84,6 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 152312, guid: 716562ef41b2d483eae46ea0beba88cf, type: 2}
+  orderInLayer: 0
 --- !u!114 &11465692
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -169,6 +170,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.x
       value: .0500000007
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
