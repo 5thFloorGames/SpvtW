@@ -6,7 +6,7 @@ public class ResourceUpdater : MonoBehaviour {
 
 	private Text[] resourceTexts;
 	private GameObject resourceCloud;
-    public int maxSize = 500;
+    public int maxSize = 400;
 
 	// Use this for initialization
 	void Start () {
