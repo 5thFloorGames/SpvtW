@@ -192,8 +192,8 @@ MonoBehaviour:
   plant: 1
   cooldown: 5
   cooldownOnStart: 0
-  activeColor: {r: .860294104, g: .913515389, b: 1, a: 1}
-  cooldownColor: {r: .83088237, g: .937018275, b: 1, a: .791000009}
+  activeColor: {r: 1, g: 1, b: 1, a: 1}
+  cooldownColor: {r: 1, g: 1, b: 1, a: .458999991}
 --- !u!114 &11452182
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -294,10 +294,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
-    m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
-    m_DisabledColor: {r: .301470578, g: .301470578, b: .301470578, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: .852999985}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: .503000021}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: .100000001
   m_SpriteState:
@@ -602,15 +602,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Colors.m_DisabledColor.r
-      value: .301470578
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Colors.m_DisabledColor.g
-      value: .301470578
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Colors.m_DisabledColor.b
-      value: .301470578
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_FontData.m_Font
@@ -623,11 +623,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: activeColor.r
-      value: .860294104
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: activeColor.g
-      value: .913515389
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: activeColor.b
@@ -639,18 +639,62 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: cooldownColor.a
-      value: .791000009
+      value: .458999991
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: cooldownColor.r
-      value: .83088237
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: cooldownColor.g
-      value: .937018275
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: cooldownColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Colors.m_NormalColor.a
+      value: .852999985
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Colors.m_PressedColor.a
+      value: .503000021
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Colors.m_PressedColor.b
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
