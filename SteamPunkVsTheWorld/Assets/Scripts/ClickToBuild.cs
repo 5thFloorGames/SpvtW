@@ -25,6 +25,8 @@ public class ClickToBuild : MonoBehaviour {
 				newPlant.transform.parent = transform;
 				newPlant.GetComponentInChildren<SpriteRenderer>().sortingOrder = childLayer;
 				free = false;
+				GameObject thingToPreview = logic.getPreview ();
+				thingToPreview.transform.position = new Vector3(-4f,-4f,0f);
 				logic.ChangePlant("None");
 			}
 		}
@@ -49,7 +51,6 @@ public class ClickToBuild : MonoBehaviour {
 			GameObject thingToPreview = logic.getPreview ();
 			if(thingToPreview != null){
 				thingToPreview.transform.position = new Vector3(-4f,-4f,0f);
-				thingToPreview.GetComponentInChildren<SpriteRenderer>().sortingOrder = childLayer;
 			}
 		}
 	}

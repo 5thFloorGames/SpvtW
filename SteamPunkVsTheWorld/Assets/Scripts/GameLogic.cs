@@ -34,6 +34,10 @@ public class GameLogic : MonoBehaviour {
 		active = (Plant) System.Enum.Parse( typeof( Plant ), plantName );
 	}
 
+	public void ChangePlant (Plant plant){
+		active = plant;
+	}
+
 	public GameObject buildPlant(){
 		if (active != Plant.None) {
 			ResourceScript.buyPlant (active);
