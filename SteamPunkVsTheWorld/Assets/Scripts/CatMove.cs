@@ -11,7 +11,8 @@ public class CatMove : MonoBehaviour {
 	void Start () {
 		rigid = gameObject.GetComponent<Rigidbody2D>();
 		rigid.MovePosition(transform.position + (Vector3.left * (0.15f) * Time.deltaTime));
-		animator = gameObject.GetComponent<Animator>();
+		animator = gameObject.GetComponentInChildren<Animator>();
+		animator.runtimeAnimatorController = Resources.Load("CatWalking") as RuntimeAnimatorController;
 	}
 	
 	// Update is called once per frame
@@ -20,9 +21,12 @@ public class CatMove : MonoBehaviour {
 	
 	public void Stop(){
 		rigid.velocity = Vector2.zero;
+		animator.runtimeAnimatorController = Resources.Load("CatEating") as RuntimeAnimatorController;
 	}
 	
 	public void Go(){
 		rigid.MovePosition(transform.position + (Vector3.left * (0.15f) * Time.deltaTime));
+		animator.runtimeAnimatorController = Resources.Load("CatWalking") as RuntimeAnimatorController;
+
 	}
 }

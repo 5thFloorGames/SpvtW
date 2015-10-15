@@ -12,7 +12,6 @@ GameObject:
   - 50: {fileID: 5069762}
   - 61: {fileID: 6125530}
   - 114: {fileID: 11453668}
-  - 95: {fileID: 9543770}
   m_Layer: 10
   m_Name: Cat
   m_TagString: Enemy
@@ -87,23 +86,6 @@ Animator:
   m_GameObject: {fileID: 193082}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fdb5c51622dbd45ad943f3d6555eaf4c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!95 &9543770
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 128354}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 075627ad460684340b3db785176162d1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -159,7 +141,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1365935075
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: df2e71c03cb6b4040bdaf0fc891f9311, type: 3}
+  m_Sprite: {fileID: 21300014, guid: df2e71c03cb6b4040bdaf0fc891f9311, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!224 &22451040
 RectTransform:
@@ -176,7 +158,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 5, y: 0}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: .5, y: .5}
 --- !u!1001 &100100000
