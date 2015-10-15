@@ -5,7 +5,8 @@ using System.Collections;
 public class ResourceUpdater : MonoBehaviour {
 
 	private Text[] resourceTexts;
-	GameObject resourceCloud;
+	private GameObject resourceCloud;
+    public int maxSize = 500;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +21,11 @@ public class ResourceUpdater : MonoBehaviour {
 		foreach (Text textComponent in resourceTexts) {
             textComponent.text = resourceText;
 		}
-        resourceCloud.transform.localScale = new Vector3(resources*5, resources*5, 1);
+
+        int cloudSize = resources * 10;
+        if (cloudSize > 500) {
+            cloudSize = 500;
+        }
+        resourceCloud.transform.localScale = new Vector3(cloudSize, cloudSize, 1);
 	}
 }
