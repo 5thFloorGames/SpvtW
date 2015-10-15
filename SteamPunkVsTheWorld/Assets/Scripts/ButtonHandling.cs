@@ -1,31 +1,40 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.EventSystems;
 
 public class ButtonHandling : MonoBehaviour, IPointerDownHandler {
 
 	public Plant plant;
-	public float cooldown = 5f;
-    public bool cooldownOnStart = true;
+    public float cooldown;
+    public bool cooldownOnStart;
     public Color activeColor;
     public Color cooldownColor;
 
     private Button button;
 	private float timeStamp = 0;
 	private GameLogic logic;
+    private List<Image> imagechildren;
+    private Text priceText;
+    private Image cooldownVisual;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		button = gameObject.GetComponent<Button> ();
 		logic = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameLogic>();
-		if (cooldownOnStart) {
+
+        getNecessaryThingsForUI();
+  
+        if (cooldownOnStart) {
 			ActivateCooldown ();
 		}
 	}
 
 	public void OnPointerDown(PointerEventData e){
-		logic.ChangePlant (plant);
+        if (ResourceScript.getResources() >= ResourceScript.getPlantPrice(plant) && timeStamp < Time.time) {
+            logic.ChangePlant(plant);
+        }
 	}
 	
 	// Update is called once per frame
@@ -38,13 +47,24 @@ public class ButtonHandling : MonoBehaviour, IPointerDownHandler {
         updateChildImages();
 	}
 
-	void ActivateCooldown(){
+    void getNecessaryThingsForUI() {
+        Image[] allimagechildren = GetComponentsInChildren<Image>();
+        imagechildren = new List<Image>();
+        priceText = transform.Find("PriceText").GetComponent<Text>();
+        foreach (Image img in allimagechildren) {
+            if (img.name == "Cooldown") {
+                cooldownVisual = img;
+            } else {
+                imagechildren.Add(img);
+            }
+        }
+    }
+
+    void ActivateCooldown(){
 		timeStamp = Time.time + cooldown;
 	}
 
     void updateChildImages() {
-        Image[] imagechildren = GetComponentsInChildren<Image>();
-        Text priceText = GetComponentInChildren<Text>();
 
         if (button.interactable) {
             priceText.color = activeColor;
@@ -57,5 +77,7 @@ public class ButtonHandling : MonoBehaviour, IPointerDownHandler {
                 img.color = cooldownColor;
             }
         }
+
+        cooldownVisual.fillAmount = (timeStamp - Time.time)/cooldown;
     }
 }
