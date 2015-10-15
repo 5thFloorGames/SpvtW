@@ -11,7 +11,7 @@ GameObject:
   - 114: {fileID: 11405330}
   - 50: {fileID: 5069762}
   - 61: {fileID: 6125530}
-  - 114: {fileID: 11463952}
+  - 114: {fileID: 11453668}
   m_Layer: 10
   m_Name: Cat
   m_TagString: Enemy
@@ -62,7 +62,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 6
+  m_Constraints: 7
 --- !u!61 &6125530
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 11
---- !u!114 &11463952
+--- !u!114 &11453668
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -96,10 +96,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 128354}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80aa981c910b24f8f98664baf4fbb18f, type: 3}
+  m_Script: {fileID: 11500000, guid: dbdc7aa1a32db48b0a9c29b7c08beb3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
 --- !u!212 &21207544
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -181,7 +180,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Constraints
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: health
@@ -193,6 +192,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

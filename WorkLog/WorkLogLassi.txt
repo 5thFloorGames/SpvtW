@@ -7,5 +7,7 @@ WorkLog Lassi
 7.10. Thinking about theme - 1h
 8.10. Coding the rest of basic gameplay and testing sprites - 5h
 9.10. Making the work with sprites - 3h
+13.10. Coding spawn logic and rewiring gameplay stuff - 2.5h
+14.10. Fixing a bunch of bugs 1h
 
-Total: 18.5 h
+Total: 22.5 h

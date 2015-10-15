@@ -20,16 +20,6 @@ public class MovementScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (moving) {
-			transform.Translate (directions[direction]);
-		}
-	}
-
-	public void Stop(){
-		moving = false;
-	}
-
-	public void Go(){
-		moving = true;
+		transform.Translate (directions[direction]);
 	}
 }

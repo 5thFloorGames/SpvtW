@@ -16,7 +16,8 @@ public class SpawnScript : MonoBehaviour {
 	}
 
 	public void Spawn(){
-		GameObject spawned = (GameObject) Instantiate (enemy, transform.position + Vector3.left, Quaternion.identity);
+		//print ("spawning at " + (transform.position));
+		GameObject spawned = (GameObject) Instantiate (enemy, transform.position, Quaternion.identity);
 		spawned.GetComponentInChildren<SpriteRenderer> ().sortingOrder = orderInLayer;
 	}
 
