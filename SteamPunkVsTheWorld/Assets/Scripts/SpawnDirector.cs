@@ -14,7 +14,7 @@ public class SpawnDirector : MonoBehaviour {
 		foreach(SpawnScript s in GameObject.FindObjectsOfType<SpawnScript> ()){
 			spawners.Add(s);
 		}
-		InvokeRepeating("nextSpawn", 1, 1);
+		InvokeRepeating("nextSpawn", 20, 20);
 		setSpawnQueue (28);
 		print (spawners.Count + " spawners in scene");
 	}
