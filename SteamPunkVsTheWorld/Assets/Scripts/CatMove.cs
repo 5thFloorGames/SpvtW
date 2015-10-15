@@ -12,7 +12,6 @@ public class CatMove : MonoBehaviour {
 		rigid = gameObject.GetComponent<Rigidbody2D>();
 		rigid.MovePosition(transform.position + (Vector3.left * (0.15f) * Time.deltaTime));
 		animator = gameObject.GetComponentInChildren<Animator>();
-		animator.runtimeAnimatorController = Resources.Load("CatWalking") as RuntimeAnimatorController;
 	}
 	
 	// Update is called once per frame

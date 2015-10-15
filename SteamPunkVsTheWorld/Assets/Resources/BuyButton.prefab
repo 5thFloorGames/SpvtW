@@ -175,6 +175,8 @@ MonoBehaviour:
   plant: 1
   cooldown: 5
   cooldownOnStart: 0
+  activeColor: {r: .882352948, g: .927170873, b: 1, a: 1}
+  cooldownColor: {r: 1, g: 1, b: 1, a: .527999997}
 --- !u!114 &11452182
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -550,6 +552,38 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_FontData.m_FontSize
       value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: activeColor.r
+      value: .882352948
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: activeColor.g
+      value: .927170873
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: activeColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: activeColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cooldownColor.a
+      value: .527999997
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cooldownColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cooldownColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cooldownColor.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

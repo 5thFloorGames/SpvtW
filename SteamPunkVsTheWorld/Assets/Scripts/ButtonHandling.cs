@@ -7,9 +7,12 @@ public class ButtonHandling : MonoBehaviour, IPointerDownHandler {
 
 	public Plant plant;
 	public float cooldown = 5f;
-	private Button button;
+    public bool cooldownOnStart = true;
+    public Color activeColor;
+    public Color cooldownColor;
+
+    private Button button;
 	private float timeStamp = 0;
-	public bool cooldownOnStart = true;
 	private GameLogic logic;
 
 	// Use this for initialization
@@ -32,9 +35,27 @@ public class ButtonHandling : MonoBehaviour, IPointerDownHandler {
 		} else {
 			button.interactable = true;
 		}
+        updateChildImages();
 	}
 
 	void ActivateCooldown(){
 		timeStamp = Time.time + cooldown;
 	}
+
+    void updateChildImages() {
+        Image[] imagechildren = GetComponentsInChildren<Image>();
+        Text priceText = GetComponentInChildren<Text>();
+
+        if (button.interactable) {
+            priceText.color = activeColor;
+            foreach (Image img in imagechildren) {
+                img.color = activeColor;
+            }
+        } else {
+            priceText.color = cooldownColor;
+            foreach (Image img in imagechildren) {
+                img.color = cooldownColor;
+            }
+        }
+    }
 }
