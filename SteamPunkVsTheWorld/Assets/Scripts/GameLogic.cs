@@ -28,7 +28,7 @@ public class GameLogic : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Escape)) {
-            Application.Quit();
+            Application.LoadLevel(0);
         }
         if (Input.GetMouseButtonDown(1)) {
             if (active != Plant.None) {
