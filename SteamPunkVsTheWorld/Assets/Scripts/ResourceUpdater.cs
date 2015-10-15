@@ -4,15 +4,18 @@ using System.Collections;
 
 public class ResourceUpdater : MonoBehaviour {
 
-	private Text resources;
+	private Text[] resourceTexts;
+	GameObject resourceCloud;
 
 	// Use this for initialization
 	void Start () {
-		resources = gameObject.GetComponent<Text>();
+		resourceTexts = gameObject.GetComponentsInChildren<Text>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		resources.text = ResourceScript.getResources().ToString();
+		foreach (Text textComponent in resourceTexts) {
+			textComponent.text = ResourceScript.getResources().ToString();
+		}
 	}
 }
