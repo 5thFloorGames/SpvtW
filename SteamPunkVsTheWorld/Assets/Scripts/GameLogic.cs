@@ -7,15 +7,22 @@ public class GameLogic : MonoBehaviour {
 
 	private List<GameObject> plants;
 	public List<Button> buttons;
+	private List<GameObject> previews;
 	public Plant active;
 
 	// Use this for initialization
 	void Start () {
 		plants = new List<GameObject>();
-        plants.Add(zeroIndexHolder());
+        plants.Add(null);
         plants.Add ((GameObject)Resources.Load("Producer"));
 		plants.Add ((GameObject)Resources.Load("Shooter"));
 		plants.Add ((GameObject)Resources.Load("Blocker"));
+		Vector3 previewLocation = new Vector3 (-4f, -4f, 0f);
+		previews = new List<GameObject> ();
+		previews.Add (null);
+		previews.Add ((GameObject)Instantiate(Resources.Load("ProducerPreview"),previewLocation, Quaternion.identity));
+		previews.Add ((GameObject)Instantiate(Resources.Load("ShooterPreview"),previewLocation, Quaternion.identity));
+		previews.Add ((GameObject)Instantiate(Resources.Load("BlockerPreview"),previewLocation, Quaternion.identity));
 	}
 	
 	// Update is called once per frame
@@ -37,11 +44,7 @@ public class GameLogic : MonoBehaviour {
 		}
 	}
 
-    GameObject zeroIndexHolder() {
-        GameObject go = new GameObject();
-        go.name = "ZeroIndexHolder";
-        go.hideFlags = HideFlags.HideInHierarchy;
-        return go;
-    }
-
+	public GameObject getPreview(){
+		return previews[(int)active];
+	}
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Plant
+  - Preview
   layers:
   - Default
   - TransparentFX

@@ -35,11 +35,23 @@ public class ClickToBuild : MonoBehaviour {
 	}
 
 	void OnMouseOver(){
-		// show gray preview
+		if (free) {
+			GameObject thingToPreview = logic.getPreview ();
+			if(thingToPreview != null){
+				thingToPreview.transform.position = transform.position;
+				thingToPreview.GetComponentInChildren<SpriteRenderer>().sortingOrder = childLayer;
+			}
+		}
 	}
 
 	void OnMouseExit(){
-		// remove gray preview
+		if (free) {
+			GameObject thingToPreview = logic.getPreview ();
+			if(thingToPreview != null){
+				thingToPreview.transform.position = new Vector3(-4f,-4f,0f);
+				thingToPreview.GetComponentInChildren<SpriteRenderer>().sortingOrder = childLayer;
+			}
+		}
 	}
 
 	void Free(){
