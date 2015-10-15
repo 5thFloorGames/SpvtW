@@ -14,8 +14,8 @@ public class ClickToBuild : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
+        
+    }
 
 	void OnMouseDown(){
 		if (free) {

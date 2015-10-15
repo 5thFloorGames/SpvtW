@@ -27,8 +27,16 @@ public class GameLogic : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            Application.Quit();
+        }
+        if (Input.GetMouseButtonDown(1)) {
+            if (active != Plant.None) {
+                getPreview().transform.position = new Vector3(-4f, -4f, 0f);
+                ChangePlant("None");
+            }
+        }
+    }
 
 	public void ChangePlant (string plantName){
 		active = (Plant) System.Enum.Parse( typeof( Plant ), plantName );
