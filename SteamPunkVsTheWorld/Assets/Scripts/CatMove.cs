@@ -2,27 +2,25 @@
 using System.Collections;
 
 public class CatMove : MonoBehaviour {
-
-	private bool moving = true;
+	
 	private Rigidbody2D rigid;
 	
 	// Use this for initialization
 	void Start () {
 		rigid = gameObject.GetComponent<Rigidbody2D>();
+		rigid.MovePosition(transform.position + (Vector3.left * (0.15f) * Time.deltaTime));
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (moving) {
-			gameObject.GetComponent<Rigidbody2D>().MovePosition(transform.position + (Vector3.left * (0.15f) * Time.deltaTime));
-		}
+		print (rigid.velocity);
 	}
-
+	
 	public void Stop(){
-		moving = false;
+		rigid.velocity = Vector2.zero;
 	}
 	
 	public void Go(){
-		moving = true;
+		rigid.MovePosition(transform.position + (Vector3.left * (0.15f) * Time.deltaTime));
 	}
 }
