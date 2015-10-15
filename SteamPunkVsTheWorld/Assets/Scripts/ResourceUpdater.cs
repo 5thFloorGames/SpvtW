@@ -10,12 +10,16 @@ public class ResourceUpdater : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		resourceTexts = gameObject.GetComponentsInChildren<Text>();
+        resourceCloud = transform.FindChild("ResourceCloud").gameObject;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        int resources = ResourceScript.getResources();
+        string resourceText = resources.ToString();
 		foreach (Text textComponent in resourceTexts) {
-			textComponent.text = ResourceScript.getResources().ToString();
+            textComponent.text = resourceText;
 		}
+        resourceCloud.transform.localScale = new Vector3(resources*5, resources*5, 1);
 	}
 }
