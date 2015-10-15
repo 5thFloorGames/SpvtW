@@ -7,6 +7,7 @@ public class GameLogic : MonoBehaviour {
 
 	private List<GameObject> plants;
 	public List<Button> buttons;
+	public List<GameObject> previews;
 	public Plant active;
 
 	// Use this for initialization
@@ -44,4 +45,7 @@ public class GameLogic : MonoBehaviour {
         return go;
     }
 
+	public GameObject getPreview(){
+		return previews[(int)active];
+	}
 }
