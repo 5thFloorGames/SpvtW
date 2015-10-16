@@ -90,19 +90,23 @@ public class GameLogic : MonoBehaviour {
 	
  	public void updateShooters(){
 		foreach(GameObject shooter in shooters){
-			if(EnemyInSameLane(shooter)){
-				shooter.SendMessage("StartShooting");
-			} else {
-				shooter.SendMessage("Stop");
+			if(shooter != null){
+				if(EnemyInSameLane(shooter)){
+					shooter.SendMessage("StartShooting");
+				} else {
+					shooter.SendMessage("Stop");
+				}
 			}
 		}
 	}
 
 	public bool EnemyInSameLane(GameObject shooter){
 		foreach(GameObject enemy in enemies){
-			if(shooter.transform.position.y == enemy.transform.position.y 
-			   && shooter.transform.position.x < enemy.transform.position.x){
-				return true;
+			if(enemy != null){
+				if(shooter.transform.position.y == enemy.transform.position.y 
+				   && shooter.transform.position.x < enemy.transform.position.x){
+					return true;
+				}
 			}
 		}
 		return false;
