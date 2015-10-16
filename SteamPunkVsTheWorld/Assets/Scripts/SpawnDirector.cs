@@ -8,6 +8,7 @@ public class SpawnDirector : MonoBehaviour {
 	private int[] spawnAmounts = {1,1,1,2,2,2,3,3,3,0,10};
 	private Queue<int> spawnQueue;
 	private int spawnIndex = 0;
+	private bool waveDone = false;
 
 	// Use this for initialization
 	void Start () {
@@ -29,6 +30,7 @@ public class SpawnDirector : MonoBehaviour {
 		spawnIndex++;
 		if (spawnIndex == spawnAmounts.Length) {
 			CancelInvoke();
+			waveDone = true;
 		}
 	}
 
@@ -58,5 +60,9 @@ public class SpawnDirector : MonoBehaviour {
 		while (spawnQueue.Count != 0) {
 			print (spawnQueue.Dequeue());
 		}
+	}
+
+	public bool noMoreEnemies(){
+		return waveDone;
 	}
 }

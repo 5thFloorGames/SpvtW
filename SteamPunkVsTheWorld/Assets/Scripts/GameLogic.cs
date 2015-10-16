@@ -11,6 +11,8 @@ public class GameLogic : MonoBehaviour {
 	public Plant active;
 	private List<GameObject> shooters = new List<GameObject>();
 	private List<GameObject> enemies = new List<GameObject>();
+	private SpawnDirector director;
+	public GameOver youWon;
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +27,7 @@ public class GameLogic : MonoBehaviour {
 		previews.Add ((GameObject)Instantiate(Resources.Load("ProducerPreview"),previewLocation, Quaternion.identity));
 		previews.Add ((GameObject)Instantiate(Resources.Load("ShooterPreview"),previewLocation, Quaternion.identity));
 		previews.Add ((GameObject)Instantiate(Resources.Load("BlockerPreview"),previewLocation, Quaternion.identity));
+		director = gameObject.GetComponent<SpawnDirector> ();
 	}
 	
 	// Update is called once per frame
@@ -80,6 +83,9 @@ public class GameLogic : MonoBehaviour {
 	public void unregisterEnemy(GameObject enemy){
 		enemies.Remove (enemy);
 		updateShooters();
+		if (enemies.Count == 0 && director.noMoreEnemies()) {
+			youWon.Enable();
+		}
 	}
 	
  	public void updateShooters(){
