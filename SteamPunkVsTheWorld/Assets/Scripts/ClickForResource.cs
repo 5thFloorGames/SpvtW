@@ -120,6 +120,9 @@ public class ClickForResource : MonoBehaviour {
 
     void getAbsorbed() {
         float size = transform.localScale.y;
+        if (Vector3.Distance(transform.position, finish) > 0.01f) {
+            transform.position = finish;
+        }
         if (size < 0) {
             size = 0;
         }
