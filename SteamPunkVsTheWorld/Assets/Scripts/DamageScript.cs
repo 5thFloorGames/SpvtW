@@ -18,6 +18,7 @@ public class DamageScript : MonoBehaviour {
 	void Damaged(){
 		health--;
 		if (health == 0) {
+			GameObject.FindGameObjectWithTag("GameController").GetComponent<GameLogic>().unregisterEnemy(gameObject);
 			Destroy(gameObject);
 		}
 	}

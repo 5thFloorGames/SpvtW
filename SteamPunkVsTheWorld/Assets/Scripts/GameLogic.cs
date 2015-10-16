@@ -9,6 +9,8 @@ public class GameLogic : MonoBehaviour {
 	public List<Button> buttons;
 	private List<GameObject> previews;
 	public Plant active;
+	private List<GameObject> shooters = new List<GameObject>();
+	private List<GameObject> enemies = new List<GameObject>();
 
 	// Use this for initialization
 	void Start () {
@@ -58,5 +60,45 @@ public class GameLogic : MonoBehaviour {
 
 	public GameObject getPreview(){
 		return previews[(int)active];
+	}
+
+	public void registerShooter(GameObject shooter){
+		shooters.Add (shooter);
+		updateShooters ();
+	}
+
+	public void registerEnemy(GameObject enemy){
+		enemies.Add (enemy);
+		updateShooters ();
+	}
+
+	public void unregisterShooter(GameObject shooter){
+		shooters.Remove (shooter);
+		updateShooters();
+	}
+
+	public void unregisterEnemy(GameObject enemy){
+		enemies.Remove (enemy);
+		updateShooters();
+	}
+	
+ 	public void updateShooters(){
+		foreach(GameObject shooter in shooters){
+			if(EnemyInSameLane(shooter)){
+				shooter.SendMessage("StartShooting");
+			} else {
+				shooter.SendMessage("Stop");
+			}
+		}
+	}
+
+
+	public bool EnemyInSameLane(GameObject shooter){
+		foreach(GameObject enemy in enemies){
+			if(shooter.transform.position.y == enemy.transform.position.y){
+				return true;
+			}
+		}
+		return false;
 	}
 }

@@ -24,6 +24,9 @@ public class ClickToBuild : MonoBehaviour {
 				GameObject newPlant = (GameObject)Instantiate(thingTobuild, transform.position, Quaternion.identity);
 				newPlant.transform.parent = transform;
 				newPlant.GetComponentInChildren<SpriteRenderer>().sortingOrder = childLayer;
+				if(newPlant.tag.Equals("Shooter")){
+					logic.registerShooter(newPlant);
+				}
 				free = false;
 				GameObject thingToPreview = logic.getPreview ();
 				thingToPreview.transform.position = new Vector3(-4f,-4f,0f);

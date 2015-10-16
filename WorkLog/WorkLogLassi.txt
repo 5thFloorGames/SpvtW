@@ -8,6 +8,6 @@ WorkLog Lassi
 8.10. Coding the rest of basic gameplay and testing sprites - 5h
 9.10. Making the code work with sprites - 3h
 13.10. Coding spawn logic and rewiring gameplay stuff - 2.5h
-15.10. Previews and fixing bugs - 4h
+15.10. Previews and fixing bugs - 5h
 
-Total: 25.5 h
+Total: 26.5 h

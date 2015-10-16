@@ -23,6 +23,9 @@ public class NibblingScript : MonoBehaviour {
 				// Figure out how to enable two kittens that are stuck on the plant
 				other.gameObject.SendMessage("Go");
 				transform.parent.SendMessage("Free");
+				if(tag.Equals("Shooter")){
+					GameObject.FindGameObjectWithTag("GameController").GetComponent<GameLogic>().unregisterShooter(gameObject);
+				}
 				Destroy(gameObject);
 			}
 		}
