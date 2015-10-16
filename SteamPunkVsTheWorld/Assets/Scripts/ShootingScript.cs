@@ -8,12 +8,14 @@ public class ShootingScript : MonoBehaviour {
     private bool shooting = false;
     private Animator animator;
     private AudioSource shootingsfx;
+    private ParticleSystem shootingvfx;
 
     // Use this for initialization
     void Start() {
         orderInLayer = gameObject.GetComponentInChildren<SpriteRenderer>().sortingOrder + 2;
         animator = gameObject.GetComponentInChildren<Animator>();
         shootingsfx = gameObject.GetComponent<AudioSource>();
+        shootingvfx = transform.FindChild("Shootingvfx").GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -24,6 +26,7 @@ public class ShootingScript : MonoBehaviour {
     void Shoot() {
         GameObject tempBullet = (GameObject)Instantiate(bullet, transform.position + Vector3.right, Quaternion.identity);
         tempBullet.GetComponentInChildren<SpriteRenderer>().sortingOrder = orderInLayer;
+        shootingvfx.Emit(1);
         //shootingsfx.Play();
     }
 
@@ -32,6 +35,9 @@ public class ShootingScript : MonoBehaviour {
             InvokeRepeating("Shoot", 0.6f, 1.6f);
             if (animator == null) {
                 animator = gameObject.GetComponentInChildren<Animator>();
+            }
+            if (shootingvfx == null) {
+                transform.FindChild("Shootingvfx").GetComponent<ParticleSystem>();
             }
             shooting = true;
             animator.runtimeAnimatorController = Resources.Load("ShooterShooting") as RuntimeAnimatorController;
