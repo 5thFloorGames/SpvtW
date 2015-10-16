@@ -92,10 +92,10 @@ public class GameLogic : MonoBehaviour {
 		}
 	}
 
-
 	public bool EnemyInSameLane(GameObject shooter){
 		foreach(GameObject enemy in enemies){
-			if(shooter.transform.position.y == enemy.transform.position.y){
+			if(shooter.transform.position.y == enemy.transform.position.y 
+			   && shooter.transform.position.x < enemy.transform.position.x){
 				return true;
 			}
 		}
