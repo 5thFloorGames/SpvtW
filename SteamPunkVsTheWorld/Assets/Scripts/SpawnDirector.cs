@@ -15,9 +15,8 @@ public class SpawnDirector : MonoBehaviour {
 		foreach(SpawnScript s in GameObject.FindObjectsOfType<SpawnScript> ()){
 			spawners.Add(s);
 		}
-		InvokeRepeating("nextSpawn", 20, 20);
+		InvokeRepeating("nextSpawn", 0, 20);
 		setSpawnQueue (28);
-		print (spawners.Count + " spawners in scene");
 	}
 	
 	// Update is called once per frame
