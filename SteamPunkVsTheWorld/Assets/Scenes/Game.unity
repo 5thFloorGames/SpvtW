@@ -158,7 +158,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
 --- !u!1001 &9728621
 Prefab:
   m_ObjectHideFlags: 0
@@ -651,7 +651,7 @@ Transform:
   m_LocalScale: {x: 1, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
 --- !u!114 &104736321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1092,7 +1092,11 @@ Prefab:
     - target: {fileID: 11464384, guid: 3b14e84ec45624f2d88e2d48ceaa068e, type: 2}
       propertyPath: energy
       value: 
-      objectReference: {fileID: 155474, guid: d0c3e9eee9c3a49978c9ac7a8b35fec2, type: 2}
+      objectReference: {fileID: 132638, guid: e7960927559ec48c6ac984205258f4c7, type: 2}
+    - target: {fileID: 198394, guid: 3b14e84ec45624f2d88e2d48ceaa068e, type: 2}
+      propertyPath: m_Name
+      value: GlobalResourceSpawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3b14e84ec45624f2d88e2d48ceaa068e, type: 2}
   m_IsPrefabParent: 0
@@ -1913,7 +1917,7 @@ RectTransform:
   - {fileID: 1281111018}
   - {fileID: 1684681336}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 10
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -2666,7 +2670,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
 --- !u!4 &1043663297 stripped
 Transform:
   m_PrefabParentObject: {fileID: 457500, guid: d5cd23579c47e43a3af3ba4d359df09d, type: 2}
@@ -5131,6 +5135,48 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 457500, guid: d5cd23579c47e43a3af3ba4d359df09d, type: 2}
   m_PrefabInternal: {fileID: 641363736}
+--- !u!1001 &1596902801
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 489648, guid: 0f8d8c5b59edb41f1b6a390642339f47, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 489648, guid: 0f8d8c5b59edb41f1b6a390642339f47, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 489648, guid: 0f8d8c5b59edb41f1b6a390642339f47, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 489648, guid: 0f8d8c5b59edb41f1b6a390642339f47, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 489648, guid: 0f8d8c5b59edb41f1b6a390642339f47, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 489648, guid: 0f8d8c5b59edb41f1b6a390642339f47, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 489648, guid: 0f8d8c5b59edb41f1b6a390642339f47, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 489648, guid: 0f8d8c5b59edb41f1b6a390642339f47, type: 2}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0f8d8c5b59edb41f1b6a390642339f47, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1625923809
 Prefab:
   m_ObjectHideFlags: 0
@@ -5538,7 +5584,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -60, y: 108}
+  m_AnchoredPosition: {x: -70, y: 108}
   m_SizeDelta: {x: 440, y: 440}
   m_Pivot: {x: .5, y: .5}
 --- !u!222 &1746880757
@@ -6559,7 +6605,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
 --- !u!1 &2075587972
 GameObject:
   m_ObjectHideFlags: 0
@@ -6586,4 +6632,4 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
