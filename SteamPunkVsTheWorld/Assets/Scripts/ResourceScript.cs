@@ -11,9 +11,11 @@ public class ResourceScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		plantPrices.Add (Plant.Producer, 2);
-		plantPrices.Add (Plant.Shooter, 4);
-		plantPrices.Add (Plant.Blocker, 2);
+		if (plantPrices.Count < 3) {
+			plantPrices.Add (Plant.Producer, 2);
+			plantPrices.Add (Plant.Shooter, 4);
+			plantPrices.Add (Plant.Blocker, 2);
+		}
 	}
 	
 	// Update is called once per frame
