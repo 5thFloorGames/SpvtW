@@ -7,11 +7,13 @@ public class ShootingScript : MonoBehaviour {
     public int orderInLayer;
     private bool shooting = false;
     private Animator animator;
+    private AudioSource shootingsfx;
 
     // Use this for initialization
     void Start() {
         orderInLayer = gameObject.GetComponentInChildren<SpriteRenderer>().sortingOrder + 2;
         animator = gameObject.GetComponentInChildren<Animator>();
+        shootingsfx = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -22,6 +24,7 @@ public class ShootingScript : MonoBehaviour {
     void Shoot() {
         GameObject tempBullet = (GameObject)Instantiate(bullet, transform.position + Vector3.right, Quaternion.identity);
         tempBullet.GetComponentInChildren<SpriteRenderer>().sortingOrder = orderInLayer;
+        //shootingsfx.Play();
     }
 
     void StartShooting() {
@@ -41,8 +44,6 @@ public class ShootingScript : MonoBehaviour {
             shooting = false;
             StartCoroutine(randomizeAnimationStart());
         }
-
-
     }
 
     IEnumerator randomizeAnimationStart() {

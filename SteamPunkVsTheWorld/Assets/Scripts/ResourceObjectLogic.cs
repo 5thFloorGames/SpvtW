@@ -4,11 +4,15 @@ using System.Collections;
 public class ResourceObjectLogic : MonoBehaviour {
 
     public bool globalResource = false;
+    private SpriteRenderer sprite;
 
     private bool available = true;
     private bool spawning = true;
     private bool absorbtionStarted = false;
+    private bool suicideActivated = false;
     private float realSize;
+    private float lifeTime;
+    private float spawnTime;
 
     private Vector3 landingPos;
     private Vector3 spawningPos;
@@ -22,11 +26,13 @@ public class ResourceObjectLogic : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        sprite = gameObject.GetComponentInChildren<SpriteRenderer>();
         finish = new Vector3(-1.65f, 0.95f, 0);
         realSize = transform.localScale.y;
         float startyPos = transform.position.y;
         float startxPos = transform.position.x;
-        
+        spawnTime = Time.time;
+        lifeTime = 11.0f;
 		transform.localScale = new Vector3(0, 0, 1);
 		transform.position = new Vector3(startxPos, (startyPos+0.36f), -1);
 		spawningPos = transform.position;
@@ -36,6 +42,7 @@ public class ResourceObjectLogic : MonoBehaviour {
         if (globalResource) {
             landingPos = new Vector3(Random.Range(0.0f, 8.0f),
                                 Random.Range(-4.0f, 0.0f), -1.0f);
+            lifeTime = 12f;
         }
 
 	}
@@ -50,11 +57,11 @@ public class ResourceObjectLogic : MonoBehaviour {
         } else {
             // be at normal state
         }
-        
+        selfDestructionCheck();
 	}
 
 	void OnMouseDown(){
-        if (available) {
+        if (available && !suicideActivated) {
             emit(20);
             available = false;
             clickTime = Time.time;
@@ -119,17 +126,36 @@ public class ResourceObjectLogic : MonoBehaviour {
     }
 
     void getAbsorbed() {
-        float size = transform.localScale.y;
         if (Vector3.Distance(transform.position, finish) > 0.01f) {
             transform.position = finish;
         }
-        if (size < 0) {
-            size = 0;
-        }
+        getSmaller();
         lifetimeAfterAbsorbed -= Time.deltaTime;
-        transform.localScale = new Vector3((size - Time.deltaTime), (size - Time.deltaTime), 1);
         if (lifetimeAfterAbsorbed < 0) {
             Destroy(gameObject);
         }
+    }
+
+    void getSmaller() {
+        float size = transform.localScale.y;
+        if (size < 0) {
+            size = 0;
+        }
+        transform.localScale = new Vector3((size - Time.deltaTime), (size - Time.deltaTime), 1);
+    }
+
+    void selfDestructionCheck() {
+        if (Time.time - spawnTime > lifeTime) {
+            fadeAndSuicide();
+            suicideActivated = true;
+        }
+    }
+
+    void fadeAndSuicide() {
+        iTween.ColorUpdate(sprite.gameObject, iTween.Hash("a", 0.0f, "time", 3.0f, "oncomplete", "suicide"));
+    }
+
+    void suicide() {
+        Destroy(gameObject);
     }
 }
