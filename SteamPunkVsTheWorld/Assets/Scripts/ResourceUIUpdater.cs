@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class ResourceUpdater : MonoBehaviour {
+public class ResourceUIUpdater : MonoBehaviour {
 
 	private Text[] resourceTexts;
 	private GameObject resourceCloud;
@@ -16,7 +16,7 @@ public class ResourceUpdater : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        int resources = ResourceScript.getResources();
+        int resources = ResourceManager.getResources();
         string resourceText = resources.ToString();
 		foreach (Text textComponent in resourceTexts) {
             textComponent.text = resourceText;

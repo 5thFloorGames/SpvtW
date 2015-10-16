@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ClickForResource : MonoBehaviour {
+public class ResourceObjectLogic : MonoBehaviour {
 
     public bool globalResource = false;
 
@@ -113,7 +113,7 @@ public class ClickForResource : MonoBehaviour {
     void goToTheGenerator() {
         transform.position = Vector3.Lerp(start, finish, (Time.time - clickTime));
         if (Vector3.Distance(transform.position, finish) < 0.01f) {
-            ResourceScript.addResources(1);
+            ResourceManager.addResources(1);
             absorbtionStarted = true;
         }
     }

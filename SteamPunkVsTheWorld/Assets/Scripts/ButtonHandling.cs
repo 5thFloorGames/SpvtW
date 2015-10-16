@@ -32,14 +32,14 @@ public class ButtonHandling : MonoBehaviour, IPointerDownHandler {
 	}
 
 	public void OnPointerDown(PointerEventData e){
-        if (ResourceScript.getResources() >= ResourceScript.getPlantPrice(plant) && timeStamp < Time.time) {
+        if (ResourceManager.getResources() >= ResourceManager.getPlantPrice(plant) && timeStamp < Time.time) {
             logic.ChangePlant(plant);
         }
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (ResourceScript.getResources () < ResourceScript.getPlantPrice(plant) || timeStamp > Time.time) {
+		if (ResourceManager.getResources () < ResourceManager.getPlantPrice(plant) || timeStamp > Time.time) {
 			button.interactable = false;
 		} else {
 			button.interactable = true;

@@ -53,7 +53,7 @@ public class GameLogic : MonoBehaviour {
 
 	public GameObject buildPlant(){
 		if (active != Plant.None) {
-			ResourceScript.buyPlant (active);
+            ResourceManager.buyPlant (active);
 			buttons[(int)active].SendMessage("ActivateCooldown");
 			return plants[(int)active];
 		} else {

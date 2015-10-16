@@ -17,7 +17,7 @@ public class ProducerResourceGeneration : MonoBehaviour {
 	
 	void Produce() {
 		GameObject spawned = (GameObject)Instantiate (resource, transform.position + new Vector3(0f,0f,-1f), Quaternion.identity);
-        ClickForResource crf = spawned.GetComponent<ClickForResource>();
+        ResourceObjectLogic crf = spawned.GetComponent<ResourceObjectLogic>();
         crf.globalResource = false;
 	}
 }

@@ -17,7 +17,7 @@ public class GlobalResourceSpawner : MonoBehaviour {
 	
 	void Spawn(){
         GameObject spawned = (GameObject)Instantiate (energy, transform.position + Vector3.down, Quaternion.identity);
-        ClickForResource cfr = spawned.GetComponent<ClickForResource>();
+        ResourceObjectLogic cfr = spawned.GetComponent<ResourceObjectLogic>();
         if (gameObject.tag != "Plant") {
             cfr.globalResource = true;
         } else {
