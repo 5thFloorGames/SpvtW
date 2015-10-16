@@ -58,6 +58,7 @@ public class ClickForResource : MonoBehaviour {
             emit(20);
             available = false;
             clickTime = Time.time;
+            iTween.Stop(gameObject);
             start = transform.position;
 			if (gameObject.GetComponent<MovementScript>() != null) {
 				gameObject.GetComponent<MovementScript>().enabled = false;
@@ -80,22 +81,33 @@ public class ClickForResource : MonoBehaviour {
 	void spawningAnimation() {
         emit(10);
         float timeToGoToPosition;
-        string eztype;
+        float delay;
+        string easeType;
+        string oncomplete = "emit10";
+        Vector3 movement = landingPos - spawningPos;
         if (globalResource) {
             timeToGoToPosition = 10.0f;
-            eztype = "easeInOutCubic";
+            delay = 0.0f;
+            easeType = "easeInOutCubic";
+            oncomplete = "emit10";
         } else {
             timeToGoToPosition = 1.0f;
-            eztype = "easeInSine";
+            easeType = "easeInSine";
+            delay = timeToGoToPosition;
         }
-        iTween.MoveBy(gameObject, iTween.Hash("y", 1.0f, "time", timeToGoToPosition / 2, "easeType", iTween.EaseType.easeOutQuad));
-        Vector3 movement = landingPos - spawningPos;
-        movement.y = movement.y - 1.0f;
-        iTween.MoveBy(gameObject, iTween.Hash("amount", movement, "time", timeToGoToPosition / 2, "delay", timeToGoToPosition / 2, "easeType", eztype));
+        if (!globalResource) {
+            iTween.MoveBy(gameObject, iTween.Hash("y", 1.0f, "time", timeToGoToPosition / 2, "easeType", iTween.EaseType.easeOutQuad));
+            movement.y = movement.y - 1.0f;
+        }
+        iTween.MoveBy(gameObject, iTween.Hash("amount", movement, "time", timeToGoToPosition / 2, "delay", delay / 2, "easeType", easeType, "oncomplete", oncomplete));
 	}
 
     void emit(int amount) {
         gameObject.GetComponent<ParticleSystem>().Emit(amount);
+    }
+
+    void emit10() {
+        emit(10);
     }
 
     void goToTheGenerator() {
