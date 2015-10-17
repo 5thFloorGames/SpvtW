@@ -27,20 +27,13 @@ public class ShootingScript : MonoBehaviour {
         GameObject tempBullet = (GameObject)Instantiate(bullet, transform.position + Vector3.right, Quaternion.identity);
         tempBullet.GetComponentInChildren<SpriteRenderer>().sortingOrder = orderInLayer;
         shootingvfx.Emit(1);
-        //shootingsfx.Play();
+        shootingsfx.Play();
     }
 
     void StartShooting() {
         if (!shooting) {
-            InvokeRepeating("Shoot", 0.6f, 1.6f);
-            if (animator == null) {
-                animator = gameObject.GetComponentInChildren<Animator>();
-            }
-            if (shootingvfx == null) {
-                transform.FindChild("Shootingvfx").GetComponent<ParticleSystem>();
-            }
             shooting = true;
-            animator.runtimeAnimatorController = Resources.Load("ShooterShooting") as RuntimeAnimatorController;
+            StartCoroutine(randomizeShootingStart());
         }
     }
 
@@ -48,14 +41,28 @@ public class ShootingScript : MonoBehaviour {
         if (shooting) {
             CancelInvoke();
             shooting = false;
-            StartCoroutine(randomizeAnimationStart());
+            StartCoroutine(randomizeIdleAnimationStart());
         }
     }
 
-    IEnumerator randomizeAnimationStart() {
-        yield return new WaitForSeconds(Random.Range(0.0f, 1.5f));
+    IEnumerator randomizeIdleAnimationStart() {
+        yield return new WaitForSeconds(Random.Range(0.00f, 0.99f));
         if (!shooting) {
             animator.runtimeAnimatorController = Resources.Load("ShooterIdling") as RuntimeAnimatorController;
+        }
+    }
+
+    IEnumerator randomizeShootingStart() {
+        yield return new WaitForSeconds(Random.Range(0.00f, 0.99f));
+        InvokeRepeating("Shoot", 0.6f, 1.6f);
+        if (animator == null) {
+            animator = gameObject.GetComponentInChildren<Animator>();
+        }
+        if (shootingvfx == null) {
+            transform.FindChild("Shootingvfx").GetComponent<ParticleSystem>();
+        }
+        if (shooting) {
+            animator.runtimeAnimatorController = Resources.Load("ShooterShooting") as RuntimeAnimatorController;
         }
     }
 
