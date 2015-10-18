@@ -152,7 +152,7 @@ public class ResourceObjectLogic : MonoBehaviour {
     }
 
     void fadeAndSuicide() {
-        iTween.ColorUpdate(sprite.gameObject, iTween.Hash("a", 0.0f, "time", 3.0f, "oncomplete", "suicide"));
+        iTween.ColorTo(sprite.gameObject, iTween.Hash("a", 0.0f, "time", 3.0f, "oncomplete", "suicide",  "oncompletetarget", gameObject));
     }
 
     void suicide() {
