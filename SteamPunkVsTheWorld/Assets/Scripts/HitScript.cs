@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class HitScript : MonoBehaviour {
-
+	
 	// Use this for initialization
 	void Start () {
 	
@@ -16,6 +16,7 @@ public class HitScript : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.tag.Equals ("Enemy")) {
 			other.SendMessageUpwards ("Damaged");
+			Instantiate(Resources.Load("HitEffect"));
 			Destroy(gameObject);
 		}
 	}

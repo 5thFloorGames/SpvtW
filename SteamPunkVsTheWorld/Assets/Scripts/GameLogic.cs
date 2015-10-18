@@ -12,7 +12,7 @@ public class GameLogic : MonoBehaviour {
 	private List<GameObject> shooters = new List<GameObject>();
 	private List<GameObject> enemies = new List<GameObject>();
 	private SpawnDirector director;
-	public GameOver youWon;
+	public LevelEnd youWon;
 
 	// Use this for initialization
 	void Start () {

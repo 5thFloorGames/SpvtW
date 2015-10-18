@@ -6,6 +6,7 @@ public class ClickToBuild : MonoBehaviour {
 	public bool free = true;
 	private GameLogic logic;
 	public int childLayer;
+	public AudioSource plantSound;
 
 	// Use this for initialization
 	void Start () {
@@ -28,6 +29,7 @@ public class ClickToBuild : MonoBehaviour {
 					logic.registerShooter(newPlant);
 				}
 				free = false;
+				plantSound.PlayOneShot(plantSound.clip);
 				GameObject thingToPreview = logic.getPreview ();
 				thingToPreview.transform.position = new Vector3(-4f,-4f,0f);
 				logic.ChangePlant("None");

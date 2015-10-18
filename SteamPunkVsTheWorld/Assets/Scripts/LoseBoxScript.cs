@@ -3,7 +3,7 @@ using System.Collections;
 
 public class LoseBoxScript : MonoBehaviour {
 
-	public GameOver gameOver;
+	public LevelEnd gameOver;
 
 	// Use this for initialization
 	void Start () {
