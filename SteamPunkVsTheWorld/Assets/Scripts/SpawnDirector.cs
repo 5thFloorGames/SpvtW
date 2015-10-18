@@ -15,7 +15,7 @@ public class SpawnDirector : MonoBehaviour {
 		foreach(SpawnScript s in GameObject.FindObjectsOfType<SpawnScript> ()){
 			spawners.Add(s);
 		}
-		InvokeRepeating("nextSpawn", 0, 20);
+		InvokeRepeating("nextSpawn", 20, 20);
 		setSpawnQueue (28);
 	}
 	
@@ -25,18 +25,27 @@ public class SpawnDirector : MonoBehaviour {
 	}
 
 	void nextSpawn(){
-		Spawn (spawnAmounts[spawnIndex]);
-		spawnIndex++;
 		if (spawnIndex == spawnAmounts.Length) {
-			CancelInvoke();
+			print ("stopping");
+			Invoke("stopSpawning",15);
 			waveDone = true;
+		} else {
+			Spawn (spawnAmounts[spawnIndex]);
+			spawnIndex++;
 		}
 	}
 
 	void Spawn(int amount){
+		float cumulate = 0f;
 		for (int i = 0; i < amount; i++) {
-			spawners[spawnQueue.Dequeue()].Spawn();
+			cumulate += Random.Range(0.2f, 1.5f);
+			Invoke("DelayedSpawn", cumulate);
 		}
+	}
+
+	void DelayedSpawn(){
+		print (spawnQueue.Count);
+		spawners[spawnQueue.Dequeue()].Spawn();
 	}
 
 	void setSpawnQueue(int length){
@@ -59,6 +68,10 @@ public class SpawnDirector : MonoBehaviour {
 		while (spawnQueue.Count != 0) {
 			print (spawnQueue.Dequeue());
 		}
+	}
+
+	void stopSpawning(){
+		CancelInvoke();
 	}
 
 	public bool noMoreEnemies(){
