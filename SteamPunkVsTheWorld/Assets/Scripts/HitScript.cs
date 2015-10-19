@@ -18,7 +18,7 @@ public class HitScript : MonoBehaviour {
 			other.SendMessageUpwards ("Damaged");
 			GameObject hit = (GameObject)Instantiate(Resources.Load("HitEffect"));
 			hit.transform.position = gameObject.transform.position;
-			hit.transform.Translate (new Vector3(0, 0.37f, 0));
+			hit.transform.Translate (new Vector3(0.2f, 0.37f, 0));
 			Destroy(gameObject);
 		}
 	}

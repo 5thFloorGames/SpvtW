@@ -24,11 +24,9 @@ public class ResourceObjectLogic : MonoBehaviour {
 	private AudioSource[] audios;
 
 
-
-    // Use this for initialization
     void Start () {
         sprite = gameObject.GetComponentInChildren<SpriteRenderer>();
-        finish = new Vector3(-1.65f, 0.95f, 0);
+        finish = new Vector3(-1.67f, 0.95f, 0);
         realSize = transform.localScale.y;
         float startyPos = transform.position.y;
         float startxPos = transform.position.x;
@@ -49,8 +47,8 @@ public class ResourceObjectLogic : MonoBehaviour {
 		audios = gameObject.GetComponents<AudioSource> ();
 
 	}
-	
-	// Update is called once per frame
+
+
 	void Update () {
 		spawn();
         if (absorbtionStarted) {
