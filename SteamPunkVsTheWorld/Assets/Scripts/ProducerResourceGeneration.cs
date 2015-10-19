@@ -7,7 +7,7 @@ public class ProducerResourceGeneration : MonoBehaviour {
 	public GameObject resource;
 
 	void Start () {
-		InvokeRepeating("Produce", 5, 24);
+		InvokeRepeating("OrbProduction", 1, 24);
 		animator = gameObject.GetComponentInChildren<Animator>();
 	}
 
@@ -15,12 +15,20 @@ public class ProducerResourceGeneration : MonoBehaviour {
 		
 	}
 
-	void StartProduction() {
+    void OrbProduction() {
+        StartCoroutine(animationTiming());
+    }
 
-	}
+	IEnumerator animationTiming() {
+        animator.SetBool("OrbGenerated", false);
+        animator.SetTrigger("LightingUp");
+        yield return new WaitForSeconds(4);
+        createAnOrb();
+        yield return new WaitForSeconds(1);
+        animator.SetBool("OrbGenerated", true);
+    }
 	
-	void Produce() {
-		animator.SetTrigger("LightUp");
+	void createAnOrb() {
 		GameObject spawned = (GameObject)Instantiate (resource, transform.position + new Vector3(0f,0f,-1f), Quaternion.identity);
 		ResourceObjectLogic crf = spawned.GetComponent<ResourceObjectLogic>();
         crf.globalResource = false;
