@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: af138f9d16e598f4088f370593861ed9
-timeCreated: 1445199752
+timeCreated: 1445257414
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -38,7 +38,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -75,7 +75,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 260
+  spritePixelsToUnits: 236
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
@@ -88,8 +88,8 @@ TextureImporter:
         y: 2558.33325
         width: 511.666656
         height: 511.666656
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatWalkParty_1
       rect:
@@ -98,8 +98,8 @@ TextureImporter:
         y: 2558.33325
         width: 511.666656
         height: 511.666656
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatWalkParty_2
       rect:
@@ -108,8 +108,8 @@ TextureImporter:
         y: 2558.33325
         width: 511.666656
         height: 511.666656
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatWalkParty_3
       rect:
@@ -118,8 +118,8 @@ TextureImporter:
         y: 2558.33325
         width: 511.666656
         height: 511.666656
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatWalkParty_4
       rect:
@@ -128,8 +128,8 @@ TextureImporter:
         y: 2558.33325
         width: 511.666656
         height: 511.666656
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatWalkParty_5
       rect:
@@ -138,8 +138,8 @@ TextureImporter:
         y: 2558.33325
         width: 511.666656
         height: 511.666656
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatWalkParty_6
       rect:
@@ -148,8 +148,8 @@ TextureImporter:
         y: 2047.33337
         width: 511.666656
         height: 511.666656
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatWalkParty_7
       rect:
@@ -158,8 +158,8 @@ TextureImporter:
         y: 2047.33337
         width: 511.666656
         height: 511.666656
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatWalkParty_8
       rect:
@@ -168,8 +168,8 @@ TextureImporter:
         y: 2047.33337
         width: 511.666656
         height: 511.666656
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatWalkParty_9
       rect:
@@ -178,8 +178,8 @@ TextureImporter:
         y: 2047.33337
         width: 511.666656
         height: 511.666656
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatWalkParty_10
       rect:
@@ -188,8 +188,8 @@ TextureImporter:
         y: 2047.33337
         width: 511.666656
         height: 511.666656
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatWalkParty_11
       rect:
@@ -198,8 +198,8 @@ TextureImporter:
         y: 2047.33337
         width: 511.666656
         height: 511.666656
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatWalkParty_12
       rect:
@@ -208,8 +208,8 @@ TextureImporter:
         y: 1536.33337
         width: 511.666656
         height: 511.666656
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatWalkParty_13
       rect:
@@ -218,8 +218,8 @@ TextureImporter:
         y: 1536.33337
         width: 511.666656
         height: 511.666656
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatWalkParty_14
       rect:
@@ -228,8 +228,8 @@ TextureImporter:
         y: 1536.33337
         width: 511.666656
         height: 511.666656
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatWalkParty_15
       rect:
@@ -238,8 +238,8 @@ TextureImporter:
         y: 1536.33337
         width: 511.666656
         height: 511.666656
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatWalkParty_16
       rect:
@@ -248,8 +248,8 @@ TextureImporter:
         y: 1536.33337
         width: 511.666656
         height: 511.666656
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatWalkParty_17
       rect:
@@ -258,8 +258,8 @@ TextureImporter:
         y: 1536.33337
         width: 511.666656
         height: 511.666656
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatWalkParty_18
       rect:
@@ -268,8 +268,8 @@ TextureImporter:
         y: 1025.33337
         width: 511.666656
         height: 511.666656
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatWalkParty_19
       rect:
@@ -278,8 +278,8 @@ TextureImporter:
         y: 1025.33337
         width: 511.666656
         height: 511.666656
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatWalkParty_20
       rect:
@@ -288,8 +288,8 @@ TextureImporter:
         y: 1025.33337
         width: 511.666656
         height: 511.666656
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatWalkParty_21
       rect:
@@ -298,8 +298,8 @@ TextureImporter:
         y: 1025.33337
         width: 511.666656
         height: 511.666656
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatWalkParty_22
       rect:
@@ -308,8 +308,8 @@ TextureImporter:
         y: 1025.33337
         width: 511.666656
         height: 511.666656
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatWalkParty_23
       rect:
@@ -318,8 +318,8 @@ TextureImporter:
         y: 1025.33337
         width: 511.666656
         height: 511.666656
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatWalkParty_24
       rect:
@@ -328,8 +328,8 @@ TextureImporter:
         y: 514.333374
         width: 511.666656
         height: 511.666656
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatWalkParty_25
       rect:
@@ -338,8 +338,8 @@ TextureImporter:
         y: 514.333374
         width: 511.666656
         height: 511.666656
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatWalkParty_26
       rect:
@@ -348,8 +348,8 @@ TextureImporter:
         y: 514.333374
         width: 511.666656
         height: 511.666656
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatWalkParty_27
       rect:
@@ -358,8 +358,8 @@ TextureImporter:
         y: 514.333374
         width: 511.666656
         height: 511.666656
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatWalkParty_28
       rect:
@@ -368,8 +368,8 @@ TextureImporter:
         y: 514.333374
         width: 511.666656
         height: 511.666656
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatWalkParty_29
       rect:
@@ -378,8 +378,8 @@ TextureImporter:
         y: 514.333374
         width: 511.666656
         height: 511.666656
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatWalkParty_30
       rect:
@@ -388,8 +388,8 @@ TextureImporter:
         y: 3.33334351
         width: 511.666656
         height: 511.666656
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

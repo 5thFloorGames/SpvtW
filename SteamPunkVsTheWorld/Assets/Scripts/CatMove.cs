@@ -3,23 +3,44 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class CatMove : MonoBehaviour {
+
+	public int maxHealth;
+	public bool hasHat;
 	
 	private Rigidbody2D rigid;
 	private Animator animator;
-	private GameObject eating; 
+	private GameObject eating;
+	private int currentHealth;
 
 	void Awake() {
 		animator = gameObject.GetComponentInChildren<Animator>();
 	}
-	
-	// Use this for initialization
+
 	void Start () {
+		currentHealth = maxHealth;
 		rigid = gameObject.GetComponent<Rigidbody2D>();
 		rigid.MovePosition(transform.position + (Vector3.left / 500f));
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
+	}
+
+	void Damaged(){
+		currentHealth--;
+
+		if ((currentHealth <= maxHealth/2) && hasHat) {
+			if (eating != null) {
+				animator.runtimeAnimatorController = Resources.Load("CatEating") as RuntimeAnimatorController;
+			} else {
+				animator.runtimeAnimatorController = Resources.Load("CatWalking") as RuntimeAnimatorController;
+			}
+
+		}
+
+		if (currentHealth == 0) {
+			GameObject.FindGameObjectWithTag("GameController").GetComponent<GameLogic>().unregisterEnemy(gameObject);
+			Destroy(gameObject);
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
@@ -32,7 +53,11 @@ public class CatMove : MonoBehaviour {
 
 	public void Stop(){
 		rigid.velocity = Vector2.zero;
-		animator.runtimeAnimatorController = Resources.Load("CatEating") as RuntimeAnimatorController;
+		if (hasHat) {
+			animator.runtimeAnimatorController = Resources.Load ("PartyCatEating") as RuntimeAnimatorController;
+		} else {
+			animator.runtimeAnimatorController = Resources.Load ("CatEating") as RuntimeAnimatorController;
+		}
 		InvokeRepeating ("Eat", 1f, 0.5f);
 	}
 
@@ -47,6 +72,11 @@ public class CatMove : MonoBehaviour {
 	
 	public void Go(){
 		rigid.MovePosition(transform.position + (Vector3.left * (0.15f) * Time.deltaTime));
-		animator.runtimeAnimatorController = Resources.Load("CatWalking") as RuntimeAnimatorController;
+
+		if (hasHat) {
+			animator.runtimeAnimatorController = Resources.Load("PartyCatWalking") as RuntimeAnimatorController;
+		} else {
+			animator.runtimeAnimatorController = Resources.Load("CatWalking") as RuntimeAnimatorController;
+		}
 	}
 }
