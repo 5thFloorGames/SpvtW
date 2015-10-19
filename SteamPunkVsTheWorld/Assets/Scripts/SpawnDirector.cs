@@ -25,7 +25,7 @@ public class SpawnDirector : MonoBehaviour {
 
 		spawnList = levelSpawns [GameState.level];
 			
-		InvokeRepeating("nextSpawn", 0, 17);
+		InvokeRepeating("nextSpawn", 0, 3);
 		setSpawnQueue (countSpawns());
 
 
@@ -39,7 +39,6 @@ public class SpawnDirector : MonoBehaviour {
 
 	void nextSpawn(){
 		if (spawnIndex == spawnList.Length) {
-			print ("stopping");
 			Invoke("stopSpawning",15);
 			waveDone = true;
 		} else {
@@ -53,6 +52,14 @@ public class SpawnDirector : MonoBehaviour {
 		if (amount != 0) {
 			lightSweeper.Sweep ();
 		}
+		int partyLimit = amount / 2;
+		for (int i = 0; i < partyLimit; i++) {
+			if(Random.Range(0,3) == 0){
+				Invoke("DelayedPartySpawn", cumulate);
+				cumulate += Random.Range(0.2f, 1.5f);
+				amount -= 2;
+			}
+		}
 		for (int i = 0; i < amount; i++) {
 			Invoke("DelayedSpawn", cumulate);
 			cumulate += Random.Range(0.2f, 1.5f);
@@ -61,7 +68,12 @@ public class SpawnDirector : MonoBehaviour {
 
 	void DelayedSpawn(){
 		//print (spawnQueue.Count);
-		spawners[spawnQueue.Dequeue()].Spawn();
+		spawners [spawnQueue.Dequeue ()].Spawn ();
+	}
+
+	void DelayedPartySpawn(){
+		//print (spawnQueue.Count);
+		spawners [spawnQueue.Dequeue ()].PartySpawn ();
 	}
 
 	int countSpawns(){
