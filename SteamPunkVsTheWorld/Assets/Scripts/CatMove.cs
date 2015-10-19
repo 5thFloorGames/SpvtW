@@ -17,6 +17,10 @@ public class CatMove : MonoBehaviour {
 	}
 
 	void Start () {
+		if (hasHat) {
+			animator.SetBool("HasHat", true);
+			transform.FindChild("Sprite").Translate(new Vector3(0.11f,0.16f,0));
+		}
 		currentHealth = maxHealth;
 		rigid = gameObject.GetComponent<Rigidbody2D>();
 		rigid.MovePosition(transform.position + (Vector3.left / 500f));
@@ -29,20 +33,15 @@ public class CatMove : MonoBehaviour {
 		currentHealth--;
 
 		if ((currentHealth <= maxHealth/2) && hasHat) {
-			if (eating != null) {
-				animator.runtimeAnimatorController = Resources.Load("CatEating") as RuntimeAnimatorController;
-			} else {
-				animator.SetTrigger("LightUp");
-				animator.runtimeAnimatorController = Resources.Load("CatWalking") as RuntimeAnimatorController;
-			}
-			gameObject.GetComponentInChildren<Transform>().Translate(new Vector3(-0.11f,-0.16f,0));
+			transform.FindChild("Sprite").Translate(new Vector3(-0.11f,-0.16f,0));
 			hasHat = false;
+			animator.SetBool("HasHat", false);
 		}
 
 		if (currentHealth == 0) {
 			GameObject.FindGameObjectWithTag("GameController").GetComponent<GameLogic>().unregisterEnemy(gameObject);
 			animator.SetTrigger("Dying");
-			//Destroy(gameObject);
+			Destroy(gameObject);
 		}
 	}
 
@@ -50,17 +49,13 @@ public class CatMove : MonoBehaviour {
 		if ((other.gameObject.tag.Equals ("Plant") || other.gameObject.tag.Equals ("Shooter"))
 		    && other.gameObject.transform.position.x < gameObject.transform.position.x) {
 			eating = other.gameObject;
-			Stop();
+			StopMovingStartEating();
 		}
 	}
 
-	public void Stop(){
+	public void StopMovingStartEating(){
 		rigid.velocity = Vector2.zero;
-		if (hasHat) {
-			animator.runtimeAnimatorController = Resources.Load ("PartyCatEating") as RuntimeAnimatorController;
-		} else {
-			animator.SetBool("Eating", true);
-		}
+		animator.SetBool("Eating", true);
 		InvokeRepeating ("Eat", 1f, 0.5f);
 	}
 
