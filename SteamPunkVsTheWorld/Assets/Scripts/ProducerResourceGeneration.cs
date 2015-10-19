@@ -2,20 +2,25 @@
 using System.Collections;
 
 public class ProducerResourceGeneration : MonoBehaviour {
+	private Animator animator;
 
 	public GameObject resource;
-	
-	// Use this for initialization
+
 	void Start () {
 		InvokeRepeating("Produce", 5, 24);
+		animator = gameObject.GetComponentInChildren<Animator>();
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		
 	}
+
+	void StartProduction() {
+
+	}
 	
 	void Produce() {
+		animator.SetTrigger("LightUp");
 		GameObject spawned = (GameObject)Instantiate (resource, transform.position + new Vector3(0f,0f,-1f), Quaternion.identity);
 		ResourceObjectLogic crf = spawned.GetComponent<ResourceObjectLogic>();
         crf.globalResource = false;

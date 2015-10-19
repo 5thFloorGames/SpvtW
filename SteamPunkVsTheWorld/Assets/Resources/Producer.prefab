@@ -173,7 +173,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resource: {fileID: 132638, guid: e7960927559ec48c6ac984205258f4c7, type: 2}
-  energyProductionSound: {fileID: 8290620}
 --- !u!114 &11472384
 MonoBehaviour:
   m_ObjectHideFlags: 1
