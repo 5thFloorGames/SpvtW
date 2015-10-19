@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CatMove : MonoBehaviour {
 	
 	private Rigidbody2D rigid;
 	private Animator animator;
-	private PlantDamageScript eating;
+	private PlantDamageScript eating; 
 
 	void Awake() {
 		animator = gameObject.GetComponentInChildren<Animator>();
@@ -22,7 +23,8 @@ public class CatMove : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if (other.gameObject.tag.Equals ("Plant") || other.gameObject.tag.Equals ("Shooter")) {
+		if ((other.gameObject.tag.Equals ("Plant") || other.gameObject.tag.Equals ("Shooter"))
+		    && other.gameObject.transform.position.x < gameObject.transform.position.x) {
 			eating = other.gameObject.GetComponent<PlantDamageScript>();
 			Stop ();
 		}
