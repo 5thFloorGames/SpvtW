@@ -26,8 +26,8 @@ public class ResourceUIUpdater : MonoBehaviour {
             }
 
             int cloudSize = resources * 10;
-            if (cloudSize > 500) {
-                cloudSize = 500;
+            if (cloudSize > maxSize) {
+                cloudSize = maxSize;
             }
             resourceCloud.transform.localScale = new Vector3(cloudSize, cloudSize, 1);
             previousResources = resources;
