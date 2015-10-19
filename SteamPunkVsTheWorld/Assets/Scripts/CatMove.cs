@@ -15,11 +15,12 @@ public class CatMove : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rigid = gameObject.GetComponent<Rigidbody2D>();
-		rigid.MovePosition(transform.position + (Vector3.left * (0.15f) * Time.deltaTime));
+		rigid.MovePosition(transform.position + (Vector3.left / 500f));
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		print (rigid.velocity);
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
