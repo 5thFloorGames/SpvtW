@@ -44,7 +44,9 @@ public class SpawnDirector : MonoBehaviour {
 
 	void Spawn(int amount){
 		float cumulate = 1f;
-		lightSweeper.Sweep ();
+		if (amount != 0) {
+			lightSweeper.Sweep ();
+		}
 		for (int i = 0; i < amount; i++) {
 			Invoke("DelayedSpawn", cumulate);
 			cumulate += Random.Range(0.2f, 1.5f);
