@@ -21,6 +21,8 @@ public class ResourceObjectLogic : MonoBehaviour {
     private Vector3 start;
     private Vector3 finish;
 
+	private AudioSource[] audios;
+
 
 
     // Use this for initialization
@@ -44,6 +46,8 @@ public class ResourceObjectLogic : MonoBehaviour {
             lifeTime = 15f;
         }
 
+		audios = gameObject.GetComponents<AudioSource> ();
+
 	}
 	
 	// Update is called once per frame
@@ -61,6 +65,7 @@ public class ResourceObjectLogic : MonoBehaviour {
 
 	void OnMouseDown(){
         if (available) {
+			audios [2].PlayOneShot (audios [2].clip);
             emit(20);
             available = false;
             clickTime = Time.time;
@@ -86,6 +91,9 @@ public class ResourceObjectLogic : MonoBehaviour {
 
 	void spawningAnimation() {
         emit(10);
+		if (!globalResource) {
+			audios [1].PlayOneShot (audios [1].clip);
+		}
         float timeToGoToPosition;
         float delay;
         string easeType;
@@ -120,6 +128,7 @@ public class ResourceObjectLogic : MonoBehaviour {
         transform.position = Vector3.Lerp(start, finish, (Time.time - clickTime));
         if (Vector3.Distance(transform.position, finish) < 0.01f) {
             ResourceManager.addResources(1);
+			audios [0].PlayOneShot (audios [0].clip);
             absorbtionStarted = true;
         }
     }
