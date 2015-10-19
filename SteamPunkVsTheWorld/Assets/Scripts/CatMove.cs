@@ -32,6 +32,7 @@ public class CatMove : MonoBehaviour {
 			if (eating != null) {
 				animator.runtimeAnimatorController = Resources.Load("CatEating") as RuntimeAnimatorController;
 			} else {
+				animator.SetTrigger("LightUp");
 				animator.runtimeAnimatorController = Resources.Load("CatWalking") as RuntimeAnimatorController;
 			}
 
@@ -39,7 +40,8 @@ public class CatMove : MonoBehaviour {
 
 		if (currentHealth == 0) {
 			GameObject.FindGameObjectWithTag("GameController").GetComponent<GameLogic>().unregisterEnemy(gameObject);
-			Destroy(gameObject);
+			animator.SetTrigger("Dying");
+			//Destroy(gameObject);
 		}
 	}
 
@@ -47,7 +49,7 @@ public class CatMove : MonoBehaviour {
 		if ((other.gameObject.tag.Equals ("Plant") || other.gameObject.tag.Equals ("Shooter"))
 		    && other.gameObject.transform.position.x < gameObject.transform.position.x) {
 			eating = other.gameObject;
-			Stop ();
+			Stop();
 		}
 	}
 
@@ -56,7 +58,7 @@ public class CatMove : MonoBehaviour {
 		if (hasHat) {
 			animator.runtimeAnimatorController = Resources.Load ("PartyCatEating") as RuntimeAnimatorController;
 		} else {
-			animator.runtimeAnimatorController = Resources.Load ("CatEating") as RuntimeAnimatorController;
+			animator.SetBool("Eating", true);
 		}
 		InvokeRepeating ("Eat", 1f, 0.5f);
 	}
@@ -66,7 +68,7 @@ public class CatMove : MonoBehaviour {
 			eating.SendMessage("Damaged");
 		} else {
 			CancelInvoke();
-			Go ();
+			Go();
 		}
 	}
 	
@@ -76,7 +78,7 @@ public class CatMove : MonoBehaviour {
 		if (hasHat) {
 			animator.runtimeAnimatorController = Resources.Load("PartyCatWalking") as RuntimeAnimatorController;
 		} else {
-			animator.runtimeAnimatorController = Resources.Load("CatWalking") as RuntimeAnimatorController;
+			animator.SetBool("Eating", false);
 		}
 	}
 }
