@@ -1,9 +1,29 @@
 fileFormatVersion: 2
 guid: e3bcd0493b4e67941bba47340ebc0b15
-timeCreated: 1445191818
+timeCreated: 1445199806
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: CatEatParty_0
+    21300002: CatEatParty_1
+    21300004: CatEatParty_2
+    21300006: CatEatParty_3
+    21300008: CatEatParty_4
+    21300010: CatEatParty_5
+    21300012: CatEatParty_6
+    21300014: CatEatParty_7
+    21300016: CatEatParty_8
+    21300018: CatEatParty_9
+    21300020: CatEatParty_10
+    21300022: CatEatParty_11
+    21300024: CatEatParty_12
+    21300026: CatEatParty_13
+    21300028: CatEatParty_14
+    21300030: CatEatParty_15
+    21300032: CatEatParty_16
+    21300034: CatEatParty_17
+    21300036: CatEatParty_18
+    21300038: CatEatParty_19
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -29,8 +49,8 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
-    aniso: -1
+    filterMode: 2
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,18 +58,218 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 260
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: CatEatParty_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1536.33337
+        width: 511.666656
+        height: 511.666656
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatEatParty_1
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 1536.33337
+        width: 511.666656
+        height: 511.666656
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatEatParty_2
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 1536.33337
+        width: 511.666656
+        height: 511.666656
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatEatParty_3
+      rect:
+        serializedVersion: 2
+        x: 1533
+        y: 1536.33337
+        width: 511.666656
+        height: 511.666656
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatEatParty_4
+      rect:
+        serializedVersion: 2
+        x: 2044
+        y: 1536.33337
+        width: 511.666656
+        height: 511.666656
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatEatParty_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1025.33337
+        width: 511.666656
+        height: 511.666656
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatEatParty_6
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 1025.33337
+        width: 511.666656
+        height: 511.666656
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatEatParty_7
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 1025.33337
+        width: 511.666656
+        height: 511.666656
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatEatParty_8
+      rect:
+        serializedVersion: 2
+        x: 1533
+        y: 1025.33337
+        width: 511.666656
+        height: 511.666656
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatEatParty_9
+      rect:
+        serializedVersion: 2
+        x: 2044
+        y: 1025.33337
+        width: 511.666656
+        height: 511.666656
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatEatParty_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 514.333374
+        width: 511.666656
+        height: 511.666656
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatEatParty_11
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 514.333374
+        width: 511.666656
+        height: 511.666656
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatEatParty_12
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 514.333374
+        width: 511.666656
+        height: 511.666656
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatEatParty_13
+      rect:
+        serializedVersion: 2
+        x: 1533
+        y: 514.333374
+        width: 511.666656
+        height: 511.666656
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatEatParty_14
+      rect:
+        serializedVersion: 2
+        x: 2044
+        y: 514.333374
+        width: 511.666656
+        height: 511.666656
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatEatParty_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3.33334351
+        width: 511.666656
+        height: 511.666656
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatEatParty_16
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 3.33334351
+        width: 511.666656
+        height: 511.666656
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatEatParty_17
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 3.33334351
+        width: 511.666656
+        height: 511.666656
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatEatParty_18
+      rect:
+        serializedVersion: 2
+        x: 1533
+        y: 3.33334351
+        width: 511.666656
+        height: 511.666656
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatEatParty_19
+      rect:
+        serializedVersion: 2
+        x: 2044
+        y: 3.33334351
+        width: 511.666656
+        height: 511.666656
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 

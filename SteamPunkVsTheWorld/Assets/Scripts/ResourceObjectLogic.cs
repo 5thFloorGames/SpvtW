@@ -9,7 +9,6 @@ public class ResourceObjectLogic : MonoBehaviour {
     private bool available = true;
     private bool spawning = true;
     private bool absorbtionStarted = false;
-    private bool suicideActivated = false;
     private float realSize;
     private float lifeTime;
     private float spawnTime;
@@ -42,7 +41,7 @@ public class ResourceObjectLogic : MonoBehaviour {
         if (globalResource) {
             landingPos = new Vector3(Random.Range(0.0f, 8.0f),
                                 Random.Range(-4.0f, 0.0f), -1.0f);
-            lifeTime = 12f;
+            lifeTime = 15f;
         }
 
 	}
@@ -61,7 +60,7 @@ public class ResourceObjectLogic : MonoBehaviour {
 	}
 
 	void OnMouseDown(){
-        if (available && !suicideActivated) {
+        if (available) {
             emit(20);
             available = false;
             clickTime = Time.time;
@@ -147,7 +146,6 @@ public class ResourceObjectLogic : MonoBehaviour {
     void selfDestructionCheck() {
         if (Time.time - spawnTime > lifeTime) {
             fadeAndSuicide();
-            suicideActivated = true;
         }
     }
 
