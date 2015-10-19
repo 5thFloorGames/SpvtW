@@ -5,11 +5,11 @@ using System.Collections.Generic;
 public class SpawnDirector : MonoBehaviour {
 
 	List<SpawnScript> spawners = new List<SpawnScript>();
-	private int[] spawnAmounts = {1,1,1,2,2,2,3,3,3,0,10};
-	private int[] spawnAmountsHugeLevel = {1,1,1,2,2,2,3,3,3,0,10,4,4,5,5,5,6,6,6,7,0,17};
+	private List<int[]> levelSpawns = new List<int[]>();
 	private Queue<int> spawnQueue;
 	private int spawnIndex = 0;
 	private bool waveDone = false;
+	private int[] spawnList;
 	public LightSweepScript lightSweeper;
 
 	// Use this for initialization
@@ -18,7 +18,13 @@ public class SpawnDirector : MonoBehaviour {
 			spawners.Add(s);
 		}
 		//spawnAmounts = spawnAmountsHugeLevel;
+		int[] spawnAmounts = {1,1,1,2,2,2,3,3,3,0,10};
+		int[] spawnAmountsHugeLevel = {1,1,1,2,2,2,3,3,3,0,10,4,4,5,5,5,6,6,6,7,0,17};
+		levelSpawns.Add (spawnAmounts);
+		levelSpawns.Add (spawnAmountsHugeLevel);
 
+		spawnList = levelSpawns [GameState.level];
+			
 		InvokeRepeating("nextSpawn", 0, 17);
 		setSpawnQueue (countSpawns());
 
@@ -32,12 +38,12 @@ public class SpawnDirector : MonoBehaviour {
 	}
 
 	void nextSpawn(){
-		if (spawnIndex == spawnAmounts.Length) {
+		if (spawnIndex == spawnList.Length) {
 			print ("stopping");
 			Invoke("stopSpawning",15);
 			waveDone = true;
 		} else {
-			Spawn (spawnAmounts[spawnIndex]);
+			Spawn (spawnList[spawnIndex]);
 			spawnIndex++;
 		}
 	}
@@ -60,8 +66,8 @@ public class SpawnDirector : MonoBehaviour {
 
 	int countSpawns(){
 		int amount = 0;
-		for (int i = 0; i < spawnAmounts.Length; i++) {
-			amount += spawnAmounts[i];
+		for (int i = 0; i < spawnList.Length; i++) {
+			amount += spawnList[i];
 		}
 		return amount;
 	}

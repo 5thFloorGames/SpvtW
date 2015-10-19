@@ -85,7 +85,7 @@ public class GameLogic : MonoBehaviour {
 		enemies.Remove (enemy);
 		updateShooters();
 		if (enemies.Count == 0 && director.noMoreEnemies()) {
-			youWon.Enable();
+			LevelWon();
 		}
 	}
 	
@@ -111,5 +111,10 @@ public class GameLogic : MonoBehaviour {
 			}
 		}
 		return false;
+	}
+
+	private void LevelWon(){
+		GameState.levelUp ();
+		youWon.Enable();
 	}
 }
