@@ -4,7 +4,6 @@ using System.Collections;
 public class ProducerResourceGeneration : MonoBehaviour {
 
 	public GameObject resource;
-	public AudioSource energyProductionSound;
 	
 	// Use this for initialization
 	void Start () {
@@ -18,7 +17,6 @@ public class ProducerResourceGeneration : MonoBehaviour {
 	
 	void Produce() {
 		GameObject spawned = (GameObject)Instantiate (resource, transform.position + new Vector3(0f,0f,-1f), Quaternion.identity);
-		energyProductionSound.PlayOneShot (energyProductionSound.clip);
 		ResourceObjectLogic crf = spawned.GetComponent<ResourceObjectLogic>();
         crf.globalResource = false;
 	}
