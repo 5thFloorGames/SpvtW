@@ -9,14 +9,12 @@ public class ResourceUIUpdater : MonoBehaviour {
     private int previousResources;
     public int maxSize = 400;
 
-	// Use this for initialization
 	void Start () {
         previousResources = 99;
 		resourceTexts = gameObject.GetComponentsInChildren<Text>();
         resourceCloud = transform.FindChild("ResourceCloud").gameObject;
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
         int resources = ResourceManager.getResources();
         if (resources != previousResources) {

@@ -6,14 +6,12 @@ public class SpawnScript : MonoBehaviour {
 	private GameObject cat;
 	public int orderInLayer;
 	private GameLogic logic;
-
-	// Use this for initialization
+	
 	void Start () {
 		logic = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameLogic>();
 		cat = (GameObject) Resources.Load("Cat");
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		
 	}

@@ -11,15 +11,19 @@ public class CatMove : MonoBehaviour {
 	private Animator animator;
 	private GameObject eating;
 	private int currentHealth;
+	private GameObject sprite;
+	private bool dying;
 
 	void Awake() {
 		animator = gameObject.GetComponentInChildren<Animator>();
+		dying = false;
 	}
 
 	void Start () {
+		sprite = (GameObject)transform.FindChild("Sprite").gameObject;
 		if (hasHat) {
 			animator.SetBool("HasHat", true);
-			transform.FindChild("Sprite").Translate(new Vector3(0.11f,0.16f,0));
+			sprite.transform.Translate(new Vector3(0.11f,0.16f,0));
 		}
 		currentHealth = maxHealth;
 		rigid = gameObject.GetComponent<Rigidbody2D>();
@@ -27,13 +31,14 @@ public class CatMove : MonoBehaviour {
 	}
 
 	void Update () {
+		fadeAndSuicideIfDying ();
 	}
 
 	void Damaged(){
 		currentHealth--;
 
 		if ((currentHealth <= maxHealth/2) && hasHat) {
-			transform.FindChild("Sprite").Translate(new Vector3(-0.11f,-0.16f,0));
+			sprite.transform.Translate(new Vector3(-0.11f,-0.16f,0));
 			hasHat = false;
 			animator.SetBool("HasHat", false);
 		}
@@ -41,7 +46,13 @@ public class CatMove : MonoBehaviour {
 		if (currentHealth == 0) {
 			GameObject.FindGameObjectWithTag("GameController").GetComponent<GameLogic>().unregisterEnemy(gameObject);
 			animator.SetTrigger("Dying");
-			Destroy(gameObject);
+			rigid.velocity = Vector2.zero;
+			Destroy (GetComponent<Rigidbody2D>());
+			Destroy (gameObject.GetComponent<BoxCollider2D>());
+			if (eating) {
+				CancelInvoke();
+			}
+			dying = true;
 		}
 	}
 
@@ -51,6 +62,21 @@ public class CatMove : MonoBehaviour {
 			eating = other.gameObject;
 			StopMovingStartEating();
 		}
+	}
+
+	void fadeAndSuicideIfDying() {
+		if (dying) {
+			iTween.ColorTo(sprite.gameObject, iTween.Hash(
+				"a", 0.0f,
+				"delay", 4.0f,
+				"time", 2.0f,
+				"oncomplete", "suicide", 
+				"oncompletetarget", gameObject));
+		}
+	}
+
+	void suicide() {
+		Destroy(gameObject);
 	}
 
 	public void StopMovingStartEating(){
