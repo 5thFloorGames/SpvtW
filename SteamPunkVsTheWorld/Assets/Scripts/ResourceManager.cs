@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 public class ResourceManager : MonoBehaviour {
 
-	private static int resources = 20;
+	private static int startingResources = 20;
+	private static int resources = startingResources;
 	private static Dictionary<Plant,int> plantPrices = new Dictionary<Plant,int>();
-
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +21,10 @@ public class ResourceManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	public static void reset(){
+		resources = startingResources;
 	}
 
 	public static void addResources(int amount){

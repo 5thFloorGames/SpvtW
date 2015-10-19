@@ -10,5 +10,6 @@ WorkLog Lassi
 13.10. Coding spawn logic and rewiring gameplay stuff - 2.5h
 15.10. Preview plants and fixing bugs - 5h
 16.10. Plants only shoot when there's something to shoot - 5h
+18.10. Staggered spawning and rigging sounds - 1h
 
-Total: 31.5 h
+Total: 32.5 h

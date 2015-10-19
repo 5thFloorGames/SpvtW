@@ -28,6 +28,7 @@ public class GameLogic : MonoBehaviour {
 		previews.Add ((GameObject)Instantiate(Resources.Load("ShooterPreview"),previewLocation, Quaternion.identity));
 		previews.Add ((GameObject)Instantiate(Resources.Load("BlockerPreview"),previewLocation, Quaternion.identity));
 		director = gameObject.GetComponent<SpawnDirector> ();
+		ResourceManager.reset ();
 	}
 	
 	// Update is called once per frame

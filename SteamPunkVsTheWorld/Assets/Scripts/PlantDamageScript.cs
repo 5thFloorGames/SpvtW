@@ -21,6 +21,7 @@ public class PlantDamageScript : MonoBehaviour {
 			if(tag.Equals("Shooter")){
 				GameObject.FindGameObjectWithTag("GameController").GetComponent<GameLogic>().unregisterShooter(gameObject);
 			}
+			transform.parent.SendMessage("Free");
 			Destroy(gameObject);
 		}
 	}
