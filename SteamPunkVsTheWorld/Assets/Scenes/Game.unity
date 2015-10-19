@@ -1055,6 +1055,10 @@ Prefab:
       propertyPath: youWon
       value: 
       objectReference: {fileID: 1281111019}
+    - target: {fileID: 11461730, guid: c21763f0444f3af43be446c0786a6d3a, type: 2}
+      propertyPath: lightSweeper
+      value: 
+      objectReference: {fileID: 1039473488}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c21763f0444f3af43be446c0786a6d3a, type: 2}
   m_IsPrefabParent: 0
@@ -2879,6 +2883,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1039473486}
   - 108: {fileID: 1039473485}
+  - 50: {fileID: 1039473487}
+  - 114: {fileID: 1039473488}
   m_Layer: 0
   m_Name: LightEffects
   m_TagString: Untagged
@@ -2925,11 +2931,38 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1039473484}
   m_LocalRotation: {x: -.632882059, y: 0, z: 0, w: .774248242}
-  m_LocalPosition: {x: 7.30999994, y: -10, z: -2}
+  m_LocalPosition: {x: 10, y: -10, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 14
+--- !u!50 &1039473487
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1039473484}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &1039473488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1039473484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb3a6c7d9b2f84e068b26cc18c2547e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1043663297 stripped
 Transform:
   m_PrefabParentObject: {fileID: 457500, guid: d5cd23579c47e43a3af3ba4d359df09d, type: 2}

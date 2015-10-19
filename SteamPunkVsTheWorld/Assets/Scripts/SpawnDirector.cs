@@ -6,17 +6,24 @@ public class SpawnDirector : MonoBehaviour {
 
 	List<SpawnScript> spawners = new List<SpawnScript>();
 	private int[] spawnAmounts = {1,1,1,2,2,2,3,3,3,0,10};
+	private int[] spawnAmountsHugeLevel = {1,1,1,2,2,2,3,3,3,0,10,4,4,5,5,5,6,6,6,7,0,17};
 	private Queue<int> spawnQueue;
 	private int spawnIndex = 0;
 	private bool waveDone = false;
+	public LightSweepScript lightSweeper;
 
 	// Use this for initialization
 	void Start () {
 		foreach(SpawnScript s in GameObject.FindObjectsOfType<SpawnScript> ()){
 			spawners.Add(s);
 		}
-		InvokeRepeating("nextSpawn", 0, 20);
-		setSpawnQueue (28);
+		//spawnAmounts = spawnAmountsHugeLevel;
+
+		InvokeRepeating("nextSpawn", 0, 17);
+		setSpawnQueue (countSpawns());
+
+
+		print ("Spawnqueue: " + spawnQueue.Count);
 	}
 	
 	// Update is called once per frame
@@ -36,16 +43,25 @@ public class SpawnDirector : MonoBehaviour {
 	}
 
 	void Spawn(int amount){
-		float cumulate = 0f;
+		float cumulate = 1f;
+		lightSweeper.Sweep ();
 		for (int i = 0; i < amount; i++) {
-			cumulate += Random.Range(0.2f, 1.5f);
 			Invoke("DelayedSpawn", cumulate);
+			cumulate += Random.Range(0.2f, 1.5f);
 		}
 	}
 
 	void DelayedSpawn(){
-		print (spawnQueue.Count);
+		//print (spawnQueue.Count);
 		spawners[spawnQueue.Dequeue()].Spawn();
+	}
+
+	int countSpawns(){
+		int amount = 0;
+		for (int i = 0; i < spawnAmounts.Length; i++) {
+			amount += spawnAmounts[i];
+		}
+		return amount;
 	}
 
 	void setSpawnQueue(int length){
