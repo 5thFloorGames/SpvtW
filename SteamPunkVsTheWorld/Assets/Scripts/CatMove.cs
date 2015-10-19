@@ -35,7 +35,8 @@ public class CatMove : MonoBehaviour {
 				animator.SetTrigger("LightUp");
 				animator.runtimeAnimatorController = Resources.Load("CatWalking") as RuntimeAnimatorController;
 			}
-
+			gameObject.GetComponentInChildren<Transform>().Translate(new Vector3(-0.11f,-0.16f,0));
+			hasHat = false;
 		}
 
 		if (currentHealth == 0) {
