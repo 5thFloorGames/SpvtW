@@ -753,7 +753,7 @@ SpriteRenderer:
   m_SortingLayerID: -1123068393
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: acbf135690132c947960d88e9e0ab60d, type: 3}
-  m_Color: {r: .454901963, g: .509803951, b: .647058845, a: .956862748}
+  m_Color: {r: .668252587, g: .735231459, b: .757352948, a: .956862748}
 --- !u!222 &117080398
 CanvasRenderer:
   m_ObjectHideFlags: 0
