@@ -100,7 +100,7 @@ public class ResourceObjectLogic : MonoBehaviour {
         if (globalResource) {
             timeToGoToPosition = 10.0f;
             delay = 0.0f;
-            easeType = "easeInOutCubic";
+            easeType = "easeOutQuad";
             oncomplete = "emit10";
         } else {
             timeToGoToPosition = 1.0f;
@@ -112,7 +112,8 @@ public class ResourceObjectLogic : MonoBehaviour {
             movement.y = movement.y - 1.0f;
         }
         iTween.MoveBy(gameObject, iTween.Hash("amount", movement, "time", timeToGoToPosition / 2, "delay", delay / 2, "easeType", easeType, "oncomplete", oncomplete));
-	}
+    
+}
 
     void emit(int amount) {
         gameObject.GetComponent<ParticleSystem>().Emit(amount);

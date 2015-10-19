@@ -23,8 +23,8 @@ public class CatMove : MonoBehaviour {
 		sprite = (GameObject)transform.FindChild("Sprite").gameObject;
 		if (hasHat) {
 			animator.SetBool("HasHat", true);
-			sprite.transform.Translate(new Vector3(0.11f,0.16f,0));
-		}
+			sprite.transform.Translate(new Vector3(0.11f, 0.16f, 0));
+        }
 		currentHealth = maxHealth;
 		rigid = gameObject.GetComponent<Rigidbody2D>();
 		rigid.MovePosition(transform.position + (Vector3.left / 500f));
@@ -39,7 +39,10 @@ public class CatMove : MonoBehaviour {
 
 		if ((currentHealth <= maxHealth/2) && hasHat) {
 			sprite.transform.Translate(new Vector3(-0.11f,-0.16f,0));
-			hasHat = false;
+            GameObject hat = (GameObject)Instantiate(Resources.Load("PartyHat"));
+            hat.transform.position = gameObject.transform.position;
+            hat.GetComponentInChildren<SpriteRenderer>().sortingOrder = sprite.GetComponent<SpriteRenderer>().sortingOrder;
+            hasHat = false;
 			animator.SetBool("HasHat", false);
 		}
 

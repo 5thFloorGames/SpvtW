@@ -131,7 +131,7 @@ ParticleSystem:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 165588}
-  lengthInSec: .5
+  lengthInSec: .100000001
   startDelay: 0
   speed: 1
   randomSeed: 0
@@ -299,7 +299,7 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 216376992
+        rgba: 401644434
       minMaxState: 0
     startSize:
       scalar: .5
@@ -420,7 +420,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
       minMaxState: 0
-    cnt0: 10
+    cnt0: 2
     cnt1: 30
     cnt2: 30
     cnt3: 30
@@ -1239,7 +1239,7 @@ SpriteRenderer:
   m_SortingLayerID: -1365935075
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 98fd6cc9218a54848b11dd99be250574, type: 3}
-  m_Color: {r: .957592964, g: .807843149, b: 1, a: .807843149}
+  m_Color: {r: .957592964, g: .807843149, b: 1, a: .158999994}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -1311,6 +1311,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: hitSound
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: InitialModule.startColor.maxColor.rgba
+      value: 401644434
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
