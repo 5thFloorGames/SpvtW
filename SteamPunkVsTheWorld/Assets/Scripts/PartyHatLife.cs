@@ -10,7 +10,6 @@ public class PartyHatLife : MonoBehaviour {
     private float lifeTime;
     private float spawnTime;
 
-    // Use this for initialization
     void Start () {
         sprite = gameObject.GetComponentInChildren<SpriteRenderer>();
         spriteObject = sprite.gameObject;
@@ -32,12 +31,8 @@ public class PartyHatLife : MonoBehaviour {
         iTween.MoveBy(gameObject, iTween.Hash("y", 0.5f, "delay", 0.2f, "easeType", iTween.EaseType.easeOutQuad));
         iTween.RotateBy(spriteObject, iTween.Hash("z", rotateAmount, "delay", 0.3f, "time", 1.4f, "easeType", "easeInSine"));
         iTween.MoveBy(gameObject, iTween.Hash("amount", movement, "delay", 0.7f, "time", 1.0f, "easeType", "easeInSine"));
-
-        //iTween.MoveBy(gameObject, iTween.Hash("y", 1.0f, "time", timeToGoToPosition, "easeType", iTween.EaseType.easeOutQuad));
-        //iTween.MoveBy(gameObject, iTween.Hash("amount", movement, "time", timeToGoToPosition, "delay", timeToGoToPosition, "easeType", "easeInSine"));
     }
 	
-	// Update is called once per frame
 	void Update () {
         selfDestructionCheck();
     }
