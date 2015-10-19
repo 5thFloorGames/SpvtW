@@ -24,7 +24,7 @@ public class ShootingScript : MonoBehaviour {
     }
 
     void Shoot() {
-        GameObject tempBullet = (GameObject)Instantiate(bullet, transform.position + Vector3.right, Quaternion.identity);
+        GameObject tempBullet = (GameObject)Instantiate(bullet, (transform.position + Vector3.right/2), Quaternion.identity);
         tempBullet.GetComponentInChildren<SpriteRenderer>().sortingOrder = orderInLayer;
         shootingvfx.Emit(1);
         shootingsfx.Play();
