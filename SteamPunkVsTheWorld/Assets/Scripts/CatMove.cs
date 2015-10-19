@@ -6,7 +6,7 @@ public class CatMove : MonoBehaviour {
 	
 	private Rigidbody2D rigid;
 	private Animator animator;
-	private PlantDamageScript eating; 
+	private GameObject eating; 
 
 	void Awake() {
 		animator = gameObject.GetComponentInChildren<Animator>();
@@ -25,7 +25,7 @@ public class CatMove : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if ((other.gameObject.tag.Equals ("Plant") || other.gameObject.tag.Equals ("Shooter"))
 		    && other.gameObject.transform.position.x < gameObject.transform.position.x) {
-			eating = other.gameObject.GetComponent<PlantDamageScript>();
+			eating = other.gameObject;
 			Stop ();
 		}
 	}
@@ -38,7 +38,7 @@ public class CatMove : MonoBehaviour {
 
 	public void Eat(){
 		if (eating != null) {
-			eating.Damaged();
+			eating.SendMessage("Damaged");
 		} else {
 			CancelInvoke();
 			Go ();
