@@ -6,7 +6,7 @@ public class CatMove : MonoBehaviour {
 
     public int maxHealth;
     public bool hasHat;
-
+	public bool runner;
     private Rigidbody2D rigid;
     private Animator animator;
     private GameObject eating;
@@ -15,6 +15,7 @@ public class CatMove : MonoBehaviour {
     private bool dying;
     private AudioSource[] audios;
     private AudioSource eatSound;
+	private Vector3 speed;
 
     void Awake() {
         animator = gameObject.GetComponentInChildren<Animator>();
@@ -30,7 +31,12 @@ public class CatMove : MonoBehaviour {
         }
         currentHealth = maxHealth;
         rigid = gameObject.GetComponent<Rigidbody2D>();
-        rigid.MovePosition(transform.position + (Vector3.left / 500f));
+		if (runner) {
+			speed = transform.position + (Vector3.left / 250f);
+		} else {
+			speed = transform.position + (Vector3.left / 500f);
+		}
+		rigid.MovePosition (speed);
     }
 
     void Update() {
@@ -117,7 +123,7 @@ public class CatMove : MonoBehaviour {
     }
 
     public void Go() {
-		rigid.MovePosition(transform.position + (Vector3.left / 500f));
+		rigid.MovePosition (speed);
 		animator.SetBool("Eating", false);
 		if (eatSound != null) {
 			eatSound.Stop();
