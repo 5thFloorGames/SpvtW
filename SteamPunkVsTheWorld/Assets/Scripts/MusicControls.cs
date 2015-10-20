@@ -5,8 +5,7 @@ public class MusicControls : MonoBehaviour {
 	
     public AudioClip music;
     private AudioSource source;
-
-    // Use this for initialization
+	
     void Awake() {
 		DontDestroyOnLoad(transform.gameObject);
         source = GetComponent<AudioSource>();
