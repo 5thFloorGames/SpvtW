@@ -123,7 +123,9 @@ public class GameLogic : MonoBehaviour {
 
 	public void TurnOffButtons(){
 		foreach(Button b in buttons){
-			b.interactable = false;
+			if(b != null) {
+				b.interactable = false;
+			}
 		}
 	}
 }
