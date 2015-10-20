@@ -35,7 +35,8 @@ public class MenuLogic : MonoBehaviour {
 	}
 
     public void loadScene(int level) {
-		StartCoroutine(playChoosingSoundAndLoadGame(level));
+		musicObject.GetComponent<MusicControls> ().playMenuSound (true);
+		Application.LoadLevel(level);
     }
 
     public void exitGame() {
@@ -47,10 +48,5 @@ public class MenuLogic : MonoBehaviour {
 		yield return new WaitForSeconds(0.5f);
 		Application.Quit();
 	}
-
-	IEnumerator playChoosingSoundAndLoadGame(int level) {
-		musicObject.GetComponent<MusicControls> ().playMenuSound (true);
-		yield return new WaitForSeconds(0.5f);
-		Application.LoadLevel(level);
-	}
+	
 }
