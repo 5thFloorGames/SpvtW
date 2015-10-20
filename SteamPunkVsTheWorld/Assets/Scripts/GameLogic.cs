@@ -14,6 +14,7 @@ public class GameLogic : MonoBehaviour {
 	private SpawnDirector director;
 	public LevelEnd nextLevel;
 	public LevelEnd gameWon;
+	private AudioSource clickfx;
 
 	// Use this for initialization
 	void Start () {
@@ -33,6 +34,7 @@ public class GameLogic : MonoBehaviour {
 		previews.Add ((GameObject)Instantiate(Resources.Load("EaterPreview"),previewLocation, Quaternion.identity));
 		director = gameObject.GetComponent<SpawnDirector> ();
 		ResourceManager.reset ();
+		clickfx = gameObject.GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -43,16 +45,15 @@ public class GameLogic : MonoBehaviour {
         if (Input.GetMouseButtonDown(1)) {
             if (active != Plant.None) {
                 getPreview().transform.position = new Vector3(-4f, -4f, 0f);
-                ChangePlant("None");
+                ChangePlant(Plant.None);
             }
         }
     }
 
-	public void ChangePlant (string plantName){
-		active = (Plant) System.Enum.Parse( typeof( Plant ), plantName );
-	}
-
 	public void ChangePlant (Plant plant){
+		if (plant != Plant.None) {
+			clickfx.PlayOneShot(clickfx.clip);
+		}
 		active = plant;
 	}
 
