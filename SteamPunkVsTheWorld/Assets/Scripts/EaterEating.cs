@@ -16,27 +16,30 @@ public class EaterEating : MonoBehaviour {
 		}
 	}
 
-	// Use this for initialization
 	void Start () {
 		animator = transform.parent.gameObject.GetComponentInChildren<Animator>();
 		logic = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameLogic>();
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
+
 	}
 
 	void Digested(){
-		animator.SetBool("Eating", false);
-		digesting = false;
+		StartCoroutine(timeToSwallow());
 	}
 
 	IEnumerator timeToBite(GameObject other) {
 		animator.SetTrigger("Bite");
-		animator.SetBool("Eating", true);
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(1.417f);
 		logic.unregisterEnemy(other);
 		Destroy(other);
+	}
+
+	IEnumerator timeToSwallow() {
+		animator.SetTrigger("Swallow");
+		yield return new WaitForSeconds(1);
+		digesting = false;
 	}
 
 }
