@@ -4,7 +4,7 @@ using System.Collections;
 public class GameState : MonoBehaviour {
 
 	public static int level = 0;
-	private static int maxLevel = 1;
+	public static int maxLevel = 2;
 
 	// Use this for initialization
 	void Start () {

@@ -12,7 +12,7 @@ public class EaterEating : MonoBehaviour {
 			print ("called");
 			digesting = true;
 			StartCoroutine(timeToBite(other.gameObject));
-			Invoke("Digested", 4);
+			Invoke("Digested", 40);
 		}
 	}
 
