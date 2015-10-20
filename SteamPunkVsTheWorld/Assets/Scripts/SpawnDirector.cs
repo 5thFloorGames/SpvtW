@@ -11,6 +11,7 @@ public class SpawnDirector : MonoBehaviour {
 	private bool waveDone = false;
 	private int[] spawnList;
 	public LightSweepScript lightSweeper;
+	public LevelProgressionUIUpdater levelprogress; 
 
 	// Use this for initialization
 	void Start () {
@@ -37,7 +38,7 @@ public class SpawnDirector : MonoBehaviour {
 	}
 
 	void nextSpawn(){
-		print ("Percent done: " + percentDone());
+		levelprogress.updateProgressBar(percentDone());
 		if (spawnIndex == spawnList.Length) {
 			Invoke("stopSpawning",15);
 			waveDone = true;
@@ -114,7 +115,7 @@ public class SpawnDirector : MonoBehaviour {
 		return waveDone;
 	}
 
-	private int percentDone(){
-		return (int)((float)(spawnIndex / (float)spawnList.Length) * 100);
+	private float percentDone(){
+		return (float)(spawnIndex / (float)spawnList.Length);
 	}
 }

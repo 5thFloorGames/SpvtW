@@ -18,8 +18,7 @@ public class ButtonHandling : MonoBehaviour, IPointerDownHandler {
     private List<Image> imagechildren;
     private Text priceText;
     private Image cooldownVisual;
-
-    // Use this for initialization
+	
     void Start () {
 		button = gameObject.GetComponent<Button> ();
 		logic = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameLogic>();
@@ -36,8 +35,7 @@ public class ButtonHandling : MonoBehaviour, IPointerDownHandler {
             logic.ChangePlant(plant);
         }
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		if (ResourceManager.getResources () < ResourceManager.getPlantPrice(plant) || timeStamp > Time.time) {
 			button.interactable = false;

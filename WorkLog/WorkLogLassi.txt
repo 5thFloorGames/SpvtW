@@ -11,6 +11,7 @@ WorkLog Lassi
 15.10. Preview plants and fixing bugs - 5h
 16.10. Plants only shoot when there's something to shoot - 5h
 18.10. Staggered spawning and rigging sounds - 1h
-19.10. Fixing a million bugs. Rigging sounds, animations and stuff - 7h
+19.10. Fixing a million bugs. Rigging sounds, animations and stuff - 8h
+20.10. Polishing for release - 7h
 
-Total: 39.5 h
+Total: 47.5 h
