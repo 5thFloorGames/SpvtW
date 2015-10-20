@@ -24,7 +24,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 462240}
-  - 114: {fileID: 11486202}
   m_Layer: 9
   m_Name: DoubleShooterPreview
   m_TagString: Shooter
@@ -57,19 +56,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 462240}
   m_RootOrder: 0
---- !u!114 &11486202
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 108298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39a3b1f7efa9d4ff58f938daccaf662a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 152312, guid: 716562ef41b2d483eae46ea0beba88cf, type: 2}
-  orderInLayer: 0
 --- !u!212 &21228496
 SpriteRenderer:
   m_ObjectHideFlags: 1
