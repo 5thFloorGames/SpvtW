@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class ResourceManager : MonoBehaviour {
 
-	private static int startingResources = 20;
+	private static int startingResources = 2;
 	private static int resources = startingResources;
 	private static Dictionary<Plant,int> plantPrices = new Dictionary<Plant,int>();
 

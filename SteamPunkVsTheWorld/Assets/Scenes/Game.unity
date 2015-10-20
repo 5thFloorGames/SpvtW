@@ -1627,6 +1627,14 @@ Prefab:
       propertyPath: buttons.Array.data[5]
       value: 
       objectReference: {fileID: 1032437067}
+    - target: {fileID: 11452600, guid: c21763f0444f3af43be446c0786a6d3a, type: 2}
+      propertyPath: doubleShooterUnlock
+      value: 
+      objectReference: {fileID: 1362379100}
+    - target: {fileID: 11452600, guid: c21763f0444f3af43be446c0786a6d3a, type: 2}
+      propertyPath: eaterUnlock
+      value: 
+      objectReference: {fileID: 1281111019}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c21763f0444f3af43be446c0786a6d3a, type: 2}
   m_IsPrefabParent: 0
@@ -7606,7 +7614,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 176570, guid: 86cd5c993b6403b4f96ece981d29b6d2, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 86cd5c993b6403b4f96ece981d29b6d2, type: 2}
