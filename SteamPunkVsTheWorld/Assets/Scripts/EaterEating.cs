@@ -19,7 +19,7 @@ public class EaterEating : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		animator = transform.parent.gameObject.GetComponentInChildren<Animator>();
-		GameObject.FindGameObjectWithTag("GameController").GetComponent<GameLogic>();
+		logic = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameLogic>();
 	}
 	
 	// Update is called once per frame
