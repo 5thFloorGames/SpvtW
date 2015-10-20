@@ -12,7 +12,8 @@ public class GameLogic : MonoBehaviour {
 	private List<GameObject> shooters = new List<GameObject>();
 	private List<GameObject> enemies = new List<GameObject>();
 	private SpawnDirector director;
-	public LevelEnd youWon;
+	public LevelEnd nextLevel;
+	public LevelEnd gameWon;
 
 	// Use this for initialization
 	void Start () {
@@ -128,13 +129,19 @@ public class GameLogic : MonoBehaviour {
 	private void LevelWon(){
 		GameState.levelUp ();
 		TurnOffButtons ();
-		youWon.Enable();
+		if (GameState.gameWon()) {
+			gameWon.Enable ();
+		} else {
+			nextLevel.Enable ();
+		}
 	}
 
 	public void TurnOffButtons(){
-		foreach(Button b in buttons){
-			if(b != null) {
-				b.interactable = false;
+		print ("buttons turning offf");
+		for (int i = 1; i < buttons.Count; i++) {
+			Button b = buttons[i];
+			if(b != null){
+				b.gameObject.SetActive(false);
 			}
 		}
 	}
