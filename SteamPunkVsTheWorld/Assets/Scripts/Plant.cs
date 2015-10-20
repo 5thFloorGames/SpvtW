@@ -1,4 +1,4 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum Plant {None, Producer, Shooter, Blocker};
+public enum Plant {None, Producer, Shooter, Blocker, Eater};
