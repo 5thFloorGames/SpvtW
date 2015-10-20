@@ -18,6 +18,10 @@ public class LevelEnd : MonoBehaviour {
 	}
 
 	public void Restart(){
-		Application.LoadLevel(1);
+		if (GameState.level == GameState.maxLevel) {
+			Application.LoadLevel (0);
+		} else {
+			Application.LoadLevel (1);
+		}
 	}
 }
