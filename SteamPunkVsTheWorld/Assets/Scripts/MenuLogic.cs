@@ -31,12 +31,13 @@ public class MenuLogic : MonoBehaviour {
     }
 
     public void exitGame() {
-		musicObject.GetComponent<MusicControls> ().playMenuSound (false);
-        Application.Quit();
+		StartCoroutine(playExitSoundAndExit());
+        
     }
 
 	IEnumerator playExitSoundAndExit() {
 		musicObject.GetComponent<MusicControls> ().playMenuSound (false);
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(0.5f);
+		Application.Quit();
 	}
 }
