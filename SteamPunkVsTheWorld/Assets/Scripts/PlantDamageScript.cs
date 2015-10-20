@@ -4,10 +4,15 @@ using System.Collections;
 public class PlantDamageScript : MonoBehaviour {
 
 	public int health = 4;
-	
+	public Plant plantType;
+	private Animator animator;
+	private bool broken = false;
+
 	// Use this for initialization
 	void Start () {
-		
+		if (plantType == Plant.Blocker) {
+			animator = gameObject.GetComponentInChildren<Animator>();
+		}
 	}
 	
 	// Update is called once per frame
@@ -17,6 +22,10 @@ public class PlantDamageScript : MonoBehaviour {
 	
 	public void Damaged(){
 		health--;
+		if (health<40 && !broken && plantType == Plant.Blocker) {
+			animator.runtimeAnimatorController = Resources.Load("AnanasBreaking") as RuntimeAnimatorController;
+			broken = true;
+		}
 		if (health == 0) {
 			if(tag.Equals("Shooter")){
 				GameObject.FindGameObjectWithTag("GameController").GetComponent<GameLogic>().unregisterShooter(gameObject);
@@ -24,5 +33,5 @@ public class PlantDamageScript : MonoBehaviour {
 			transform.parent.SendMessage("Free");
 			Destroy(gameObject);
 		}
-	}
+	}	
 }

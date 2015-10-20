@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 6
+  plantType: 1
 --- !u!212 &21268938
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -303,6 +304,10 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 6dc00b295d92e9f4692631d52d20f794, type: 2}
+    - target: {fileID: 0}
+      propertyPath: plantType
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 118260}
