@@ -20,4 +20,8 @@ public class GameState : MonoBehaviour {
 			level = maxLevel;
 		}
 	}
+
+	public static bool gameWon () {
+		return level == maxLevel;
+	}
 }
