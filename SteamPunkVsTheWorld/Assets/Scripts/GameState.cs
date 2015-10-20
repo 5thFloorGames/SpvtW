@@ -3,8 +3,8 @@ using System.Collections;
 
 public class GameState : MonoBehaviour {
 
-	public static int level = 0;
-	public static int maxLevel = 2;
+	public static int level = 2;
+	public static int maxLevel = 3;
 	
 	void Start () {
 	

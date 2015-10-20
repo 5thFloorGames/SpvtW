@@ -6,7 +6,7 @@ public class CatMove : MonoBehaviour {
 
     public int maxHealth;
     public bool hasHat;
-	public bool runner;
+	public bool isRunner;
     private Rigidbody2D rigid;
     private Animator animator;
     private GameObject eating;
@@ -31,7 +31,7 @@ public class CatMove : MonoBehaviour {
         }
         currentHealth = maxHealth;
         rigid = gameObject.GetComponent<Rigidbody2D>();
-		if (runner) {
+		if (isRunner) {
 			speed = transform.position + (Vector3.left / 250f);
 		} else {
 			speed = transform.position + (Vector3.left / 500f);
