@@ -28,7 +28,6 @@ public class SpawnDirector : MonoBehaviour {
 		InvokeRepeating("nextSpawn", 17, 17);
 		setSpawnQueue (countSpawns());
 
-
 		//print ("Spawnqueue: " + spawnQueue.Count);
 	}
 	
@@ -38,6 +37,7 @@ public class SpawnDirector : MonoBehaviour {
 	}
 
 	void nextSpawn(){
+		print ("Percent done: " + percentDone());
 		if (spawnIndex == spawnList.Length) {
 			Invoke("stopSpawning",15);
 			waveDone = true;
@@ -112,5 +112,9 @@ public class SpawnDirector : MonoBehaviour {
 
 	public bool noMoreEnemies(){
 		return waveDone;
+	}
+
+	private int percentDone(){
+		return (int)((float)(spawnIndex / (float)spawnList.Length) * 100);
 	}
 }
