@@ -15,7 +15,7 @@ public class MusicControls : MonoBehaviour {
         if ((level == 0)) {
             source.Stop();
         }
-        if (level == 1) {
+        if (level == 1 && !source.isPlaying) {
             source.clip = music;
             source.Play();
         }
