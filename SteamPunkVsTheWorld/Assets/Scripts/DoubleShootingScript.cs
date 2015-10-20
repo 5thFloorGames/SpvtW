@@ -23,17 +23,21 @@ public class DoubleShootingScript : MonoBehaviour {
 		
 	}
 
-	IEnumerator Shoot() {
+	void Shoot() {
+		StartCoroutine (DoubleShoot ());
+	}
+
+	IEnumerator DoubleShoot() {
 		GameObject tempBullet = (GameObject)Instantiate(bullet, (transform.position + Vector3.right/2), Quaternion.identity);
 		tempBullet.GetComponentInChildren<SpriteRenderer>().sortingOrder = orderInLayer;
 		shootingvfx.Emit(1);
 		shootingsfx.Play();
-
+		
 		yield return new WaitForSeconds(0.417f);
-
+		
 		tempBullet = (GameObject)Instantiate(bullet, (transform.position + Vector3.right/2 + Vector3.down/2), Quaternion.identity);
 		tempBullet.GetComponentInChildren<SpriteRenderer>().sortingOrder = orderInLayer;
-
+		
 		shootingvfx.Emit(1);
 		shootingsfx.Play();
 	}
@@ -56,13 +60,13 @@ public class DoubleShootingScript : MonoBehaviour {
 	IEnumerator randomizeIdleAnimationStart() {
 		yield return new WaitForSeconds(Random.Range(0.00f, 0.99f));
 		if (!shooting) {
-			animator.runtimeAnimatorController = Resources.Load("ShooterIdling") as RuntimeAnimatorController;
+			animator.SetBool ("Shooting", false);
 		}
 	}
 	
 	IEnumerator randomizeShootingStart() {
 		yield return new WaitForSeconds(Random.Range(0.00f, 0.99f));
-		InvokeRepeating("Shoot", 0.6f, 1.6f);
+		InvokeRepeating("Shoot", 0.6f, 1.667f);
 		if (animator == null) {
 			animator = gameObject.GetComponentInChildren<Animator>();
 		}
@@ -70,7 +74,7 @@ public class DoubleShootingScript : MonoBehaviour {
 			transform.FindChild("Shootingvfx").GetComponent<ParticleSystem>();
 		}
 		if (shooting) {
-			animator.runtimeAnimatorController = Resources.Load("ShooterShooting") as RuntimeAnimatorController;
+			animator.SetBool("Shooting", true);
 		}
 	}
 	
