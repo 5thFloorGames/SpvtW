@@ -32,7 +32,7 @@ public class ClickToBuild : MonoBehaviour {
 				plantSound.PlayOneShot(plantSound.clip);
 				GameObject thingToPreview = logic.getPreview ();
 				thingToPreview.transform.position = new Vector3(-4f,-4f,0f);
-				logic.ChangePlant("None");
+				logic.ChangePlant(Plant.None);
 			}
 		}
 
