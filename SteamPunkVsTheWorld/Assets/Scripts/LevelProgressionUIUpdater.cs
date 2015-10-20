@@ -10,10 +10,11 @@ public class LevelProgressionUIUpdater : MonoBehaviour {
 	}
 
 	void Update () {
-		
+
 	}
 
-	void updateProgressBar (float progressStatus) {
+	public void updateProgressBar (float progressStatus) {
 		levelProgress.fillAmount = progressStatus;
+		print (progressStatus);
 	}
 }

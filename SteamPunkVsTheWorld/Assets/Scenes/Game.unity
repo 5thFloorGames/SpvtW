@@ -1372,6 +1372,10 @@ Prefab:
       propertyPath: gameWon
       value: 
       objectReference: {fileID: 519010187}
+    - target: {fileID: 11461730, guid: c21763f0444f3af43be446c0786a6d3a, type: 2}
+      propertyPath: levelprogress
+      value: 
+      objectReference: {fileID: 614090482}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c21763f0444f3af43be446c0786a6d3a, type: 2}
   m_IsPrefabParent: 0
