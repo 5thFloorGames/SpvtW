@@ -16,14 +16,11 @@ public class LevelEnd : MonoBehaviour {
 	}
 
 	public void Restart(){
-		if (GameState.level == GameState.maxLevel) {
-			Application.LoadLevel (0);
-		} else {
-			Application.LoadLevel (1);
-		}
+		Application.LoadLevel (1);
 	}
 
 	public void ExitToMenu() {
+		GameState.reset();
 		Application.LoadLevel (0);
 	}
 }

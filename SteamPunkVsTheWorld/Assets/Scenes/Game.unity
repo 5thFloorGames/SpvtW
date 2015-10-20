@@ -1070,7 +1070,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 519010187}
-        m_MethodName: Restart
+        m_MethodName: ExitToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2255,6 +2255,10 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11441486, guid: 86cd5c993b6403b4f96ece981d29b6d2, type: 2}
+      propertyPath: cooldownOnStart
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 86cd5c993b6403b4f96ece981d29b6d2, type: 2}
   m_IsPrefabParent: 0
@@ -3055,7 +3059,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11441486, guid: 86cd5c993b6403b4f96ece981d29b6d2, type: 2}
       propertyPath: cooldownOnStart
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11452182, guid: 86cd5c993b6403b4f96ece981d29b6d2, type: 2}
       propertyPath: m_Sprite
@@ -7762,6 +7766,10 @@ Prefab:
     - target: {fileID: 11477462, guid: 86cd5c993b6403b4f96ece981d29b6d2, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11441486, guid: 86cd5c993b6403b4f96ece981d29b6d2, type: 2}
+      propertyPath: cooldownOnStart
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 86cd5c993b6403b4f96ece981d29b6d2, type: 2}

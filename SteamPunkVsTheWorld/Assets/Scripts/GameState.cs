@@ -24,4 +24,8 @@ public class GameState : MonoBehaviour {
 	public static bool gameWon () {
 		return level == maxLevel;
 	}
+
+	public static void reset(){
+		level = 0;
+	}
 }
