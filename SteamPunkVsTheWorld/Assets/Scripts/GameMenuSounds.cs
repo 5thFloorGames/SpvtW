@@ -13,15 +13,15 @@ public class GameMenuSounds : MonoBehaviour {
 	}
 
 	public void playHoverSound() {
-		audios [0].Play ();
+		audios[0].PlayOneShot(audios[0].clip);
 	}
 
 	public void playChoosingSound() {
-		audios [1].Play ();
+		audios[1].PlayOneShot(audios[1].clip);
 	}
 
 	public void playExitSound() {
-		audios [2].Play ();
+		audios[2].PlayOneShot(audios[2].clip);
 	}
 
 }

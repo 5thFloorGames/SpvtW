@@ -9,16 +9,19 @@ public class DoubleShootingScript : MonoBehaviour {
 	private Animator animator;
 	private AudioSource shootingsfx;
 	private ParticleSystem shootingvfx;
-	
-	// Use this for initialization
+	private ParticleSystem shootingvfxSmall;
+
 	void Start() {
 		orderInLayer = gameObject.GetComponentInChildren<SpriteRenderer>().sortingOrder + 2;
 		animator = gameObject.GetComponentInChildren<Animator>();
 		shootingsfx = gameObject.GetComponent<AudioSource>();
+
+		shootingvfx = transform.FindChild("Shootingvfx").GetComponent<ParticleSystem>();
+		shootingvfxSmall = transform.FindChild("ShootingvfxSmall").GetComponent<ParticleSystem>();
+
 		shootingvfx = transform.FindChild("Shootingvfx").GetComponent<ParticleSystem>();
 	}
-	
-	// Update is called once per frame
+
 	void Update() {
 		
 	}
@@ -35,10 +38,10 @@ public class DoubleShootingScript : MonoBehaviour {
 		
 		yield return new WaitForSeconds(0.417f);
 		
-		tempBullet = (GameObject)Instantiate(bullet, (transform.position + Vector3.right/2 + Vector3.down/2), Quaternion.identity);
+		tempBullet = (GameObject)Instantiate(bullet, (transform.position + Vector3.right/2 + Vector3.down/2 + new Vector3(-0.3f, 0.3f, 0.0f)), Quaternion.identity);
 		tempBullet.GetComponentInChildren<SpriteRenderer>().sortingOrder = orderInLayer;
 		
-		shootingvfx.Emit(1);
+		shootingvfxSmall.Emit(1);
 		shootingsfx.Play();
 	}
 	

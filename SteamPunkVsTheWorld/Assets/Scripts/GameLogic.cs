@@ -12,7 +12,8 @@ public class GameLogic : MonoBehaviour {
 	private List<GameObject> shooters = new List<GameObject>();
 	private List<GameObject> enemies = new List<GameObject>();
 	private SpawnDirector director;
-	public LevelEnd nextLevel;
+	public LevelEnd eaterUnlock;
+	public LevelEnd doubleShooterUnlock;
 	public LevelEnd gameWon;
 	private AudioSource clickfx;
 
@@ -134,8 +135,10 @@ public class GameLogic : MonoBehaviour {
 		TurnOffButtons ();
 		if (GameState.gameWon()) {
 			gameWon.Enable ();
-		} else {
-			nextLevel.Enable ();
+		} else if (GameState.level == 1) {
+			eaterUnlock.Enable ();
+		} else if (GameState.level == 2) {
+			doubleShooterUnlock.Enable ();
 		}
 	}
 

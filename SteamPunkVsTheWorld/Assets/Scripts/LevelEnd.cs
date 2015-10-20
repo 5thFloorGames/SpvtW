@@ -16,11 +16,21 @@ public class LevelEnd : MonoBehaviour {
 	}
 
 	public void Restart(){
-		Application.LoadLevel (1);
+		StartCoroutine(waitaMomentAndResetLevel());
 	}
 
 	public void ExitToMenu() {
+		StartCoroutine(waitaMomentAndExitToMenu());
+	}
+
+	IEnumerator waitaMomentAndExitToMenu() {
+		yield return new WaitForSeconds(0.5f);
 		GameState.reset();
 		Application.LoadLevel (0);
+	}
+
+	IEnumerator waitaMomentAndResetLevel() {
+		yield return new WaitForSeconds(0.5f);
+		Application.LoadLevel (1);
 	}
 }
