@@ -119,8 +119,10 @@ public class CatMove : MonoBehaviour {
     public void Go() {
         rigid.MovePosition(transform.position + (Vector3.left * (0.15f) * Time.deltaTime));
         animator.SetBool("Eating", false);
-        eatSound.Stop();
-        eatSound = null;
+		if (eatSound != null) {
+			eatSound.Stop();
+			eatSound = null;
+		}
     }
 
     IEnumerator flashWhenTakingDamage() {
