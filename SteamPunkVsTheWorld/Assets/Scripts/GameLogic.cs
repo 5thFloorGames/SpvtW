@@ -21,12 +21,14 @@ public class GameLogic : MonoBehaviour {
         plants.Add ((GameObject)Resources.Load("Producer"));
 		plants.Add ((GameObject)Resources.Load("Shooter"));
 		plants.Add ((GameObject)Resources.Load("Blocker"));
+		plants.Add ((GameObject)Resources.Load("Eater"));
 		Vector3 previewLocation = new Vector3 (-4f, -4f, 0f);
 		previews = new List<GameObject> ();
 		previews.Add (null);
 		previews.Add ((GameObject)Instantiate(Resources.Load("ProducerPreview"),previewLocation, Quaternion.identity));
 		previews.Add ((GameObject)Instantiate(Resources.Load("ShooterPreview"),previewLocation, Quaternion.identity));
 		previews.Add ((GameObject)Instantiate(Resources.Load("BlockerPreview"),previewLocation, Quaternion.identity));
+		previews.Add ((GameObject)Instantiate(Resources.Load("EaterPreview"),previewLocation, Quaternion.identity));
 		director = gameObject.GetComponent<SpawnDirector> ();
 		ResourceManager.reset ();
 	}
