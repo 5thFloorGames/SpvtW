@@ -5,18 +5,21 @@ public class EaterEating : MonoBehaviour {
 
 	public bool digesting = false;
 	private Animator animator;
+	private GameLogic logic;
 
-	void OnTriggerEnter2D(Collider2D other) {
+	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.tag.Equals("Enemy") && !digesting){
+			print ("called");
 			digesting = true;
 			StartCoroutine(timeToBite(other.gameObject));
-			Invoke("Digested", 40);
+			Invoke("Digested", 4);
 		}
 	}
 
 	// Use this for initialization
 	void Start () {
 		animator = transform.parent.gameObject.GetComponentInChildren<Animator>();
+		GameObject.FindGameObjectWithTag("GameController").GetComponent<GameLogic>();
 	}
 	
 	// Update is called once per frame
@@ -32,6 +35,7 @@ public class EaterEating : MonoBehaviour {
 		animator.SetTrigger("Bite");
 		animator.SetBool("Eating", true);
 		yield return new WaitForSeconds(1);
+		logic.unregisterEnemy(other);
 		Destroy(other);
 	}
 
