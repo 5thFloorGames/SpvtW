@@ -31,6 +31,11 @@ public class CatMove : MonoBehaviour {
         currentHealth = maxHealth;
         rigid = gameObject.GetComponent<Rigidbody2D>();
         rigid.MovePosition(transform.position + (Vector3.left / 500f));
+		if (Random.Range (0, 2) == 0) {
+			audios[3].PlayOneShot(audios[3].clip);
+		} else {
+			audios[4].PlayOneShot(audios[4].clip);
+		}
     }
 
     void Update() {
