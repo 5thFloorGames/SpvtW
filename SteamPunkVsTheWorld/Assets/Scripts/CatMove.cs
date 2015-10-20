@@ -16,6 +16,7 @@ public class CatMove : MonoBehaviour {
     private AudioSource[] audios;
     private AudioSource eatSound;
 	private Vector3 speed;
+	
 
     void Awake() {
         animator = gameObject.GetComponentInChildren<Animator>();
@@ -45,7 +46,7 @@ public class CatMove : MonoBehaviour {
     }
 
     void Update() {
-        fadeAndSuicideIfDying();
+        
     }
 
     void Damaged() {
@@ -79,8 +80,8 @@ public class CatMove : MonoBehaviour {
                 eatSound.Stop();
                 eatSound = null;
             }
-
-            dying = true;
+			dying = true;
+			fadeAndSuicideIfDying();
         }
     }
 
