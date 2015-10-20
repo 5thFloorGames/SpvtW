@@ -32,11 +32,11 @@ public class CatMove : MonoBehaviour {
         currentHealth = maxHealth;
         rigid = gameObject.GetComponent<Rigidbody2D>();
 		if (isRunner) {
-			speed = transform.position + (Vector3.left / 200f);
+			speed = (Vector3.left / 200f);
 		} else {
-			speed = transform.position + (Vector3.left / 500f);
+			speed = (Vector3.left / 500f);
 		}
-		rigid.MovePosition (speed);
+		rigid.MovePosition (transform.position + speed);
 		if (Random.Range (0, 2) == 0) {
 			audios[3].PlayOneShot(audios[3].clip);
 		} else {
@@ -128,7 +128,7 @@ public class CatMove : MonoBehaviour {
     }
 
     public void Go() {
-		rigid.MovePosition (speed);
+		rigid.MovePosition (transform.position + speed);
 		animator.SetBool("Eating", false);
 		if (eatSound != null) {
 			eatSound.Stop();

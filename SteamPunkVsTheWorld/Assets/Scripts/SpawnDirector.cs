@@ -28,7 +28,7 @@ public class SpawnDirector : MonoBehaviour {
 
 		spawnList = levelSpawns [GameState.level];
 			
-		InvokeRepeating("nextSpawn", 1, 3);
+		InvokeRepeating("nextSpawn", 17, 17);
 		setSpawnQueue (countSpawns());
 
 		//print ("Spawnqueue: " + spawnQueue.Count);
@@ -55,36 +55,30 @@ public class SpawnDirector : MonoBehaviour {
 			lightSweeper.Sweep ();
 		}
 
-		if (GameState.level < 2) {
+		if (GameState.level > 0) {
 			NormalAndPartyCats (amount);
 		} else {
 			AllTheCats(amount);
 		}
 	}
-
-
+	
 	void DelayedSpawn(){
 		//print (spawnQueue.Count);
 		spawners [spawnQueue.Dequeue ()].Spawn ();
 	}
 
 	void DelayedPartySpawn(){
-		print ("Party!");
-
 		//print (spawnQueue.Count);
 		spawners [spawnQueue.Dequeue ()].PartySpawn ();
 	}
 
 	void DelayedRunnerSpawn(){
-		print ("Runner!");
-
 		//print (spawnQueue.Count);
 		spawners [spawnQueue.Dequeue ()].RunnerSpawn ();
 	}
 
 	void DelayedPartyRunnerSpawn(){
 		//print (spawnQueue.Count);
-		print ("Partyrunner!");
 		spawners [spawnQueue.Dequeue ()].PartyRunnerSpawn ();
 	}
 
