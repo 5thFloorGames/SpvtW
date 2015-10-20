@@ -28,7 +28,7 @@ public class SpawnDirector : MonoBehaviour {
 
 		spawnList = levelSpawns [GameState.level];
 			
-		InvokeRepeating("nextSpawn", 1, 5);
+		InvokeRepeating("nextSpawn", 1, 3);
 		setSpawnQueue (countSpawns());
 
 		//print ("Spawnqueue: " + spawnQueue.Count);
@@ -69,17 +69,22 @@ public class SpawnDirector : MonoBehaviour {
 	}
 
 	void DelayedPartySpawn(){
+		print ("Party!");
+
 		//print (spawnQueue.Count);
 		spawners [spawnQueue.Dequeue ()].PartySpawn ();
 	}
 
 	void DelayedRunnerSpawn(){
+		print ("Runner!");
+
 		//print (spawnQueue.Count);
 		spawners [spawnQueue.Dequeue ()].RunnerSpawn ();
 	}
 
 	void DelayedPartyRunnerSpawn(){
 		//print (spawnQueue.Count);
+		print ("Partyrunner!");
 		spawners [spawnQueue.Dequeue ()].PartyRunnerSpawn ();
 	}
 
@@ -105,10 +110,10 @@ public class SpawnDirector : MonoBehaviour {
 		for (int i = 0; i < partyLimit; i++) {
 			bool party = false;
 			bool runner = false;
-			if (Random.Range (0, 6) == 0) {
+			if (Random.Range (0, 3) == 0) {
 				party = true;
 			}
-			if (Random.Range (0, 6) == 0) {
+			if (Random.Range (0, 3) == 0) {
 				runner = true;
 			}
 			if(party && runner && amount > 3){

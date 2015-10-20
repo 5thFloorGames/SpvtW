@@ -32,7 +32,7 @@ public class CatMove : MonoBehaviour {
         currentHealth = maxHealth;
         rigid = gameObject.GetComponent<Rigidbody2D>();
 		if (isRunner) {
-			speed = transform.position + (Vector3.left / 250f);
+			speed = transform.position + (Vector3.left / 200f);
 		} else {
 			speed = transform.position + (Vector3.left / 500f);
 		}
