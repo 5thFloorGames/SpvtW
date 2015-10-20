@@ -11,14 +11,15 @@ public class AnanasDamaged : MonoBehaviour {
 	}
 
 	void Update () {
-		if (health<40 && !broken) {
-			animator.runtimeAnimatorController = Resources.Load("AnanasBreaking") as RuntimeAnimatorController;
-			broken = true;
-		}
+
 	}
 	
 	public void Damaged(){
 		health--;
+		if (health<40 && !broken) {
+			animator.runtimeAnimatorController = Resources.Load("AnanasBreaking") as RuntimeAnimatorController;
+			broken = true;
+		}
 		if (health == 0) {
 			transform.parent.SendMessage("Free");
 			Destroy(gameObject);
