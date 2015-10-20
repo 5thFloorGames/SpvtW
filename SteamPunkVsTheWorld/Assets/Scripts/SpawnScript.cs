@@ -16,22 +16,21 @@ public class SpawnScript : MonoBehaviour {
 		
 	}
 
-	public void Spawn(){
-		//print ("spawning at " + (transform.position));
+	private void Spawn(bool hat, int health){
 		GameObject spawned = (GameObject) Instantiate (cat, transform.position, Quaternion.identity);
-		spawned.GetComponent<CatMove> ().hasHat = false;
-		spawned.GetComponent<CatMove> ().maxHealth = 13;
+		CatMove catFeatures = spawned.GetComponent<CatMove> ();
+		catFeatures.hasHat = hat;
+		catFeatures.maxHealth = health;
 		spawned.GetComponentInChildren<SpriteRenderer> ().sortingOrder = orderInLayer;
 		logic.registerEnemy (spawned);
 	}
 
+	public void Spawn(){
+		Spawn (false, 13);
+	}
+
 	public void PartySpawn(){
-		//print ("spawning at " + (transform.position));
-		GameObject spawned = (GameObject) Instantiate (cat, transform.position, Quaternion.identity);
-		spawned.GetComponent<CatMove> ().hasHat = true;
-		spawned.GetComponent<CatMove> ().maxHealth = 26;
-		spawned.GetComponentInChildren<SpriteRenderer> ().sortingOrder = orderInLayer;
-		logic.registerEnemy (spawned);
+		Spawn (true, 26);
 	}
 	
 

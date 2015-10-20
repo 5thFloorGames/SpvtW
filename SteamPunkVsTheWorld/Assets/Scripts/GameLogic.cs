@@ -115,6 +115,13 @@ public class GameLogic : MonoBehaviour {
 
 	private void LevelWon(){
 		GameState.levelUp ();
+		TurnOffButtons ();
 		youWon.Enable();
+	}
+
+	public void TurnOffButtons(){
+		foreach(Button b in buttons){
+			b.interactable = false;
+		}
 	}
 }

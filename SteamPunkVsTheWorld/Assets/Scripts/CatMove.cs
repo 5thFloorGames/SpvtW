@@ -51,11 +51,10 @@ public class CatMove : MonoBehaviour {
         }
 
         if (currentHealth == 0) {
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameLogic>().unregisterEnemy(gameObject);
             animator.SetTrigger("Dying");
             rigid.velocity = Vector2.zero;
-            Destroy(GetComponent<Rigidbody2D>());
-            Destroy(gameObject.GetComponent<BoxCollider2D>());
+            //Destroy(GetComponent<Rigidbody2D>());
+            //Destroy(gameObject.GetComponent<BoxCollider2D>());
             if (eating) {
                 CancelInvoke();
             }
@@ -94,6 +93,7 @@ public class CatMove : MonoBehaviour {
     }
 
     void suicide() {
+		GameObject.FindGameObjectWithTag("GameController").GetComponent<GameLogic>().unregisterEnemy(gameObject);
         Destroy(gameObject);
     }
 
