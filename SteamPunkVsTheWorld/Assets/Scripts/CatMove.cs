@@ -39,7 +39,7 @@ public class CatMove : MonoBehaviour {
 
     void Damaged() {
         currentHealth--;
-        StartCoroutine(flashWhenTakingDamage());
+        //StartCoroutine(flashWhenTakingDamage());
 
         if ((currentHealth <= maxHealth / 2) && hasHat) {
             sprite.transform.Translate(new Vector3(-0.11f, -0.16f, 0));

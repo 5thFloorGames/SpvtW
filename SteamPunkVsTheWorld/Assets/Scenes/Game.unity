@@ -1808,7 +1808,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6dc45cfde7a0d964d8601bf18e71b5c8, type: 2}
+  - {fileID: 2100000, guid: 84c1d3812b476416caad86fe63271b39, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0

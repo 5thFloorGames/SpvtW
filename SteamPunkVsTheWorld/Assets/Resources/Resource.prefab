@@ -2450,7 +2450,7 @@ ParticleSystemRenderer:
   m_GameObject: {fileID: 132638}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_Materials:
   - {fileID: 2100000, guid: ab72b67fb585c4b5f805b75c9b51cb1f, type: 2}
   m_SubsetIndices: 
@@ -2604,6 +2604,14 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 019447e0566634a56b01613431492823,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ab72b67fb585c4b5f805b75c9b51cb1f, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 132638}
