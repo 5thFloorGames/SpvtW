@@ -21,10 +21,12 @@ public class ResourceObjectLogic : MonoBehaviour {
     private Vector3 start;
     private Vector3 finish;
 
+	private bool suiciding;
+
 	private AudioSource[] audios;
 
-
     void Start () {
+		suiciding = false;
         sprite = gameObject.GetComponentInChildren<SpriteRenderer>();
         finish = new Vector3(-1.67f, 0.95f, 0);
         realSize = transform.localScale.y;
@@ -152,8 +154,9 @@ public class ResourceObjectLogic : MonoBehaviour {
     }
 
     void selfDestructionCheck() {
-        if (Time.time - spawnTime > lifeTime) {
+        if ((Time.time - spawnTime > lifeTime) && !suiciding) {
             fadeAndSuicide();
+			suiciding = true;
         }
     }
 
