@@ -12,4 +12,16 @@ public class GameMenuSounds : MonoBehaviour {
 		
 	}
 
+	public void playHoverSound() {
+		audios [0].Play ();
+	}
+
+	public void playChoosingSound() {
+		audios [1].Play ();
+	}
+
+	public void playExitSound() {
+		audios [2].Play ();
+	}
+
 }

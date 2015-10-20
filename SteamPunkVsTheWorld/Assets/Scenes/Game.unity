@@ -7003,6 +7003,7 @@ GameObject:
   - 82: {fileID: 1597754348}
   - 82: {fileID: 1597754347}
   - 82: {fileID: 1597754350}
+  - 114: {fileID: 1597754351}
   m_Layer: 0
   m_Name: GameMenuSounds
   m_TagString: Untagged
@@ -7232,6 +7233,17 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &1597754351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1597754346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7a68690a2e7c45a5ae98aec0343ff17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1610564248
 GameObject:
   m_ObjectHideFlags: 0
