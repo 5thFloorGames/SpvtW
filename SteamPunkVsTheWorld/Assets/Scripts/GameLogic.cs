@@ -137,7 +137,6 @@ public class GameLogic : MonoBehaviour {
 	}
 
 	public void TurnOffButtons(){
-		print ("buttons turning offf");
 		for (int i = 1; i < buttons.Count; i++) {
 			Button b = buttons[i];
 			if(b != null){

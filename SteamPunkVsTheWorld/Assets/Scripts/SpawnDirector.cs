@@ -29,7 +29,7 @@ public class SpawnDirector : MonoBehaviour {
 		setSpawnQueue (countSpawns());
 
 
-		print ("Spawnqueue: " + spawnQueue.Count);
+		//print ("Spawnqueue: " + spawnQueue.Count);
 	}
 	
 	// Update is called once per frame

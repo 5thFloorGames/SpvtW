@@ -20,7 +20,6 @@ public class EaterEating : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.tag.Equals("Enemy") && !digesting){
-			print ("called");
 			digesting = true;
 			StartCoroutine(timeToBite(other.gameObject));
 			Invoke("Digested", 40);
