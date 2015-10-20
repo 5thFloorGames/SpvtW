@@ -9,9 +9,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 489144}
   - 61: {fileID: 6111376}
-  - 114: {fileID: 11437276}
   - 114: {fileID: 11480662}
   - 82: {fileID: 8264768}
+  - 114: {fileID: 11408186}
   m_Layer: 9
   m_Name: DoubleShooter
   m_TagString: Shooter
@@ -191,7 +191,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11437276
+--- !u!114 &11408186
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 108442}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f151667635be749f19fc3315b3739917, type: 3}
+  m_Script: {fileID: 11500000, guid: 39a3b1f7efa9d4ff58f938daccaf662a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 152312, guid: 716562ef41b2d483eae46ea0beba88cf, type: 2}
@@ -216,6 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 6
+  plantType: 2
 --- !u!198 &19872430
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -1337,7 +1338,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: plantType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 152312, guid: 716562ef41b2d483eae46ea0beba88cf, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 108442}
