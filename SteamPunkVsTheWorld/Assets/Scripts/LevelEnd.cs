@@ -22,4 +22,8 @@ public class LevelEnd : MonoBehaviour {
 			Application.LoadLevel (1);
 		}
 	}
+
+	public void ExitToMenu() {
+		Application.LoadLevel (0);
+	}
 }
