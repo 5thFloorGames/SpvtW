@@ -9,7 +9,7 @@ public class CatMove : MonoBehaviour {
 	public bool isRunner;
     private Rigidbody2D rigid;
     private Animator animator;
-    private GameObject eating;
+    private PlantDamageScript eating;
     private int currentHealth;
     private GameObject sprite;
     private bool dying;
@@ -87,7 +87,7 @@ public class CatMove : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other) {
         if ((other.gameObject.tag.Equals("Plant") || other.gameObject.tag.Equals("Shooter"))
             && other.gameObject.transform.position.x < gameObject.transform.position.x) {
-            eating = other.gameObject;
+            eating = other.gameObject.GetComponent<PlantDamageScript>();
             StopMovingStartEating();
         }
     }
@@ -116,7 +116,7 @@ public class CatMove : MonoBehaviour {
 
     public void Eat() {
         if (eating != null) {
-            eating.SendMessage("Damaged");
+			eating.Damaged();
             if (eatSound == null) {
                 eatSound = audios[0];
                 eatSound.Play();
