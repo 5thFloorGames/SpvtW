@@ -34,4 +34,9 @@ public class MenuLogic : MonoBehaviour {
 		musicObject.GetComponent<MusicControls> ().playMenuSound (false);
         Application.Quit();
     }
+
+	IEnumerator playExitSoundAndExit() {
+		musicObject.GetComponent<MusicControls> ().playMenuSound (false);
+		yield return new WaitForSeconds(1);
+	}
 }
