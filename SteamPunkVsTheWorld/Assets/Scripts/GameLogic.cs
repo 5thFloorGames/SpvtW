@@ -25,6 +25,7 @@ public class GameLogic : MonoBehaviour {
 		plants.Add ((GameObject)Resources.Load("Shooter"));
 		plants.Add ((GameObject)Resources.Load("Blocker"));
 		plants.Add ((GameObject)Resources.Load("Eater"));
+		plants.Add ((GameObject)Resources.Load("DoubleShooter"));
 		Vector3 previewLocation = new Vector3 (-4f, -4f, 0f);
 		previews = new List<GameObject> ();
 		previews.Add (null);
@@ -32,6 +33,7 @@ public class GameLogic : MonoBehaviour {
 		previews.Add ((GameObject)Instantiate(Resources.Load("ShooterPreview"),previewLocation, Quaternion.identity));
 		previews.Add ((GameObject)Instantiate(Resources.Load("BlockerPreview"),previewLocation, Quaternion.identity));
 		previews.Add ((GameObject)Instantiate(Resources.Load("EaterPreview"),previewLocation, Quaternion.identity));
+		previews.Add ((GameObject)Instantiate(Resources.Load("DoubleShooterPreview"),previewLocation, Quaternion.identity));
 		director = gameObject.GetComponent<SpawnDirector> ();
 		ResourceManager.reset ();
 		clickfx = gameObject.GetComponent<AudioSource>();
