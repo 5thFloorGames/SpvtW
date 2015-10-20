@@ -16,6 +16,7 @@ public class GameLogic : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		activateButtons ();
 		plants = new List<GameObject>();
         plants.Add(null);
         plants.Add ((GameObject)Resources.Load("Producer"));
@@ -113,6 +114,15 @@ public class GameLogic : MonoBehaviour {
 			}
 		}
 		return false;
+	}
+
+	private void activateButtons(){
+		for (int i = 1; i <= 3 + GameState.level; i++) {
+			Button b = buttons[i];
+			if(b != null){
+				b.gameObject.SetActive(true);
+			}
+		}
 	}
 
 	private void LevelWon(){
