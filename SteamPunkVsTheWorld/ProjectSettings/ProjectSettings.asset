@@ -11,7 +11,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: 5thFloorGames
   productName: SteamPunkVsTheWorld
-  defaultCursor: {fileID: 0}
+  defaultCursor: {fileID: 2800000, guid: 830d1ab093c05f34b8c30a14e91fe0d0, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_ShowUnitySplashScreen: 1
   defaultScreenWidth: 1920
