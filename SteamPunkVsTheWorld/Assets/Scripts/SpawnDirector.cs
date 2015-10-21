@@ -55,7 +55,7 @@ public class SpawnDirector : MonoBehaviour {
 			lightSweeper.Sweep ();
 		}
 
-		if (GameState.level > 0) {
+		if (GameState.level < 1) {
 			NormalAndPartyCats (amount);
 		} else {
 			AllTheCats(amount);
