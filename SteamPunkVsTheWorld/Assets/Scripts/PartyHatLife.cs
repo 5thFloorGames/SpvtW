@@ -9,6 +9,7 @@ public class PartyHatLife : MonoBehaviour {
     private Vector3 spawningPos;
     private float lifeTime;
     private float spawnTime;
+    private bool suiciding = false;
 
     void Start () {
         sprite = gameObject.GetComponentInChildren<SpriteRenderer>();
@@ -38,7 +39,8 @@ public class PartyHatLife : MonoBehaviour {
     }
 
     void selfDestructionCheck() {
-        if (Time.time - spawnTime > lifeTime) {
+        if ((Time.time - spawnTime > lifeTime) && !suiciding) {
+            suiciding = true;
             fadeAndSuicide();
         }
     }
