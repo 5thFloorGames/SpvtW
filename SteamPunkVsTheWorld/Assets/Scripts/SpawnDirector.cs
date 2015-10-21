@@ -28,7 +28,7 @@ public class SpawnDirector : MonoBehaviour {
 
 		spawnList = levelSpawns [GameState.level];
 			
-		InvokeRepeating("nextSpawn", 17, 17);
+		InvokeRepeating("nextSpawn", 19, 19);
 		setSpawnQueue (countSpawns());
 
 		//print ("Spawnqueue: " + spawnQueue.Count);
