@@ -7,21 +7,22 @@ public class CatMove : MonoBehaviour {
     public int maxHealth;
     public bool hasHat;
 	public bool isRunner;
+
+    private int currentHealth;
+    private Vector3 speed;
+    private bool dying = false;
+
+    private PlantDamageScript eating;
     private Rigidbody2D rigid;
     private Animator animator;
-    private PlantDamageScript eating;
-    private int currentHealth;
     private GameObject sprite;
-    private bool dying;
     private AudioSource[] audios;
     private AudioSource eatSound;
-	private Vector3 speed;
-	
+
 
     void Awake() {
         animator = gameObject.GetComponentInChildren<Animator>();
         audios = gameObject.GetComponents<AudioSource>();
-        dying = false;
     }
 
     void Start() {
@@ -51,7 +52,10 @@ public class CatMove : MonoBehaviour {
 
     void Damaged() {
         currentHealth--;
-        //StartCoroutine(flashWhenTakingDamage());
+
+        if (!dying) {
+            StartCoroutine(flashWhenTakingDamage());
+        }
 
         if ((currentHealth <= maxHealth / 2) && hasHat) {
             sprite.transform.Translate(new Vector3(-0.11f, -0.16f, 0));
@@ -80,9 +84,11 @@ public class CatMove : MonoBehaviour {
                 eatSound.Stop();
                 eatSound = null;
             }
-			dying = true;
-			fadeAndSuicideIfDying();
+            
+            dying = true;
+			fadeAndSuicide();
         }
+
     }
 
     void OnTriggerEnter2D(Collider2D other) {
@@ -93,15 +99,13 @@ public class CatMove : MonoBehaviour {
         }
     }
 
-    void fadeAndSuicideIfDying() {
-        if (dying) {
-            iTween.ColorTo(sprite.gameObject, iTween.Hash(
-                "a", 0.0f,
-                "delay", 4.0f,
-                "time", 2.0f,
-                "oncomplete", "suicide",
-                "oncompletetarget", gameObject));
-        }
+    void fadeAndSuicide() {
+        iTween.ColorTo(sprite.gameObject, iTween.Hash(
+            "a", 0.0f,
+            "delay", 4.0f,
+            "time", 2.0f,
+            "oncomplete", "suicide",
+            "oncompletetarget", gameObject));
     }
 
     void suicide() {
