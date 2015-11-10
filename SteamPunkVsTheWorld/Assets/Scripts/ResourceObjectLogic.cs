@@ -4,7 +4,9 @@ using System.Collections;
 public class ResourceObjectLogic : MonoBehaviour {
 
     public bool globalResource = false;
-    private SpriteRenderer sprite;
+    public bool menuResource = false;
+
+    private Vector3 finish;
 
     private bool available = true;
     private bool spawning = true;
@@ -13,26 +15,28 @@ public class ResourceObjectLogic : MonoBehaviour {
     private float lifeTime;
     private float spawnTime;
 
+    private SpriteRenderer sprite;
     private Vector3 landingPos;
     private Vector3 spawningPos;
 
     private float clickTime;
     private float lifetimeAfterAbsorbed = 4.0f;
     private Vector3 start;
-    private Vector3 finish;
+
+	private bool suiciding;
 
 	private AudioSource[] audios;
 
-
     void Start () {
+		suiciding = false;
         sprite = gameObject.GetComponentInChildren<SpriteRenderer>();
-        finish = new Vector3(-1.67f, 0.95f, 0);
         realSize = transform.localScale.y;
         float startyPos = transform.position.y;
         float startxPos = transform.position.x;
         spawnTime = Time.time;
         lifeTime = 11.0f;
-		transform.localScale = new Vector3(0, 0, 1);
+        finish = new Vector3(-1.67f, 0.95f, 0);
+        transform.localScale = new Vector3(0, 0, 1);
 		transform.position = new Vector3(startxPos, (startyPos+0.36f), -1);
 		spawningPos = transform.position;
 		landingPos = new Vector3 (Random.Range((startxPos-0.50f),(startxPos+0.50f)),
@@ -42,6 +46,10 @@ public class ResourceObjectLogic : MonoBehaviour {
             landingPos = new Vector3(Random.Range(0.0f, 8.0f),
                                 Random.Range(-4.0f, 0.0f), -1.0f);
             lifeTime = 15f;
+        }
+
+        if (menuResource) {
+            finish = new Vector3(-1.32f, 1.562f, 0);
         }
 
 		audios = gameObject.GetComponents<AudioSource> ();
@@ -152,8 +160,9 @@ public class ResourceObjectLogic : MonoBehaviour {
     }
 
     void selfDestructionCheck() {
-        if (Time.time - spawnTime > lifeTime) {
+        if ((Time.time - spawnTime > lifeTime) && !suiciding) {
             fadeAndSuicide();
+			suiciding = true;
         }
     }
 

@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class MenuLogic : MonoBehaviour {
+    public GameObject mainOptions;
+    public GameObject credits;
 	private GameObject musicObject;
 	private AudioSource hoverSound;
 
@@ -43,10 +45,26 @@ public class MenuLogic : MonoBehaviour {
 		StartCoroutine(playExitSoundAndExit());
     }
 
+    public void showCredits() {
+        playChoosingSound();
+        mainOptions.SetActive(false);
+        credits.SetActive(true);
+    }
+
+    public void showMainMenu() {
+        playChoosingSound();
+        mainOptions.SetActive(true);
+        credits.SetActive(false);
+    }
+
 	IEnumerator playExitSoundAndExit() {
 		musicObject.GetComponent<MusicControls> ().playMenuSound (false);
 		yield return new WaitForSeconds(0.5f);
 		Application.Quit();
 	}
-	
+
+    void playChoosingSound() {
+        musicObject.GetComponent<MusicControls>().playMenuSound(true);
+    }
+
 }

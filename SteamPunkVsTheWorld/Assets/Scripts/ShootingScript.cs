@@ -9,16 +9,14 @@ public class ShootingScript : MonoBehaviour {
     private Animator animator;
     private AudioSource shootingsfx;
     private ParticleSystem shootingvfx;
-
-    // Use this for initialization
+	
     void Start() {
         orderInLayer = gameObject.GetComponentInChildren<SpriteRenderer>().sortingOrder + 2;
         animator = gameObject.GetComponentInChildren<Animator>();
         shootingsfx = gameObject.GetComponent<AudioSource>();
         shootingvfx = transform.FindChild("Shootingvfx").GetComponent<ParticleSystem>();
     }
-
-    // Update is called once per frame
+	
     void Update() {
 
     }

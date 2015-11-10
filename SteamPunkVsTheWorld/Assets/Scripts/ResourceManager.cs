@@ -16,6 +16,7 @@ public class ResourceManager : MonoBehaviour {
 			plantPrices.Add (Plant.Shooter, 4);
 			plantPrices.Add (Plant.Blocker, 2);
 			plantPrices.Add (Plant.Eater, 6);
+			plantPrices.Add (Plant.DoubleShooter, 8);
 		}
 	}
 	

@@ -12,7 +12,8 @@ public class GameLogic : MonoBehaviour {
 	private List<GameObject> shooters = new List<GameObject>();
 	private List<GameObject> enemies = new List<GameObject>();
 	private SpawnDirector director;
-	public LevelEnd nextLevel;
+	public LevelEnd eaterUnlock;
+	public LevelEnd doubleShooterUnlock;
 	public LevelEnd gameWon;
 	private AudioSource clickfx;
 
@@ -25,6 +26,7 @@ public class GameLogic : MonoBehaviour {
 		plants.Add ((GameObject)Resources.Load("Shooter"));
 		plants.Add ((GameObject)Resources.Load("Blocker"));
 		plants.Add ((GameObject)Resources.Load("Eater"));
+		plants.Add ((GameObject)Resources.Load("DoubleShooter"));
 		Vector3 previewLocation = new Vector3 (-4f, -4f, 0f);
 		previews = new List<GameObject> ();
 		previews.Add (null);
@@ -32,6 +34,7 @@ public class GameLogic : MonoBehaviour {
 		previews.Add ((GameObject)Instantiate(Resources.Load("ShooterPreview"),previewLocation, Quaternion.identity));
 		previews.Add ((GameObject)Instantiate(Resources.Load("BlockerPreview"),previewLocation, Quaternion.identity));
 		previews.Add ((GameObject)Instantiate(Resources.Load("EaterPreview"),previewLocation, Quaternion.identity));
+		previews.Add ((GameObject)Instantiate(Resources.Load("DoubleShooterPreview"),previewLocation, Quaternion.identity));
 		director = gameObject.GetComponent<SpawnDirector> ();
 		ResourceManager.reset ();
 		clickfx = gameObject.GetComponent<AudioSource>();
@@ -40,6 +43,7 @@ public class GameLogic : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Escape)) {
+            GameState.reset();
             Application.LoadLevel(0);
         }
         if (Input.GetMouseButtonDown(1)) {
@@ -132,8 +136,10 @@ public class GameLogic : MonoBehaviour {
 		TurnOffButtons ();
 		if (GameState.gameWon()) {
 			gameWon.Enable ();
-		} else {
-			nextLevel.Enable ();
+		} else if (GameState.level == 1) {
+			eaterUnlock.Enable ();
+		} else if (GameState.level == 2) {
+			doubleShooterUnlock.Enable ();
 		}
 	}
 
