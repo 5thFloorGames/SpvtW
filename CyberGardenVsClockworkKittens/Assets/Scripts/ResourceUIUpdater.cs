@@ -12,7 +12,7 @@ public class ResourceUIUpdater : MonoBehaviour {
 	void Start () {
         previousResources = 99;
 		resourceTexts = gameObject.GetComponentsInChildren<Text>();
-        resourceCloud = transform.FindChild("ResourceCloud").gameObject;
+        resourceCloud = transform.Find("ResourceCloud").gameObject;
 	}
 
 	void Update () {

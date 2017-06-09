@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class LevelEnd : MonoBehaviour {
 	
@@ -26,11 +27,11 @@ public class LevelEnd : MonoBehaviour {
 	IEnumerator waitaMomentAndExitToMenu() {
 		yield return new WaitForSeconds(0.5f);
 		GameState.reset();
-		Application.LoadLevel (0);
-	}
+        SceneManager.LoadScene("Menu");
+    }
 
 	IEnumerator waitaMomentAndResetLevel() {
 		yield return new WaitForSeconds(0.5f);
-		Application.LoadLevel (1);
-	}
+        SceneManager.LoadScene("Game");
+    }
 }

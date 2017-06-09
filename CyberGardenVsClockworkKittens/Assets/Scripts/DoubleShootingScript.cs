@@ -16,10 +16,10 @@ public class DoubleShootingScript : MonoBehaviour {
 		animator = gameObject.GetComponentInChildren<Animator>();
 		shootingsfx = gameObject.GetComponent<AudioSource>();
 
-		shootingvfx = transform.FindChild("Shootingvfx").GetComponent<ParticleSystem>();
-		shootingvfxSmall = transform.FindChild("ShootingvfxSmall").GetComponent<ParticleSystem>();
+		shootingvfx = transform.Find("Shootingvfx").GetComponent<ParticleSystem>();
+		shootingvfxSmall = transform.Find("ShootingvfxSmall").GetComponent<ParticleSystem>();
 
-		shootingvfx = transform.FindChild("Shootingvfx").GetComponent<ParticleSystem>();
+		shootingvfx = transform.Find("Shootingvfx").GetComponent<ParticleSystem>();
 	}
 
 	void Update() {
@@ -74,7 +74,7 @@ public class DoubleShootingScript : MonoBehaviour {
 			animator = gameObject.GetComponentInChildren<Animator>();
 		}
 		if (shootingvfx == null) {
-			transform.FindChild("Shootingvfx").GetComponent<ParticleSystem>();
+			transform.Find("Shootingvfx").GetComponent<ParticleSystem>();
 		}
 		if (shooting) {
 			animator.SetBool("Shooting", true);

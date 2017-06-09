@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class MenuLogic : MonoBehaviour {
     public GameObject mainOptions;
@@ -20,7 +21,7 @@ public class MenuLogic : MonoBehaviour {
             Application.Quit();
         }
         if (Input.GetKeyDown(KeyCode.Space)) {
-            Application.LoadLevel(1);
+            SceneManager.LoadScene("Game");
         }
     }
 
@@ -38,7 +39,11 @@ public class MenuLogic : MonoBehaviour {
 
     public void loadScene(int level) {
 		musicObject.GetComponent<MusicControls> ().playMenuSound (true);
-		Application.LoadLevel(level);
+        if (level == 0) {
+            SceneManager.LoadScene("Menu");
+        } else if (level == 1) {
+            SceneManager.LoadScene("Game");
+        }
     }
 
     public void exitGame() {

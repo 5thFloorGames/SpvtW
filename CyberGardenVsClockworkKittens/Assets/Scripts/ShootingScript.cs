@@ -14,7 +14,7 @@ public class ShootingScript : MonoBehaviour {
         orderInLayer = gameObject.GetComponentInChildren<SpriteRenderer>().sortingOrder + 2;
         animator = gameObject.GetComponentInChildren<Animator>();
         shootingsfx = gameObject.GetComponent<AudioSource>();
-        shootingvfx = transform.FindChild("Shootingvfx").GetComponent<ParticleSystem>();
+        shootingvfx = transform.Find("Shootingvfx").GetComponent<ParticleSystem>();
     }
 	
     void Update() {
@@ -57,7 +57,7 @@ public class ShootingScript : MonoBehaviour {
             animator = gameObject.GetComponentInChildren<Animator>();
         }
         if (shootingvfx == null) {
-            transform.FindChild("Shootingvfx").GetComponent<ParticleSystem>();
+            transform.Find("Shootingvfx").GetComponent<ParticleSystem>();
         }
         if (shooting) {
             animator.runtimeAnimatorController = Resources.Load("ShooterShooting") as RuntimeAnimatorController;

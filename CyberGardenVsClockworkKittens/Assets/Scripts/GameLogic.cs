@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class GameLogic : MonoBehaviour {
 
@@ -17,7 +18,6 @@ public class GameLogic : MonoBehaviour {
 	public LevelEnd gameWon;
 	private AudioSource clickfx;
 
-	// Use this for initialization
 	void Start () {
 		activateButtons ();
 		plants = new List<GameObject>();
@@ -40,11 +40,10 @@ public class GameLogic : MonoBehaviour {
 		clickfx = gameObject.GetComponent<AudioSource>();
 	}
 	
-	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Escape)) {
             GameState.reset();
-            Application.LoadLevel(0);
+            SceneManager.LoadScene("Menu");
         }
         if (Input.GetMouseButtonDown(1)) {
             if (active != Plant.None) {

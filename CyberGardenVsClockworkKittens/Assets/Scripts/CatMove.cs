@@ -26,7 +26,7 @@ public class CatMove : MonoBehaviour {
     }
 
     void Start() {
-        sprite = (GameObject)transform.FindChild("Sprite").gameObject;
+        sprite = (GameObject)transform.Find("Sprite").gameObject;
         if (hasHat) {
             animator.SetBool("HasHat", true);
             sprite.transform.Translate(new Vector3(0.11f, 0.16f, 0));
@@ -38,7 +38,7 @@ public class CatMove : MonoBehaviour {
 		} else {
 			speed = (Vector3.left / 500f);
 		}
-		rigid.MovePosition (transform.position + speed);
+		
 		if (Random.Range (0, 2) == 0) {
 			audios[3].PlayOneShot(audios[3].clip);
 		} else {
@@ -47,7 +47,7 @@ public class CatMove : MonoBehaviour {
     }
 
     void Update() {
-        
+        rigid.MovePosition(transform.position + speed);
     }
 
     void Damaged() {
@@ -142,8 +142,12 @@ public class CatMove : MonoBehaviour {
     }
 
     IEnumerator flashWhenTakingDamage() {
-        sprite.GetComponent<SpriteRenderer>().material.color = new Color(1f, 1f, 1f, 0.8f);
-        yield return new WaitForSeconds(0.1f);
+        sprite.GetComponent<SpriteRenderer>().material.color = new Color(1f, 1f, 1f, 0.4f);
+        yield return new WaitForSeconds(0.05f);
+        sprite.GetComponent<SpriteRenderer>().material.color = new Color(1f, 1f, 1f, 1f);
+        yield return new WaitForSeconds(0.05f);
+        sprite.GetComponent<SpriteRenderer>().material.color = new Color(1f, 1f, 1f, 0.4f);
+        yield return new WaitForSeconds(0.05f);
         sprite.GetComponent<SpriteRenderer>().material.color = new Color(1f, 1f, 1f, 1f);
     }
 
