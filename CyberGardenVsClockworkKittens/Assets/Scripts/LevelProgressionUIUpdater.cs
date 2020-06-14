@@ -9,10 +9,6 @@ public class LevelProgressionUIUpdater : MonoBehaviour {
 		levelProgress = gameObject.GetComponent<Image>();
 	}
 
-	void Update () {
-
-	}
-
 	public void updateProgressBar (float progressStatus) {
 		levelProgress.fillAmount = progressStatus;
 	}

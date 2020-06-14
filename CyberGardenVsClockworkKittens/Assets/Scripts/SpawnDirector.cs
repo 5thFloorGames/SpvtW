@@ -12,8 +12,7 @@ public class SpawnDirector : MonoBehaviour {
 	private int[] spawnList;
 	public LightSweepScript lightSweeper;
 	public LevelProgressionUIUpdater levelprogress; 
-
-	// Use this for initialization
+	
 	void Start () {
 		foreach(SpawnScript s in GameObject.FindObjectsOfType<SpawnScript> ()){
 			spawners.Add(s);
@@ -33,16 +32,11 @@ public class SpawnDirector : MonoBehaviour {
 
 		//print ("Spawnqueue: " + spawnQueue.Count);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-
-	}
 
 	void nextSpawn(){
-		levelprogress.updateProgressBar(percentDone());
+		levelprogress.updateProgressBar(PercentDone());
 		if (spawnIndex == spawnList.Length) {
-			Invoke("stopSpawning",15);
+			Invoke("StopSpawning",15);
 			waveDone = true;
 		} else {
 			Spawn (spawnList[spawnIndex]);
@@ -153,21 +147,15 @@ public class SpawnDirector : MonoBehaviour {
 		spawnQueue = tempQueue;
 	}
 
-	void printQueue(){
-		while (spawnQueue.Count != 0) {
-			print (spawnQueue.Dequeue());
-		}
-	}
-
-	void stopSpawning(){
+	void StopSpawning(){
 		CancelInvoke();
 	}
 
-	public bool noMoreEnemies(){
+	public bool NoMoreEnemies(){
 		return waveDone;
 	}
 
-	private float percentDone(){
+	private float PercentDone(){
 		return (float)(spawnIndex / (float)spawnList.Length);
 	}
 }

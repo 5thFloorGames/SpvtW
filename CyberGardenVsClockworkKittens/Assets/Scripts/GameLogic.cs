@@ -92,7 +92,7 @@ public class GameLogic : MonoBehaviour {
 	public void unregisterEnemy(GameObject enemy){
 		enemies.Remove (enemy);
 		updateShooters();
-		if (enemies.Count == 0 && director.noMoreEnemies()) {
+		if (enemies.Count == 0 && director.NoMoreEnemies()) {
 			LevelWon();
 		}
 	}

@@ -10,12 +10,8 @@ public class ProducerResourceGeneration : MonoBehaviour {
 		InvokeRepeating("OrbProduction", 1, 24);
 		animator = gameObject.GetComponentInChildren<Animator>();
 	}
-
-	void Update () {
-		
-	}
-
-    void OrbProduction() {
+	
+	void OrbProduction() {
         StartCoroutine(animationTiming());
     }
 

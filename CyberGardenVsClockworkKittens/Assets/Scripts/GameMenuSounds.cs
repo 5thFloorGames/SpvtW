@@ -8,10 +8,6 @@ public class GameMenuSounds : MonoBehaviour {
 		audios = gameObject.GetComponents<AudioSource>();
 	}
 
-	void Update () {
-		
-	}
-
 	public void playHoverSound() {
 		audios[0].PlayOneShot(audios[0].clip);
 	}

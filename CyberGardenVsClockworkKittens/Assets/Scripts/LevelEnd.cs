@@ -3,14 +3,6 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class LevelEnd : MonoBehaviour {
-	
-	void Start () {
-	
-	}
-
-	void Update () {
-	
-	}
 
 	public void Enable(){
 		gameObject.SetActive (true);

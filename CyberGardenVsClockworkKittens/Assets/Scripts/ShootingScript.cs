@@ -16,10 +16,6 @@ public class ShootingScript : MonoBehaviour {
         shootingsfx = gameObject.GetComponent<AudioSource>();
         shootingvfx = transform.Find("Shootingvfx").GetComponent<ParticleSystem>();
     }
-	
-    void Update() {
-
-    }
 
     void Shoot() {
         GameObject tempBullet = (GameObject)Instantiate(bullet, (transform.position + Vector3.right/2), Quaternion.identity);

@@ -13,11 +13,7 @@ public class EaterEating : MonoBehaviour {
 		animator = transform.parent.gameObject.GetComponentInChildren<Animator>();
 		logic = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameLogic>();
 	}
-
-	void Update () {
-
-	}
-
+	
 	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.tag.Equals("Enemy") && !digesting){
 			digesting = true;

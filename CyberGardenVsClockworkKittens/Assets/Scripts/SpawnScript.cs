@@ -12,10 +12,6 @@ public class SpawnScript : MonoBehaviour {
 		cat = (GameObject) Resources.Load("Cat");
 	}
 
-	void Update () {
-		
-	}
-
 	private void Spawn(bool hat, int health, bool runner){
 		GameObject spawned = (GameObject) Instantiate (cat, transform.position, Quaternion.identity);
 		CatMove catFeatures = spawned.GetComponent<CatMove> ();

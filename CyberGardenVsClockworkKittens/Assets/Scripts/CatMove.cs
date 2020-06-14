@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
+using Random = UnityEngine.Random;
 
 public class CatMove : MonoBehaviour {
 
@@ -10,7 +10,8 @@ public class CatMove : MonoBehaviour {
 
     private int currentHealth;
     private Vector3 speed;
-    private bool dying = false;
+    private bool isMoving;
+    private bool dying;
 
     private PlantDamageScript eating;
     private Rigidbody2D rigid;
@@ -20,12 +21,18 @@ public class CatMove : MonoBehaviour {
     private AudioSource eatSound;
 
 
-    void Awake() {
+    private void Awake() {
         animator = gameObject.GetComponentInChildren<Animator>();
         audios = gameObject.GetComponents<AudioSource>();
     }
 
-    void Start() {
+    private void Update()
+    {
+        if (!isMoving) return;
+        rigid.MovePosition(transform.position + speed);
+    }
+
+    private void Start() {
         sprite = (GameObject)transform.Find("Sprite").gameObject;
         if (hasHat) {
             animator.SetBool("HasHat", true);
@@ -38,19 +45,16 @@ public class CatMove : MonoBehaviour {
 		} else {
 			speed = (Vector3.left / 500f);
 		}
-		
-		if (Random.Range (0, 2) == 0) {
+        isMoving = true;
+        
+        if (Random.Range (0, 2) == 0) {
 			audios[3].PlayOneShot(audios[3].clip);
 		} else {
 			audios[4].PlayOneShot(audios[4].clip);
 		}
     }
-
-    void Update() {
-        rigid.MovePosition(transform.position + speed);
-    }
-
-    void Damaged() {
+    
+    private void Damaged() {
         currentHealth--;
 
         if (!dying) {
@@ -86,12 +90,12 @@ public class CatMove : MonoBehaviour {
             }
             
             dying = true;
-			fadeAndSuicide();
+			FadeAndSuicide();
         }
 
     }
 
-    void OnTriggerEnter2D(Collider2D other) {
+    private void OnTriggerEnter2D(Collider2D other) {
         if ((other.gameObject.tag.Equals("Plant") || other.gameObject.tag.Equals("Shooter"))
             && other.gameObject.transform.position.x < gameObject.transform.position.x) {
             eating = other.gameObject.GetComponent<PlantDamageScript>();
@@ -99,22 +103,23 @@ public class CatMove : MonoBehaviour {
         }
     }
 
-    void fadeAndSuicide() {
+    private void FadeAndSuicide() {
         iTween.ColorTo(sprite.gameObject, iTween.Hash(
             "a", 0.0f,
             "delay", 4.0f,
             "time", 2.0f,
-            "oncomplete", "suicide",
+            "oncomplete", "Suicide",
             "oncompletetarget", gameObject));
     }
 
-    void suicide() {
+    private void Suicide() {
 		GameObject.FindGameObjectWithTag("GameController").GetComponent<GameLogic>().unregisterEnemy(gameObject);
         Destroy(gameObject);
     }
 
     public void StopMovingStartEating() {
         rigid.velocity = Vector2.zero;
+        isMoving = false;
         animator.SetBool("Eating", true);
         InvokeRepeating("Eat", 1f, 0.5f);
     }
@@ -133,12 +138,12 @@ public class CatMove : MonoBehaviour {
     }
 
     public void Go() {
-		rigid.MovePosition (transform.position + speed);
-		animator.SetBool("Eating", false);
+        animator.SetBool("Eating", false);
 		if (eatSound != null) {
 			eatSound.Stop();
 			eatSound = null;
 		}
+        isMoving = true;
     }
 
     IEnumerator flashWhenTakingDamage() {

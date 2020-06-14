@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 808a25f6a58894425ac86375663e501a, type: 3}
+    totalSpriteSurfaceArea: 10739868
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 8e88fee3b88fa274489e38dad818cd03, type: 3}
+  - {fileID: 21300000, guid: 615365f3d271242b89b161748102d62d, type: 3}
+  - {fileID: 21300000, guid: 1efd25c479ebc0243a7ac51df8b3d9ee, type: 3}
+  - {fileID: 21300000, guid: 6aab2a657963158499c683f7cfa8332a, type: 3}
+  - {fileID: 21300000, guid: 70a87185439bd479e86e104ad89cb28f, type: 3}
+  - {fileID: 21300000, guid: 86981e85bdd0e42ababb2e4e7a2c518e, type: 3}
+  - {fileID: 21300000, guid: 709db6a524f5b46cd83cb365c33eefad, type: 3}
+  - {fileID: 21300000, guid: 694be126cdd724043ace9db3471171a7, type: 3}
+  - {fileID: 21300000, guid: acbf135690132c947960d88e9e0ab60d, type: 3}
+  - {fileID: 21300000, guid: 5e7b74678873c8040806878baecb9429, type: 3}
+  - {fileID: 21300000, guid: 784ffda843db04edc84dc33c4d33f6ae, type: 3}
+  - {fileID: 21300000, guid: 688a782900ca54c02b7ef35d6e897f4e, type: 3}
+  - {fileID: 21300000, guid: 98fd6cc9218a54848b11dd99be250574, type: 3}
+  - {fileID: 21300000, guid: f5124fcce426db24788391f54a29d168, type: 3}
+  - {fileID: 21300000, guid: 9f63252eaacd14f6c9b2f0c0cb5784a1, type: 3}
+  - {fileID: 21300000, guid: 725a89fedd933ea4f9001428daa56680, type: 3}
+  - {fileID: 21300000, guid: 78d54e7f90abf49d681e5e5bd1d92d35, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - tile
+  - partyhat
+  - stripes
+  - shooter-512
+  - wall-512
+  - gatherer-512
+  - shooter-placeholder-512
+  - producer-512
+  - background
+  - resourceholder-white
+  - icon
+  - cat-placeholder-512
+  - bullet
+  - btn3-bg
+  - resourceholder-1024
+  - btn3-borders
+  - logo
+  m_Tag: Atlas
+  m_IsVariant: 0

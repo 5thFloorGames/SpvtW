@@ -9,26 +9,26 @@ public class ResourceUIUpdater : MonoBehaviour {
     private int previousResources;
     public int maxSize = 400;
 
-	void Start () {
+    private void Start () {
         previousResources = 99;
 		resourceTexts = gameObject.GetComponentsInChildren<Text>();
         resourceCloud = transform.Find("ResourceCloud").gameObject;
 	}
 
-	void Update () {
+	private void Update () {
         int resources = ResourceManager.getResources();
-        if (resources != previousResources) {
-            string resourceText = resources.ToString();
-            foreach (Text textComponent in resourceTexts) {
-                textComponent.text = resourceText;
-            }
-
-            int cloudSize = resources * 10;
-            if (cloudSize > maxSize) {
-                cloudSize = maxSize;
-            }
-            resourceCloud.transform.localScale = new Vector3(cloudSize, cloudSize, 1);
-            previousResources = resources;
+        if (resources == previousResources) return;
+        
+        string resourceText = resources.ToString();
+        foreach (Text textComponent in resourceTexts) {
+	        textComponent.text = resourceText;
         }
+
+        int cloudSize = resources * 10;
+        if (cloudSize > maxSize) {
+	        cloudSize = maxSize;
+        }
+        resourceCloud.transform.localScale = new Vector3(cloudSize, cloudSize, 1);
+        previousResources = resources;
 	}
 }

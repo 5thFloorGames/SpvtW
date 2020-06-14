@@ -7,17 +7,11 @@ public class PlantDamageScript : MonoBehaviour {
 	public Plant plantType;
 	private Animator animator;
 	private bool broken = false;
-
-	// Use this for initialization
+	
 	void Start () {
 		if (plantType == Plant.Blocker) {
 			animator = gameObject.GetComponentInChildren<Animator>();
 		}
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 	
 	public void Damaged(){

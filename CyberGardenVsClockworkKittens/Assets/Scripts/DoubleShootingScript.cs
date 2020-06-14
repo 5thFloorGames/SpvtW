@@ -22,10 +22,6 @@ public class DoubleShootingScript : MonoBehaviour {
 		shootingvfx = transform.Find("Shootingvfx").GetComponent<ParticleSystem>();
 	}
 
-	void Update() {
-		
-	}
-
 	void Shoot() {
 		StartCoroutine (DoubleShoot ());
 	}

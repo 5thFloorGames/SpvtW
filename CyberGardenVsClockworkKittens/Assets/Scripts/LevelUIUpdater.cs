@@ -2,31 +2,41 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class LevelUIUpdater : MonoBehaviour {
+public class LevelUIUpdater : MonoBehaviour
+{
 	private string levelString;
 	private Text levelText;
-	
-	void Start () {
-		levelText = gameObject.GetComponent<Text> ();
+
+	void Start()
+	{
+		levelText = gameObject.GetComponent<Text>();
 		levelString = "";
-		if (GameState.level == 0) {
+		if (GameState.level == 0)
+		{
 			levelString += "Warming up";
-		} else if (GameState.level == 1) {
+		}
+		else if (GameState.level == 1)
+		{
 			levelString += "1st";
-		} else if (GameState.level == 2) {
+		}
+		else if (GameState.level == 2)
+		{
 			levelString += "2nd";
-		} else if (GameState.level == 3) {
+		}
+		else if (GameState.level == 3)
+		{
 			levelString += "3rd";
-		} else {
+		}
+		else
+		{
 			levelString += GameState.level.ToString() + "th";
 		}
-		if (levelString != "Warming up") {
+
+		if (levelString != "Warming up")
+		{
 			levelString += " level";
 		}
-		levelText.text = levelString;
-	}
 
-	void Update () {
-		
+		levelText.text = levelString;
 	}
 }

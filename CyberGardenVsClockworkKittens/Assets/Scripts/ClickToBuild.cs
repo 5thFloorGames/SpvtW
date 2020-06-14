@@ -12,11 +12,6 @@ public class ClickToBuild : MonoBehaviour {
 	void Start () {
 		logic = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameLogic>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        
-    }
 
 	void OnMouseDown(){
 		if (free) {

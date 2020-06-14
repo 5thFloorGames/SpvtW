@@ -5,14 +5,6 @@ public class GameState : MonoBehaviour {
 
 	public static int level = 0;
 	public static int maxLevel = 3;
-	
-	void Start () {
-	
-	}
-
-	void Update () {
-	
-	}
 
 	public static void levelUp(){
 		level++;

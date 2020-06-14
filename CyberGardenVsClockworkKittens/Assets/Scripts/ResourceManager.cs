@@ -19,11 +19,6 @@ public class ResourceManager : MonoBehaviour {
 			plantPrices.Add (Plant.DoubleShooter, 8);
 		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
 	public static void reset(){
 		resources = startingResources;
